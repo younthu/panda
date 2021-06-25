@@ -24,7 +24,10 @@ $ gem install panda
 
 ## Test
 1. run rails test: `rails test`
-1. run dummy app in the root folder: 'rails s'
+   1. 注意fixture加载的方式: `panda_users(:one)`, 需要加namespace `panda_`
+1. run dummy app in the root folder: 'rails s'.
+   1. 魔法在`panda/bin/rails`里面. `APP_PATH = File.expand_path('../test/dummy/config/application', __dir__)`
+1. postman scripts.
 
 ## Contributing
 Contribution directions go here.
@@ -33,18 +36,19 @@ Contribution directions go here.
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Roadmap
-1. User
-	1. User model
-	1. Rest api for Avatar upload
-	1.
-	1. Identity model
-	1. Profile model
-1. Login with devise
-1. Login with wechat
-1. User
-1. wx_pay, WechatMiniService from Tekapic.
-1. 优惠券
-1. 常用可通用的功能写到subfolder里面以gem的形式加载.
+1. [ ] User
+	1. [ ] User model
+	1. [ ] Rest api for Avatar upload
+	1. [ ]
+	1. [ ] Identity model
+	1. [ ] Profile model
+1. [ ] Login with devise
+1. [ ] Login with wechat
+1. [ ] User
+1. [ ] wx_pay, WechatMiniService from Tekapic.
+1. [ ] 优惠券
+1. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
+1. [ ] swagger
 
 ## Notes
 1. Rails Engine和Rails Plugin的区别.

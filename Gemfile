@@ -6,6 +6,10 @@ gemspec
 
 group :development do
   gem 'sqlite3'
+
+  # pry rails for dev console
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 # To use a debugger
