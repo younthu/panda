@@ -14,3 +14,12 @@ end
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+# ruby 3以后必须指定web server
+gem "puma", "~> 5.3"
+
+gem "devise-i18n", "~> 1.10"
+
+gem "devise", "~> 4.8"
+
+gem "activeadmin", "~> 2.9"

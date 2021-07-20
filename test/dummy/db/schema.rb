@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_015354) do
+ActiveRecord::Schema.define(version: 2021_07_20_002630) do
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.integer "resource_id"
+    t.string "author_type"
+    t.integer "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "panda_admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_panda_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_panda_admin_users_on_reset_password_token", unique: true
+  end
 
   create_table "panda_identities", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -40,13 +66,28 @@ ActiveRecord::Schema.define(version: 2021_06_25_015354) do
   end
 
   create_table "panda_users", force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.boolean "allow_password_change", default: false
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.string "name"
-    t.string "nick_name"
-    t.string "avatar"
-    t.string "gender"
-    t.date "birth"
+    t.string "nickname"
+    t.string "image"
+    t.string "email"
+    t.text "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_panda_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_panda_users_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_panda_users_on_uid_and_provider", unique: true
   end
 
   add_foreign_key "panda_identities", "users"

@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   # free news' attachment
   # get '/free/attachment/translation/file/:id/*file_name', to: 'download_center#get_free_attachment'
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, class_name: "Panda::AdminUser"
 
   namespace :api do
     scope :v1 do
