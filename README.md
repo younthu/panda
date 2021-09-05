@@ -22,12 +22,14 @@ Or install it yourself as:
 $ gem install panda
 ```
 
+
 ## Test
 1. run rails test: `rails test`
    1. 注意fixture加载的方式: `panda_users(:one)`, 需要加namespace `panda_`
 1. run dummy app in the root folder: 'rails s'.
    1. 魔法在`panda/bin/rails`里面. `APP_PATH = File.expand_path('../test/dummy/config/application', __dir__)`
 1. postman scripts.
+1. 后台登录: http://localhost:3000/admin
 
 ## Rails tasks
 

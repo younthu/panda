@@ -19,7 +19,13 @@ Panda::Engine.routes.draw do
         sessions: 'panda/api/users/sessions'
         # registrations: 'api/users/registrations'
       }
+      namespace :users do
+        put :change_password
+        get :my_info
+        post :upload_avatar
+      end
     end
+
 
     # 微信登录
     resource :login_by_code, only: %i[create]
