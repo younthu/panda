@@ -14,7 +14,6 @@ module Panda
     # load these files too and that will be the reason for them to get loaded more than once.
     initializer :panda do
       ActiveAdmin.application.load_paths+= Dir[File.dirname(__FILE__) + '/admin']
-      Rails.logger.info ActiveAdmin.application.load_paths
     end
   end
 end

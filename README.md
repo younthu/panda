@@ -118,4 +118,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	require d.name
 	end
    ~~~
-1. 
+1.
+
+## mount activeadmin inside engine
+1. [Define a resource inside an engine](https://github.com/activeadmin/activeadmin/wiki/Define-a-resource-inside-an-engine)
+1. [Example Engines](https://github.com/activeadmin/activeadmin/wiki#engines-gems)

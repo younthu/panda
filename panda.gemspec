@@ -59,6 +59,7 @@ Comment
   # 图片上传
   spec.add_dependency 'carrierwave'
 
+  spec.add_dependency 'sass-rails'
   # development dependencies
   spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
   spec.add_development_dependency 'pry-rails'   # pry rails support
