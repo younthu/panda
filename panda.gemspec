@@ -61,8 +61,8 @@ Comment
 
   spec.add_dependency 'sass-rails'
   # development dependencies
-  spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
-  spec.add_development_dependency 'pry-rails'   # pry rails support
+  # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
+  # spec.add_development_dependency 'pry-rails'   # pry rails support
   spec.add_development_dependency 'rspec-rails' # integration test
 
 

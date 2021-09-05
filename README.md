@@ -39,12 +39,12 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Roadmap
 1. [ ] User
-	1. [ ] User model
-	1. [ ] Rest api for Avatar upload
-	1. [ ] Identity model
-	1. [ ] Profile model
+	1. [x] User model
+	1. [  ] Rest api for Avatar upload
+	1. [x] Identity model
+	1. [x] Profile model
 1. [ ] Login with devise
-   1. 手机登录
+    1. [x] 手机登录
 	1. 微信登录
 	1. 邮箱登录
 	1. 账号密码登录

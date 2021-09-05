@@ -5,5 +5,8 @@ module Panda
     devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
     include DeviseTokenAuth::Concerns::User
+
+      alias auth_token create_new_auth_token
+
   end
 end
