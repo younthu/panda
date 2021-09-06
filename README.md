@@ -42,7 +42,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Roadmap
 1. [ ] User
 	1. [x] User model
-	1. [  ] Rest api for Avatar upload
+	1. [x] Rest api for Avatar upload
 	1. [x] Identity model
 	1. [x] Profile model
 1. [ ] Login with devise

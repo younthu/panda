@@ -23,6 +23,7 @@ Panda::Engine.routes.draw do
         put :change_password
         get :my_info
         post :upload_avatar
+        post :append_photo
       end
     end
 

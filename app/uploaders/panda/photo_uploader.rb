@@ -1,10 +1,26 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class Panda::PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
+
+  # fix orientation issue: https://stackoverflow.com/questions/44895719/images-uploaded-from-mobile-have-incorrect-orientation
+  process :fix_exif_rotation
+
+  def fix_exif_rotation
+    manipulate! do |image|
+      image.tap(&:auto_orient)
+    end
+  end
+
+  version :thumb_nail do
+    process resize_to_fit: [2400, 2400]
+
+  end
+
+
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -13,10 +29,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def asset_host
-    return "http://tekapic.ilibrary.me"
-  end
-  
+  # def asset_host
+  #   return "FIXME"
+  # end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -45,7 +61,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    g = ::MiniMagick::Image.open(file.file)[:dimensions]
+    if self.parent_version&.file
+      g = ::MiniMagick::Image.open(self.parent_version.file.file)[:dimensions]
+    end
+    "#{original_filename}.wxh.#{g[0]}x#{g[1]}.#{file.extension}" if original_filename
+  end
 end
