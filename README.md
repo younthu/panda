@@ -31,6 +31,8 @@ $ gem install panda
 1. postman scripts.
 1. 后台登录: http://localhost:3000/admin
 
+## Development
+1. 更新版本号: `lib/panda/version`
 ## Rails tasks
 
 ## Contributing

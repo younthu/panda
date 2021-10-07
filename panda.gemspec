@@ -45,7 +45,7 @@ Comment
   spec.add_dependency 'devise_token_auth'
 
 
-  # swag, 包含了swag-rails, swag-spec
+  # swag, 包含了rspec-rails, rswag-specs, ref: https://github.com/rswag/rswag
   spec.add_dependency 'rswag'
 
   # active_admin
@@ -63,7 +63,7 @@ Comment
   # development dependencies
   # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
   # spec.add_development_dependency 'pry-rails'   # pry rails support
-  spec.add_development_dependency 'rspec-rails' # integration test
-
+  spec.add_dependency 'rspec-rails' # integration test, add_development_dependency not work.
+  spec.add_dependency 'rspec'
 
 end

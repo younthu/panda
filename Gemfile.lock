@@ -10,6 +10,8 @@ PATH
       kaminari-i18n
       rails (~> 6.1.3, >= 6.1.3.2)
       rails-i18n
+      rspec
+      rspec-rails
       rswag
       sass-rails
       wechat
@@ -250,6 +252,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -337,7 +343,6 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 5.3)
-  rspec-rails
   sass-rails
   sqlite3
 
