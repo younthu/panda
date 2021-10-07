@@ -1,0 +1,5 @@
+class AddMobileToUsers < ActiveRecord::Migration<%= migration_version %>
+  def change
+    add_column :panda_users, :mobile, :string
+  end
+end
