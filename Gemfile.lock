@@ -343,6 +343,7 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 5.3)
+  rails (~> 6.1.0)
   sass-rails
   sqlite3
 
