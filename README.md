@@ -122,6 +122,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	require d.name
 	end
    ~~~
+1. ActiveAdmin routes放engine namespace下面会导致资源加载的问题，解决办法是把routes放`Rails.application.routes.draw do`下面, 具体细节查看`routes/api.rb`.
 1.
 
 ## mount activeadmin inside engine
