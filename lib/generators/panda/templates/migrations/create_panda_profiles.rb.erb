@@ -1,4 +1,4 @@
-class CreatePandaProfiles < ActiveRecord::Migration[6.1]
+class CreatePandaProfiles < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :panda_profiles do |t|
       t.string :store

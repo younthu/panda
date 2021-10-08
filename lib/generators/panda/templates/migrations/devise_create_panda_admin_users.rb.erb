@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DeviseCreatePandaAdminUsers < ActiveRecord::Migration[6.1]
+class DeviseCreatePandaAdminUsers < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :panda_admin_users do |t|
       ## Database authenticatable

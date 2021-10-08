@@ -1,4 +1,4 @@
-class CreatePandaIdentities < ActiveRecord::Migration[6.1]
+class CreatePandaIdentities < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :panda_identities do |t|
       t.references :user, null: false, foreign_key: true

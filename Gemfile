@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
+gem "rails", "~> 6.1.0"
+
 group :development do
   gem 'sqlite3'
 
