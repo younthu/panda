@@ -33,6 +33,9 @@ $ gem install panda
 
 ## Development
 1. 更新版本号: `lib/panda/version`
+1. 调试panda的时候可以引用本地panda, 这样可以直接改panda的代码调试: ``gem 'panda', path: '../panda'``
+
+
 ## Rails tasks
 
 ## Contributing
@@ -123,6 +126,20 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	end
    ~~~
 1. ActiveAdmin routes放engine namespace下面会导致资源加载的问题，解决办法是把routes放`Rails.application.routes.draw do`下面, 具体细节查看`routes/api.rb`.
+1. panda.gemspec里面添加`spec.add_development_dependency`会导致依赖项在目标项目中不会被安装。用`spec.add_dependency`则不会有这个问题。
+1. 自定义migration files加载路径(见`./test/test_helper.rb`): `ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]`
+
+   Rails Engine会根据变量`ENGINE_ROOT`自动添加migrate path:
+   ~~~
+   #activerecord/lib/active_record/railtie.rb:42,
+        task :load_config do
+          if defined?(ENGINE_ROOT) && engine = Rails::Engine.find(ENGINE_ROOT)
+            if engine.paths["db/migrate"].existent
+              ActiveRecord::Tasks::DatabaseTasks.migrations_paths += engine.paths["db/migrate"].to_a
+            end
+          end
+        end
+   ~~~
 1.
 
 ## mount activeadmin inside engine
