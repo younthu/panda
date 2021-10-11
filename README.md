@@ -22,6 +22,10 @@ Or install it yourself as:
 $ gem install panda
 ```
 
+安装迁移文件:
+~~~sh
+rails panda:install:migrations
+~~~
 
 ## Test
 1. run rails test: `rails test`
@@ -58,6 +62,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	1. 苹果登录
 1. [ ] Login with wechat
 1. [ ] User
+1. [ ] 后台用户权限管理
 1. [ ] wx_pay, WechatMiniService from Tekapic.
 1. [ ] 优惠券
 1. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
@@ -73,6 +78,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] JWT
 1. [ ] RPush
 1. [ ] ActiveAdmin
+   1. [ ] 后台
 1. [ ] 朋友圈
    	1. [ ] 照片
    	1. [ ] 文字
@@ -130,7 +136,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. 自定义migration files加载路径(见`./test/test_helper.rb`): `ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]`
 
    Rails Engine会根据变量`ENGINE_ROOT`自动添加migrate path:
-   ~~~
+   ~~~ruby
    #activerecord/lib/active_record/railtie.rb:42,
         task :load_config do
           if defined?(ENGINE_ROOT) && engine = Rails::Engine.find(ENGINE_ROOT)
@@ -140,7 +146,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
           end
         end
    ~~~
-1.
+1. sqlite可以存jsonb, 查看yoga.user
 
 ## mount activeadmin inside engine
 1. [Define a resource inside an engine](https://github.com/activeadmin/activeadmin/wiki/Define-a-resource-inside-an-engine)

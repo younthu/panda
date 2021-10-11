@@ -8,6 +8,28 @@ class Api::LoginByCodesController < ::ApplicationController
     _render_to_body_with_renderer(options) || super
   end
 
+  # 绑定微信到手机用户
+  def bindWechat
+    @user = current_user
+
+    code = params[:code]
+    res = Wechat.api.jscode2session(code)
+    openid = res['openid']
+    session_key = res['session_key']
+
+    @user.openid = openid
+    @user.session_key = session_key
+    @user.skip_password_validation = true
+    # login_user.confirmed_at = Time.zone.now if login_user.new_record?
+    @user.save!
+
+    update_user_info
+
+    @auth_token = @user.auth_token
+
+    render json: @user, methods: [:auth_token] and return
+  end
+
   def create
     code = params[:code]
     res = Wechat.api.jscode2session(code)

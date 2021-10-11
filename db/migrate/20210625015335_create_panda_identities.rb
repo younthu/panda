@@ -2,7 +2,7 @@ class CreatePandaIdentities < ActiveRecord::Migration[6.1]
   def change
     create_table :panda_identities do |t|
       t.references :user, null: false, foreign_key: true
-      t.string :uid
+      t.string :uid, comment: '用户UID'
       t.string :provider
       t.string :status
       t.string :token

@@ -29,6 +29,8 @@ Panda::Engine.routes.draw do
 
 
     # 微信登录
-    resource :login_by_code, only: %i[create]
+    resource :login_by_code, only: %i[create] do
+      post :bindWechat
+    end
   end
 end
