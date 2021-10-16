@@ -4,7 +4,6 @@ module Panda
     skip_before_action :authenticate_user!, only: :create
 
     def create
-      puts params[:user]
       user = Panda::User.create! params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
 
       render json: user, methods: :auth_token
