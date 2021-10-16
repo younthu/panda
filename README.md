@@ -133,7 +133,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
    ~~~
 1. ActiveAdmin routes放engine namespace下面会导致资源加载的问题，解决办法是把routes放`Rails.application.routes.draw do`下面, 具体细节查看`routes/api.rb`.
 1. panda.gemspec里面添加`spec.add_development_dependency`会导致依赖项在目标项目中不会被安装。用`spec.add_dependency`则不会有这个问题。
-1. 自定义migration files加载路径(见`./test/test_helper.rb`): `ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]`
+1. 自定义migration files加载路径:
+   ~~~ruby
+   # ./test/test_helper.rb
+   ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]`
+   ~~~
 
    Rails Engine会根据变量`ENGINE_ROOT`自动添加migrate path:
    ~~~ruby
@@ -146,6 +150,13 @@ The gem is available as open source under the terms of the [MIT License](https:/
           end
         end
    ~~~
+   1. panda engine做了自动加载engine migration files的配置, 所以不需要手动`rails panda:install:migrations`:
+	  ~~~ruby
+      # lib/panda/engine.rb
+      config.paths["db/migrate"].expanded.each do |expanded_path|
+          app.config.paths["db/migrate"] << expanded_path
+       end
+      ~~~
 1. sqlite可以存jsonb, 查看yoga.user
 1. 每改一行engine里面的代码，dummy的routes就会奔溃，得重启`rails s`
 1. rails在debug模式下会渲染exception in html.
