@@ -13,6 +13,12 @@ module Panda
       render json: current_user
     end
 
+    def update_my_info
+      current_user.update params.require(:user).permit!
+
+      render json: current_user
+    end
+
     # 上传个人照片
     def append_photo
       u = current_user
