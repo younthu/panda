@@ -147,6 +147,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
         end
    ~~~
 1. sqlite可以存jsonb, 查看yoga.user
+1. 每改一行engine里面的代码，dummy的routes就会奔溃，得重启`rails s`
+1. rails在debug模式下会渲染exception in html.
+	1. 解决办法: 在basecontroller.rb里面加`rescue_from ActiveRecord::RecordInvalid`,
+	1. 打印exception in json: `config.debug_exception_response_format = :api`
+	1. https://www.wyeworks.com/blog/2016/01/12/improvements-to-error-responses-in-rails-5-api-mode/
 
 ## mount activeadmin inside engine
 1. [Define a resource inside an engine](https://github.com/activeadmin/activeadmin/wiki/Define-a-resource-inside-an-engine)
