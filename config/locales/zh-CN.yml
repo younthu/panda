@@ -1,0 +1,263 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+"zh-CN":
+  hello: "Hello world"
+  active_admin: # active admin 导航栏标签
+    user: "用户"
+  activerecord:
+    models:
+      panda/admin_user:
+        one: "管理员"
+        other: "管理员"
+      user: # 单数复数
+        one: "用户"
+        other: "用户"
+      comment:
+        one: "评论"
+        other: "评论"
+      feedback:
+        one: "用户反馈"
+        other: "用户反馈"
+      follow:
+        one: "关注"
+        other: "关注"
+      invitation_code:
+        one: "邀请码"
+        other: "邀请码"
+      message:
+        one: "消息"
+        other: "消息"
+      moment:
+        one: "朋友圈"
+        other: "朋友圈"
+      like:
+        one: '点赞'
+        other: '点赞'
+      photo:
+        one: '照片'
+        other: '照片'
+      censor:
+        one: '评论审核'
+        other: '评论审核'
+      ad:
+        one: '广告'
+        other: '广告'
+      order:
+        one: '订单'
+        other: '订单'
+      package:
+        one: '套餐'
+        other: '套餐'
+      admin_user:
+        one: '管理员'
+        other: '管理员'
+      income:
+        one: '收入'
+        other: '收入'
+      payment:
+        one: '提现'
+        other: '提现'
+    attributes:
+      common: &common
+        id: '编号'
+        user: '用户'
+        comment: '评论'
+        status: '状态'
+        description: '描述'
+        like: '点赞'
+        photo: '照片'
+        comments: '评论'
+        photos: '照片'
+        created_at: '创建日期'
+        updated_at: '更新于'
+        start_at: '开始于'
+        end_at: '结束于'
+        name: '姓名'
+        gender: '性别'
+        birth_day: '生日'
+        mobile: '手机号'
+        birth: '生日'
+        city: '城市'
+        province: '省份'
+        nick_name: '昵称'
+        country: '国家'
+        id_card: '身份证号码'
+        phone_number: '电话号码'
+      user:
+        <<: *common
+        id: '编号'
+        name: '姓名'
+        gender: '性别'
+        birth_day: '生日'
+        mobile: '手机号'
+        birth: '生日'
+        city: '城市'
+        province: '省份'
+        nick_name: '昵称'
+        country: '国家'
+        id_card: '身份证号码'
+        phone_number: '电话号码'
+        is_photographer: '摄影师?'
+        id_number: '身份证号码'
+        qq: 'QQ号码'
+        wechat: '微信'
+        contact_address: '联系地址'
+        cards: '会员卡'
+        package_users: '会员套餐绑定'
+        packages: '套餐'
+        payments: '支付'
+        balances: '余额'
+        credits: '积分'
+        followings: '关注中'
+        follows: '粉丝'
+        moments: '朋友圈'
+        works: '作品(废弃中)'
+        comments: '评论'
+        bookings: '预约'
+        my_bookings: '我的预约'
+        feedbacks: '反馈'
+        apps: '申请'
+        invitation_code: '邀请码'
+        whitelisted_jwts: 'jwt白名单'
+      moment:
+        <<: *common
+        location: '位置坐标'
+        location_text: '地名'
+        city: '城市'
+        province: '省'
+        district: '区'
+        order: '订单'
+      censor:
+        <<: *common
+        target: '审核对象'
+        target_type: '审核对象类型'
+        pass: '通过'
+        failed: '屏蔽'
+        waiting_for_censor: '待审核'
+      invitation_code:
+        <<: *common
+        code: '邀请码'
+        invitable: '邀请对象'
+        expire_at: '有效期至'
+      feedback:
+        <<: *common
+        body: '反馈意见'
+      competition:
+        <<: *common
+        title: '主题'
+        moments: '参赛作品'
+        detail: '活动文案'
+        awards: '奖项'
+        schedule: '日程表'
+        judges: '评委'
+        note: '注意事项'
+      follow:
+        <<: *common
+        followable_type: '被关注类型'
+        followable: '被关注者'
+        follower_type: '关注者'
+        follower: '关注者'
+        blocked: '屏蔽'
+      package:
+        <<: *common
+        price: '价格'
+        duration: '时长'
+        photos_number: '拍摄张数'
+        delivery_photos_number: '精修张数'
+        title: '标题'
+        description: '描述'
+        style: '风格'
+        clothes_number: '服装套数'
+        max_participant_number: '最大人数'
+        location: '拍摄地点'
+        working_hours: '拍摄时间'
+        parent: '父套餐'
+        deleted_at: '删除于'
+      ad:
+        <<: *common
+        title: '标题'
+        image: '图片'
+        expire_at: '过期时间'
+        ad_data: '广告数据'
+      message:
+        <<: *common
+        sender: '发送者'
+        receiver: '接收者'
+        payload_type: '附件类型'
+        payload: '附件'
+        body: '文本内容'
+        read: '已读'
+        session: '会话'
+        msg_type: '消息类型'
+      photo:
+        <<: *common
+      admin_user:
+        <<: *common
+      order:
+        <<: *common
+        comment: '备注'
+        status: '状态'
+        title: '标题'
+        code: '支付码'
+        price: '价格'
+      comment:
+        <<: *common
+        namespace: '命名空间'
+        body: '内容'
+        resource_type: '资源类型'
+        resource: '资源'
+        author_type: '评论者类型'
+        author: '评论者'
+      shooting_plan:
+        <<: *common
+        city: '城市'
+        status: '状态'
+      income:
+        <<: *common
+      payment:
+        <<: *common
+        amount: "金额"
+        fee: "手续费"
+        actual_pay: "实付金额"
+        channel: "支付方式"
+  activemodel:
+    models:
+      user: "用户"
+    attributes:
+      user:
+        id: '编号'
+        name: '名字'
+        credit: '积分'
+        created_at: '创建日期'
+        updated_at: '更新日期'
+
+
