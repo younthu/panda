@@ -20,6 +20,7 @@ Panda::Engine.routes.draw do
         registrations: 'panda/api/users/registrations'
       }
       namespace :users do
+        post :create
         put :change_password
         get :my_info
         put :update_my_info

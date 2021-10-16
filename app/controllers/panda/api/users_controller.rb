@@ -1,6 +1,17 @@
 module Panda
   module Api
   class UsersController < BaseController
+    skip_before_action :authenticate_user!, only: :create
+
+    def create
+      puts params[:user]
+      user = Panda::User.new params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
+      if user.save
+        render json: { success: 0, message: user }
+      else
+        render json: { success: -1, error: user.errors.full_messages.join(', ') }
+      end
+    end
 
     # TODO: Fixme
     def upload_avatar
