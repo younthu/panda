@@ -5,12 +5,9 @@ module Panda
 
     def create
       puts params[:user]
-      user = Panda::User.new params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
-      if user.save
-        render json: { success: 0, message: user }
-      else
-        render json: { success: -1, error: user.errors.full_messages.join(', ') }
-      end
+      user = Panda::User.create! params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
+
+      render json: user, methods: :auth_token
     end
 
     # TODO: Fixme
