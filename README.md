@@ -22,6 +22,8 @@ Or install it yourself as:
 $ gem install panda
 ```
 
+Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了rest api登录的基本功能.
+
 安装迁移文件:
 ~~~sh
 rails panda:install:migrations
