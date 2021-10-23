@@ -23,13 +23,21 @@ module Panda
           password = params[:user][:password]
           # user = User.find_by mobile: mobile
           user = User.where(mobile: mobile).last # 修复bug: 一个手机号被注册多个用户的情况下，以最新的账号为准。
-          if user and user.valid_password?(password)
-            sign_in :user, user
-            set_user_by_token
+          if user
+            valid_login = if Panda.default_login_validation == :password
+              user.valid_password?(password)
+            else
+              user.valid_secure_token?(password)
+            end
 
-            session[:current_user_id] = current_user&.id
+            if valid_login
+              sign_in :user, user
+              set_user_by_token
 
-            render json: user, methods: :auth_token and return
+              session[:current_user_id] = current_user&.id
+
+              render json: user, methods: :auth_token and return
+            end
           end
           render json: "用户名密码不对!", status: 401
         end

@@ -14,5 +14,8 @@ module Panda
       mount_uploaders :photos, PhotoUploader # 用户头像顶部照片
       serialize :photos, JSON # If you use SQLite, add this line. if using psql, alter photos to type of json rails g migration add_avatars_to_users photos:json
 
+    def valid_secure_token?(token)
+      secure_token == token
+    end
   end
 end
