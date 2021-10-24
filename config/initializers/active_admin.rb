@@ -333,4 +333,9 @@ ActiveAdmin.setup do |config|
   #
   # config.use_webpacker = true
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
+
+  # avoid access denied loop, https://github.com/activeadmin/activeadmin/issues/2081
+  # The method access_denied would be defined in application_controller.rb
+  # TODO: implement access_denied in application controller, please check the activeadmin page section `Using the CanCan Adapter` for detail: https://activeadmin.info/13-authorization-adapter.html
+  # config.on_unauthorized_access = :access_denied
 end
