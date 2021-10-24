@@ -59,6 +59,8 @@ Comment
   # 图片上传
   spec.add_dependency 'carrierwave'
 
+  # 权限管理
+  spec.add_dependency 'cancancan'
   spec.add_dependency 'sass-rails'
   # development dependencies
   # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.

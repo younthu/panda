@@ -1,9 +1,6 @@
-module Api
-  module Users
-    class TokenValidationsController < ::DeviseTokenAuth::TokenValidationsController
-      def validate_token
-        super
-      end
-    end
+class Panda::Api::Users::TokenValidationsController < ::DeviseTokenAuth::TokenValidationsController
+  def validate_token
+    super
   end
 end
+
