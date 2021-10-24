@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_074555) do
+ActiveRecord::Schema.define(version: 2021_10_24_060342) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 2021_10_23_074555) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
+  create_table "panda_admin_roles", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.integer "resource_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "resource_type", "resource_id"], name: "admin_role_name_resource_type_and_id_index"
+    t.index ["name"], name: "index_panda_admin_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_panda_admin_roles_on_resource"
+  end
+
   create_table "panda_admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -36,6 +47,14 @@ ActiveRecord::Schema.define(version: 2021_10_23_074555) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_panda_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "panda_admin_users_panda_admin_roles", id: false, force: :cascade do |t|
+    t.integer "admin_user_id"
+    t.integer "admin_role_id"
+    t.index ["admin_role_id"], name: "index_panda_admin_users_panda_admin_roles_on_admin_role_id"
+    t.index ["admin_user_id", "admin_role_id"], name: "admin_user_admin_id_role_id_index"
+    t.index ["admin_user_id"], name: "index_panda_admin_users_panda_admin_roles_on_admin_user_id"
   end
 
   create_table "panda_identities", force: :cascade do |t|

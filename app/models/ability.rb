@@ -29,8 +29,8 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-
+    # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+    # One last action is manage. This action means that you have full permissions on the subject and you can perform any possible action.
     can :manage, :all
   end
 end

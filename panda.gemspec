@@ -61,6 +61,10 @@ Comment
 
   # 权限管理
   spec.add_dependency 'cancancan'
+
+  # 角色管理
+  spec.add_dependency 'rolify'
+
   spec.add_dependency 'sass-rails'
   # development dependencies
   # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
