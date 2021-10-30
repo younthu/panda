@@ -17,5 +17,15 @@ module Panda
     def valid_secure_token?(token)
       secure_token.present? && secure_token == token
     end
+
+    def age
+      Date.today.year - self.birthday.year
+    end
+
+    def as_json(options = {})
+      super(options).merge({
+        age: age
+      })
+    end
   end
 end
