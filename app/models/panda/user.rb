@@ -19,6 +19,7 @@ module Panda
     end
 
     def age
+      return unless self.birthday
       Date.today.year - self.birthday.year
     end
 
