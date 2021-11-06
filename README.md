@@ -22,12 +22,39 @@ Or install it yourself as:
 $ gem install panda
 ```
 
+# Quick start
+
+1. Add gems
+	1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
+	1. Add `gem 'annotate'` to development group.
+	1.
+1. `bundle install`
+1. `rails db:create && rails db:migrate`
+1. start server: `rails s`
+1. start sidekiq(optional): `sidekiq`
+1. start rpush(optional): `rpush`
+1. check app info: `rails app:about`
+
+
+# Setup
+
 Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了rest api登录的基本功能.
 
 安装迁移文件:
 ~~~sh
 rails panda:install:migrations
 ~~~
+
+# Features
+
+## Rpush
+1.
+
+## 微信支付
+
+## 权限管理
+
+## Swagger
 
 ## Test
 1. run rails test: `rails test`

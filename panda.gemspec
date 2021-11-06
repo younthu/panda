@@ -65,11 +65,14 @@ Comment
   # 角色管理
   spec.add_dependency 'rolify'
 
+  # 苹果推送, rpush
+  spec.add_dependency 'rpush'
+
   spec.add_dependency 'sass-rails'
   # development dependencies
   # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.
   # spec.add_development_dependency 'pry-rails'   # pry rails support
-  spec.add_dependency 'rspec-rails' # integration test, add_development_dependency not work.
+  spec.add_dependency 'rspec-rails' # integration test, add_development_dependency not work. please specify it in the app gem file.
   spec.add_dependency 'rspec'
 
 end

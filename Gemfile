@@ -10,6 +10,7 @@ group :development do
   # pry rails for dev console
   gem 'pry'
   gem 'pry-rails'
+  gem 'annotate'
 end
 
 # To use a debugger
