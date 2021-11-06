@@ -20,6 +20,17 @@ module Panda
       render json: current_user
     end
 
+    # 绑定苹果device token
+    def bind_ios_device_token
+      token = params[:token]
+
+      if Panda::Device.where(user: current_user, token: token) < 1
+        Panda::Device.create!(user: current_user, token: token)
+      end
+
+      render json: {msg: "success"}
+    end
+
     def update_my_info
       current_user.update params.require(:user).permit!
 

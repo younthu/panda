@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_041408) do
+ActiveRecord::Schema.define(version: 2021_11_06_082814) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 2021_11_06_041408) do
     t.index ["admin_user_id"], name: "index_panda_admin_users_panda_admin_roles_on_admin_user_id"
   end
 
+  create_table "panda_devices", force: :cascade do |t|
+    t.integer "panda_user_id"
+    t.string "token"
+    t.string "name"
+    t.string "full_version"
+    t.string "os_name"
+    t.string "os_full_version"
+    t.string "device_name"
+    t.string "device_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["panda_user_id"], name: "index_panda_devices_on_panda_user_id"
+  end
+
   create_table "panda_identities", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "uid"
@@ -96,16 +110,17 @@ ActiveRecord::Schema.define(version: 2021_11_06_041408) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "email"
     t.string "name"
     t.string "nickname"
-    t.string "image"
-    t.string "email"
+    t.string "avatar"
+    t.string "photos"
+    t.date "birthday"
+    t.integer "gender"
+    t.string "mobile"
     t.text "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "mobile"
-    t.string "photos"
-    t.string "avatar"
     t.string "secure_token", default: ""
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_panda_users_on_email", unique: true
@@ -182,6 +197,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_041408) do
     t.index ["delivered", "failed", "processing", "deliver_after", "created_at"], name: "index_rpush_notifications_multi", where: "NOT delivered AND NOT failed"
   end
 
+  add_foreign_key "panda_devices", "panda_users"
   add_foreign_key "panda_identities", "users"
   add_foreign_key "panda_profiles", "users"
 end

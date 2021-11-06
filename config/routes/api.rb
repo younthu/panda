@@ -26,6 +26,7 @@ Panda::Engine.routes.draw do
         put :update_my_info
         post :upload_avatar
         post :append_photo
+        post :bind_ios_device_token
       end
     end
 

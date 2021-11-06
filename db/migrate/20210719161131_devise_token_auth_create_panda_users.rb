@@ -28,11 +28,16 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      ## User Info
-      t.string :name
-      t.string :nickname
-      t.string :image
       t.string :email
+
+      ## User Info
+      t.string  :name,       comment: '用户名'
+      t.string  :nickname,   comment: '昵称'
+      t.string  :avatar,     comment: '头像'
+      t.string  :photos,     comment: '个人顶部相册'
+      t.date    :birthday,   comment: '个人生日'
+      t.integer :gender,     comment: '性别, 0, 男, 1, 女'
+      t.string  :mobile,     comment: '手机号'
 
       ## Tokens
       t.text :tokens
