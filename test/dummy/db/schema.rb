@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
   end
 
   create_table "panda_devices", force: :cascade do |t|
-    t.integer "panda_user_id"
+    t.integer "user_id"
     t.string "token"
     t.string "name"
     t.string "full_version"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
     t.string "device_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["panda_user_id"], name: "index_panda_devices_on_panda_user_id"
+    t.index ["user_id"], name: "index_panda_devices_on_user_id"
   end
 
   create_table "panda_identities", force: :cascade do |t|
@@ -197,7 +197,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
     t.index ["delivered", "failed", "processing", "deliver_after", "created_at"], name: "index_rpush_notifications_multi", where: "NOT delivered AND NOT failed"
   end
 
-  add_foreign_key "panda_devices", "panda_users"
+  add_foreign_key "panda_devices", "panda_users", column: "user_id"
   add_foreign_key "panda_identities", "users"
   add_foreign_key "panda_profiles", "users"
 end

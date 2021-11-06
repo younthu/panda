@@ -12,18 +12,18 @@
 #  token           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  panda_user_id   :integer
+#  user_id         :integer
 #
 # Indexes
 #
-#  index_panda_devices_on_panda_user_id  (panda_user_id)
+#  index_panda_devices_on_user_id  (user_id)
 #
 # Foreign Keys
 #
-#  panda_user_id  (panda_user_id => panda_users.id)
+#  user_id  (user_id => panda_users.id)
 #
 module Panda
   class Device < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, class_name: 'Panda::User'
   end
 end

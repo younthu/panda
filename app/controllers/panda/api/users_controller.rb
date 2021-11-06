@@ -24,7 +24,7 @@ module Panda
     def bind_ios_device_token
       token = params[:token]
 
-      if Panda::Device.where(user: current_user, token: token) < 1
+      if Panda::Device.where(user: current_user, token: token).count < 1
         Panda::Device.create!(user: current_user, token: token)
       end
 
