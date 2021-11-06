@@ -58,7 +58,7 @@ rails panda:install:migrations
 ## 微信支付
 
 ## 权限管理
-
+1. Panda::AdminRole是给后台用户角色定义用的。目前没有对一般用户权限做支持，可以在后期根据需求来添加。
 ## Swagger
 
 ## Test

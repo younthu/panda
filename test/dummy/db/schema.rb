@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
 
   create_table "panda_admin_roles", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.string "resource_type"
     t.integer "resource_id"
     t.datetime "created_at", precision: 6, null: false

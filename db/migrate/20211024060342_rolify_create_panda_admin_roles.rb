@@ -1,8 +1,9 @@
 class RolifyCreatePandaAdminRoles < ActiveRecord::Migration[6.1]
   def change
     create_table(:panda_admin_roles) do |t|
-      t.string :name
-      t.references :resource, :polymorphic => true
+      t.string :name, comment: '权限名称'
+      t.string :description, comment: '权限描述'
+      t.references :resource, :polymorphic => true, comment: '权限作用于哪种资源，如果为空，则表示作用于所有资源。'
 
       t.timestamps
     end

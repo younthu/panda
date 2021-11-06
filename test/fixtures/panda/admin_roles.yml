@@ -3,6 +3,7 @@
 # Table name: panda_admin_roles
 #
 #  id            :integer          not null, primary key
+#  description   :string
 #  name          :string
 #  resource_type :string
 #  created_at    :datetime         not null
