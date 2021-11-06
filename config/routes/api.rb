@@ -1,5 +1,7 @@
 # require_relative '../../app/models/panda/user.rb'
 
+def draw_apis
+
 Rails.application.routes.draw do
   # free news' attachment
   # get '/free/attachment/translation/file/:id/*file_name', to: 'download_center#get_free_attachment'
@@ -36,4 +38,6 @@ Panda::Engine.routes.draw do
       post :bindWechat
     end
   end
+end
+
 end

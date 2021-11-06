@@ -36,6 +36,8 @@
 #
 module Panda
   class User < ApplicationRecord
+    enum gender: {female: 0, male: 1, f: 0, m: 1} # enum usage: https://naturaily.com/blog/ruby-on-rails-enum
+
       # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
     devise :database_authenticatable, :registerable,
