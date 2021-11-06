@@ -25,4 +25,28 @@ namespace :rpush do
         n.save!
     end
 
+    desc 'seed app for push notification'
+    task :seed, [:app] => [:environment] do |task, args|
+        # 创建push 服务, Apns2
+        app = Rpush::Apns2::App.new;
+        app.name = "blind_glass_ios_app";
+        app.certificate = File.read("./certs/aps_dev.pem");
+        app.environment = "development";
+        app.password = "";
+        app.bundle_id = "com.zhiyin.glass";
+        app.connections = 1;
+        app.save!;
+
+        # Apns p8
+        app = Rpush::Apnsp8::App.new
+        app.name = "blind_glass_ios_app_p8"
+        app.apn_key = File.read("./certs/AuthKey_5DMW53GX22.p8")
+        app.environment = "development" # APNs environment.
+        app.apn_key_id = "5DMW53GX22" # This is the Encryption Key ID provided by apple
+        app.team_id = "HXEHGC77U2" # the team id - e.g. ABCDE12345
+        app.bundle_id = "com.zhiyin.glass" # the unique bundle id of the app, like com.example.appname
+        app.connections = 1
+        app.save!
+    end
+
 end

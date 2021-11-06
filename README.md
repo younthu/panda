@@ -32,7 +32,7 @@ $ gem install panda
 1. `rails db:create && rails db:migrate`
 1. start server: `rails s`
 1. start sidekiq(optional): `sidekiq`
-1. start rpush(optional): `rpush`
+1. start rpush(optional): `rpush start`
 1. check app info: `rails app:about`
 
 
@@ -48,7 +48,12 @@ rails panda:install:migrations
 # Features
 
 ## Rpush
-1.
+
+1. start rpush(optional): `rpush start`
+	1. Both two commands below work in mac, but, not in linux.
+	1. send notification to a device: `rails rpush:p8push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
+	1. send notification to device: `rails rpush:push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
+	1.
 
 ## 微信支付
 
