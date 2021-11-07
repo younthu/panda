@@ -9,8 +9,8 @@ class RolifyCreatePandaAdminRoles < ActiveRecord::Migration[6.1]
     end
 
     create_table(:panda_admin_users_panda_admin_roles, :id => false) do |t|
-      t.references :admin_user
-      t.references :admin_role
+      t.references :admin_user, foreign_key: {to_table: :panda_admin_users}
+      t.references :admin_role, foreign_key: {to_table: :panda_admin_roles}
     end
 
     add_index(:panda_admin_roles, :name)
