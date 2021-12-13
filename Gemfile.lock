@@ -10,14 +10,18 @@ PATH
       devise-i18n
       devise_token_auth
       kaminari-i18n
-      rails (~> 6.1.3, >= 6.1.3.2)
+      rails
       rails-i18n
+      redis
+      redis-namespace
+      redis-rails
       rolify
       rpush
       rspec
       rspec-rails
       rswag
       sass-rails
+      sidekiq
       wechat
       wx_pay
 
@@ -262,6 +266,25 @@ GEM
       activerecord (>= 5.2.4)
       activesupport (>= 5.2.4)
       i18n
+    redis (4.5.1)
+    redis-actionpack (5.2.0)
+      actionpack (>= 5, < 7)
+      redis-rack (>= 2.1.0, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.2.1)
+      activesupport (>= 3, < 7)
+      redis-store (>= 1.3, < 2)
+    redis-namespace (1.8.1)
+      redis (>= 3.0.4)
+    redis-rack (2.1.3)
+      rack (>= 2.0.8, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.9.0)
+      redis (>= 4, < 5)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -329,6 +352,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sidekiq (6.3.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -381,4 +408,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.19
+   2.2.22

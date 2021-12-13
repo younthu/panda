@@ -137,16 +137,21 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] RN app generator
 1. [ ]
 
-
+# 设计原则
+1. 多用callbacks, 方便做定制化。
 ## Notes
 1. Rails Engine和Rails Plugin的区别.
 1. 加载本地gem: `gem 'core', path: '../core'`
+
 # Famous engine
 1. Rails is the biggest engine.
 1. [Thredded](https://github.com/thredded/thredded), Thredded is a Rails 4.2+ forum/messageboard engine. Its goal is to be as simple and feature rich as possible.
 1. [Spree](https://github.com/spree/spree),Spree is a complete open source e-commerce solution built with Ruby on Rails.
 1. [Devise](https://github.com/heartcombo/devise),Flexible authentication solution for Rails with Warden.
 1.
+
+# Famous Rails app(open sourced)
+1. [Discourse](https://github.com/discourse/discourse)
 
 # Useful gems
 1.

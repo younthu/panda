@@ -57,6 +57,17 @@ Comment
   spec.add_dependency 'devise-i18n'
   spec.add_dependency 'kaminari-i18n'
 
+	# Redis
+	spec.add_dependency 'redis' # ruby redis gem
+
+	# Redis::Namespace provides an interface to a namespaced subset of your redis keyspace (e.g., keys with a common beginning),
+	# and requires the redis-rb gem.
+	spec.add_dependency 'redis-namespace'
+
+	# redis-rails provides a full set of stores (Cache, Session, HTTP Cache) for Ruby on Rails.
+	# See the main redis-store readme for general guidelines.
+	spec.add_dependency 'redis-rails'
+
   # 图片上传
   spec.add_dependency 'carrierwave'
 
@@ -68,6 +79,9 @@ Comment
 
   # 苹果推送, rpush
   spec.add_dependency 'rpush'
+
+	# job管理
+	spec.add_dependency 'sidekiq'
 
   # 设备识别, https://github.com/podigee/device_detector
   spec.add_dependency 'device_detector'
