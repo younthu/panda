@@ -25,6 +25,17 @@
 	   end
       ~~~
 
-1.
+1. 默认有三个角色
+  1. admin
+  1. site_admin
+  1. finance
+
+  seeds.rb里面有.
+  ~~~
+    # 创建角色
+	site_admin_role = Panda::AdminRole.create! name: "site_admin", description: "站点管理员，最高权限角色"
+	admin_role = Panda::AdminRole.create! name: "admin", description: "系统管理员, 管理系统所有功能。"
+	finance_role = Panda::AdminRole.create! name: "finance", description: "财务管理。"
+  ~~~
 
 # 注意

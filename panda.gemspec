@@ -86,6 +86,9 @@ Comment
   # 设备识别, https://github.com/podigee/device_detector
   spec.add_dependency 'device_detector'
 
+  # 状态机，for order status management
+  spec.add_dependency 'aasm'
+
   spec.add_dependency 'sass-rails'
   # development dependencies
   # spec.add_development_dependency "pry"         # powerful ruby console, for debugging.

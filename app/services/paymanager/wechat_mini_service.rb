@@ -34,7 +34,7 @@ module Paymanager
     end
 
     # 付款到用户零钱账户, 这个是不收手续费的, amount单位为分，最低付款金额为100分.
-    # 转一元钱到杨志勇账户: Paymanager::WechatMiniService.new.transfer_to_user "oWe9O5aFM_0V_pzNLehXIX-t7tEE", 100, "杨x勇"
+    # 转一元钱到杨账户: Paymanager::WechatMiniService.new.transfer_to_user "oWe9O5aFM_0V_pzNLehXIX-t7tEE", 100, "杨xx"
     def transfer_to_user(openid, amount, check_name, name="", spbill_create_ip="")
       # openid = 'oWe9O5Rkf7zS5LMWpK62Md6VjHL4'
       # name = '陈x妮'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_082814) do
+ActiveRecord::Schema.define(version: 2021_12_13_081705) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -89,6 +89,30 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
     t.index ["token"], name: "index_panda_identities_on_token"
     t.index ["uid"], name: "index_panda_identities_on_uid"
     t.index ["user_id"], name: "index_panda_identities_on_user_id"
+  end
+
+  create_table "panda_order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_type", "item_id"], name: "index_panda_order_items_on_item"
+    t.index ["order_id"], name: "index_panda_order_items_on_order_id"
+  end
+
+  create_table "panda_orders", force: :cascade do |t|
+    t.string "comment"
+    t.string "business_type"
+    t.string "status"
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "title"
+    t.string "code"
+    t.integer "price_in_cent"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_type", "owner_id"], name: "index_panda_orders_on_owner"
   end
 
   create_table "panda_profiles", force: :cascade do |t|
@@ -200,5 +224,6 @@ ActiveRecord::Schema.define(version: 2021_11_06_082814) do
 
   add_foreign_key "panda_devices", "panda_users", column: "user_id"
   add_foreign_key "panda_identities", "users"
+  add_foreign_key "panda_order_items", "orders"
   add_foreign_key "panda_profiles", "users"
 end

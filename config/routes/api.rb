@@ -30,6 +30,23 @@ Panda::Engine.routes.draw do
         post :append_photo
         post :bind_ios_device_token
       end
+
+      resources :orders do
+        collection do
+          post :wechat_mini_notify
+          get :photographer_orders
+          get :has_new_order
+          put :mark_all_orders_as_read
+        end
+
+        member do
+          put :confirm_order
+          put :done_order
+          put :reject_order
+          put :cancel_order
+          post :comment
+        end
+      end
     end
 
 
