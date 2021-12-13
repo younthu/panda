@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 end
 
 Panda::Engine.routes.draw do
-  devise_for :users, controllers: { sessions: 'user/sessions', class_name: "Panda::User" }
+  devise_for :users, path: "users", class_name: "Panda::User", controllers: { sessions: 'user/sessions', class_name: "Panda::User" }
 
   namespace :api do
     scope :v1 do

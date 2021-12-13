@@ -6,7 +6,7 @@ module Paymanager
 
     def initialize
       WxPay.appid = 'wxb803d179ea68xxxx'
-      WxPay.key = '3745893d62'
+      WxPay.key = '37458xxxxx'
       WxPay.mch_id = '1599404xxx'
       WxPay.extra_rest_client_options = { timeout: 2, open_timeout: 3 }
       WxPay.set_apiclient_by_pkcs12(File.read("#{Rails.root}/lib/159940xxxx/apiclient_cert.p12"), '159940xxxx')
