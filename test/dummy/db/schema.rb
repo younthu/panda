@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_081705) do
+ActiveRecord::Schema.define(version: 2021_12_18_185720) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -113,6 +113,29 @@ ActiveRecord::Schema.define(version: 2021_12_13_081705) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_type", "owner_id"], name: "index_panda_orders_on_owner"
+  end
+
+  create_table "panda_payments", force: :cascade do |t|
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "payment_method_type", null: false
+    t.integer "payment_method_id", null: false
+    t.string "comment"
+    t.string "payee_type"
+    t.integer "payee_id"
+    t.string "payer_type"
+    t.integer "payer_id"
+    t.integer "amount_in_cent"
+    t.integer "fee_in_cent"
+    t.integer "actual_pay_in_cent"
+    t.string "channel"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["payee_type", "payee_id"], name: "index_panda_payments_on_payee"
+    t.index ["payer_type", "payer_id"], name: "index_panda_payments_on_payer"
+    t.index ["payment_method_type", "payment_method_id"], name: "index_panda_payments_on_payment_method"
+    t.index ["target_type", "target_id"], name: "index_panda_payments_on_target"
   end
 
   create_table "panda_profiles", force: :cascade do |t|
