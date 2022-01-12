@@ -245,8 +245,10 @@ ActiveRecord::Schema.define(version: 2021_12_18_185720) do
     t.index ["delivered", "failed", "processing", "deliver_after", "created_at"], name: "index_rpush_notifications_multi", where: "NOT delivered AND NOT failed"
   end
 
+  add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_roles", column: "admin_role_id"
+  add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_users", column: "admin_user_id"
   add_foreign_key "panda_devices", "panda_users", column: "user_id"
-  add_foreign_key "panda_identities", "users"
+  add_foreign_key "panda_identities", "panda_users", column: "user_id"
   add_foreign_key "panda_order_items", "orders"
-  add_foreign_key "panda_profiles", "users"
+  add_foreign_key "panda_profiles", "panda_users", column: "user_id"
 end

@@ -14,7 +14,7 @@
 #
 # Foreign Keys
 #
-#  user_id  (user_id => users.id)
+#  user_id  (user_id => panda_users.id)
 #
 module Panda
   class Profile < ApplicationRecord

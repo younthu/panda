@@ -27,7 +27,6 @@
 #  index_panda_payments_on_payment_method  (payment_method_type,payment_method_id)
 #  index_panda_payments_on_target          (target_type,target_id)
 #
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   target: one

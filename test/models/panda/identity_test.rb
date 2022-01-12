@@ -25,7 +25,7 @@
 #
 # Foreign Keys
 #
-#  user_id  (user_id => users.id)
+#  user_id  (user_id => panda_users.id)
 #
 require "test_helper"
 
