@@ -1,6 +1,5 @@
 # frozen_string_literal: true
-
-module Api
+module Panda::Api
   class OrdersController < BaseController
     skip_before_action :authenticate_user!, only: %i[wechat_mini_notify]
     before_action :set_order, only: %i[show cancel_order confirm_order done_order reject_order comment]
