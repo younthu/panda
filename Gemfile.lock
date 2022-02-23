@@ -4,6 +4,7 @@ PATH
     panda (0.1.0)
       aasm
       activeadmin
+      aliyun-cloud_sms
       cancancan
       carrierwave
       device_detector
@@ -101,6 +102,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    aliyun-cloud_sms (0.2.3)
+      rest-client (>= 2.0)
+      uuid (>= 2.0)
     annotate (3.1.1)
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
@@ -200,6 +204,8 @@ GEM
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
@@ -368,6 +374,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     ssrf_filter (1.0.7)
+    systemu (2.6.5)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -375,6 +382,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     webpush (1.1.0)
@@ -400,6 +409,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 2.9)
+  aliyun-cloud_sms
   annotate
   devise (~> 4.8)
   devise-i18n (~> 1.10)
@@ -410,5 +420,8 @@ DEPENDENCIES
   sass-rails
   sqlite3
 
+RUBY VERSION
+   ruby 3.0.3p157
+
 BUNDLED WITH
-   2.2.22
+   2.2.32

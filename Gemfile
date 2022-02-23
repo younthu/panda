@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '3.0.3'
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
@@ -26,3 +27,5 @@ gem "devise-i18n", "~> 1.10"
 gem "devise", "~> 4.8"
 
 gem "activeadmin", "~> 2.9"
+
+gem 'aliyun-cloud_sms'

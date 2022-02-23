@@ -96,4 +96,7 @@ Comment
   spec.add_dependency 'rspec-rails' # integration test, add_development_dependency not work. please specify it in the app gem file.
   spec.add_dependency 'rspec'
 
+  # 阿里云短信，测试: AliyunCloud::AliSmsService.new('测试', '15201991025', 'SMS_1918162822').invoke({ code: '1234' })
+  spec.add_dependency 'aliyun-cloud_sms'
+
 end

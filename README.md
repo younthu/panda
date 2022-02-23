@@ -124,19 +124,20 @@ The gem is available as open source under the terms of the [MIT License](https:/
 5. [ ] Panda installer
 	1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
 	1. [ ]
-6. [ ] 订单系统
-7. [ ] 支付系统
-8. [ ] spree商城
-9. [ ] sentry rails
-10. [ ] newrelic 免费版
-11. [ ] devise authentication in go
-12. [ ] APIs in go
-13. [ ] nginx configuration
-14. [ ] APIs in python
-15. [ ] devise authentication in python
-16. [ ] 小程序generator
-17. [ ] RN app generator
-18. [ ]
+1. [ ] 订单系统
+1. [ ] 支付系统
+1. [ ] spree商城
+1. [ ] sentry rails
+1. [ ] newrelic 免费版
+1. [ ] devise authentication in go
+1. [ ] APIs in go
+1. [ ] nginx configuration
+1. [ ] APIs in python
+1. [ ] devise authentication in python
+1. [ ] 小程序generator
+1. [ ] RN app generator
+1. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+
 
 # 设计原则
 1. 多用callbacks, 方便做定制化。
