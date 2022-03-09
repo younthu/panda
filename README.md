@@ -90,19 +90,19 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	1. [x] Profile model
 1. [ ] Login with devise
     1. [x] 手机登录
-	1. 微信登录
-	1. 邮箱登录
-	1. 账号密码登录
+	1. [x] 微信登录
+	1. [x] 邮箱登录
+	1. [x] 账号密码登录
 	1. 苹果登录
-1. [ ] Login with wechat
-1. [ ] User
-1. [ ] 后台用户权限管理
-1. [ ] wx_pay, WechatMiniService from Tekapic.
+1. [x] Login with wechat
+1. [x] User
+1. [x] 后台用户权限管理
+1. [x] wx_pay, WechatMiniService from Tekapic.
 1. [ ] 优惠券
 1. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
 1. [ ] swagger
 1. [ ] Kaminari pagination
-1. [ ] Localization
+1. [x] Localization
 1. [ ] ElasticSearch
 1. [ ] Redis
 1. [ ] ELK Log

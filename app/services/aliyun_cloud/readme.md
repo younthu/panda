@@ -3,6 +3,10 @@
 
 client = Aliyun::CloudSms.new('your_access_key_id', 'your_access_key_secret', 'your_sign_name')
 
+# create new app
+1. `gem 'pand'`
+1. generate settings files: `rails g config:install`
+1.
 ## API
 ### Message send
 ```ruby

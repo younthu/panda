@@ -1,6 +1,6 @@
 # requires all dependencies, https://guides.rubyonrails.org/v5.1/autoloading_and_reloading_constants.html
 Gem.loaded_specs['panda'].dependencies.each do |d|
-  puts "Loading #{d.name}"
+  # puts "Loading #{d.name}"
   if d.name == 'aliyun-cloud_sms' # aliyun-cloud_sms require path里面没有aliyun-cloud_sms.rb 详见doc/issues/aliyun_cloud_sm_cannot-load.md
     require 'aliyun/cloud_sms'
   else
