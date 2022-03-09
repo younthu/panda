@@ -98,6 +98,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [x] User
 1. [x] 后台用户权限管理
 1. [x] wx_pay, WechatMiniService from Tekapic.
+1. [x] config gem with settings files.
 1. [ ] 优惠券
 1. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
 1. [ ] swagger
