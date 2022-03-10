@@ -45,6 +45,9 @@ Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了re
 rails panda:install:migrations
 ~~~
 
+# Settings
+见[./config/readme.md](./config/readme.md)
+
 # Features
 
 ## Rpush
