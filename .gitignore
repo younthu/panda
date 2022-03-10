@@ -13,6 +13,6 @@ test/dummy/public/uploads
 .DS_Store
 master.key
 
-config/settings.local.yml
+test/dummy/config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml

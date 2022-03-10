@@ -138,6 +138,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] 小程序generator
 1. [ ] RN app generator
 1. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+1. [ ] 禁用panda的dashboard, settings里面禁用
 
 
 # 设计原则
