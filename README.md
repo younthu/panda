@@ -29,6 +29,8 @@ $ gem install panda
 	1. Add `gem 'annotate'` to development group.
 	1.
 1. `bundle install`
+1. `rails g config:install`
+   1. copy `test/dummy/config/settings.yml` to `config/settings.yml`
 1. `rails db:create && rails db:migrate`
 1. start server: `rails s`
 1. start sidekiq(optional): `sidekiq`
@@ -96,7 +98,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	1. [x] 微信登录
 	1. [x] 邮箱登录
 	1. [x] 账号密码登录
-	1. 苹果登录
+	1. [ ] 苹果登录
 1. [x] Login with wechat
 1. [x] User
 1. [x] 后台用户权限管理
