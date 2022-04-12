@@ -1,26 +1,6 @@
 # Panda
-Short description and motivation.
+Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用。常用的用户系统，缓存和任务系统, 消息推送, 短信验证码, 管理后台, etc.
 
-
-## Usage
-How to use my plugin.
-
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'panda'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install panda
-```
 
 # Quick start
 
@@ -144,7 +124,27 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] RN app generator
 1. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
 1. [ ] 禁用panda的dashboard, settings里面禁用
+1. [ ] App版本控制
+2. [ ] 测试
+   1. [ ] UT
+   2. [ ] Postman
+   3. [ ] jmeter
 
+# 性能问题
+常用来讲，性能问题不可避免。性能问题想通过架构来解决，规划如下:
+
+1. rails做快速业务开发和数据库建模，常用的业务逻辑和代码就落到panda里面去。
+2. Rails在某些情况下会存在API并发上的问题，对某些性能敏感的API，用go或者java去处理. 也就是某些模块一个API会有两套实现，一套是Rails的，成熟以后用go或者java再实现一遍。
+3. 两套API挂不同的namespace下面，用nginx做路由转发。
+4. 两套API必然会遇到用户认证的问题，前期可以两边各自实现，到后期可以考虑用kong之类的工具做用户认证。
+5. 以后可以用这套模板代码批量做系统。
+5. 短期内(1到2年)只需要集中精力在第1点就可以了。
+# Rails generators
+
+1. [ ] Docker-compose template generator
+1. [ ] Panda settings generator(config rb and settings yaml)
+1. [ ] Seeds generator
+1. [ ]
 
 # 设计原则
 1. 多用callbacks, 方便做定制化。

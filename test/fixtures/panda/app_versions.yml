@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pre_version: MyString
+  current_version: MyString
+  minimal_version: MyString
+  latest_download_url: MyString
+  app: one
+
+two:
+  pre_version: MyString
+  current_version: MyString
+  minimal_version: MyString
+  latest_download_url: MyString
+  app: two
