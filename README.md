@@ -27,6 +27,10 @@ Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了re
 rails panda:install:migrations
 ~~~
 
+# 目录结构
+1. 遵循传统的Rails项目结构。
+2. 这是一个Rails Engine, 多了一个Dummy App，所以代码目录结构在细节上和传统Rails项目有区别。
+3.
 # Settings
 见[./config/readme.md](./config/readme.md)
 
@@ -79,6 +83,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	1. [x] 邮箱登录
 	1. [x] 账号密码登录
 	1. [ ] 苹果登录
+1. [ ] 基于Secure_token的token管理和身份认证.
 1. [x] Login with wechat
 1. [x] User
 1. [x] 后台用户权限管理
@@ -110,6 +115,9 @@ The gem is available as open source under the terms of the [MIT License](https:/
 5. [ ] Panda installer
 	1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
 	1. [ ]
+1. [ ] 基于数据库的配置
+    1. [ ] config做基于文件的静态配置
+	1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
 1. [ ] 订单系统
 1. [ ] 支付系统
 1. [ ] spree商城
@@ -128,15 +136,19 @@ The gem is available as open source under the terms of the [MIT License](https:/
 2. [ ] 测试
    1. [ ] UT
    2. [ ] Postman
-   3. [ ] jmeter
+   3. [ ] Jmeter
+1. Docker
+   1. [ ] Docker文件
+   1. [ ] Docker-compose文件
+   1. [ ] Docker-compose for dummy
 
 # 性能问题
-常用来讲，性能问题不可避免。性能问题想通过架构来解决，规划如下:
+常用来讲，性能问题不可避免。性能问题需要通过微服务架构来解决，规划如下:
 
 1. rails做快速业务开发和数据库建模，常用的业务逻辑和代码就落到panda里面去。
 2. Rails在某些情况下会存在API并发上的问题，对某些性能敏感的API，用go或者java去处理. 也就是某些模块一个API会有两套实现，一套是Rails的，成熟以后用go或者java再实现一遍。
 3. 两套API挂不同的namespace下面，用nginx做路由转发。
-4. 两套API必然会遇到用户认证的问题，前期可以两边各自实现，到后期可以考虑用kong之类的工具做用户认证。
+4. 两套API必然会遇到用户认证的问题，前期可以两边各自实现，到后期可以考虑用kong之类的网关工具做用户认证。
 5. 以后可以用这套模板代码批量做系统。
 5. 短期内(1到2年)只需要集中精力在第1点就可以了。
 # Rails generators
@@ -144,7 +156,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] Docker-compose template generator
 1. [ ] Panda settings generator(config rb and settings yaml)
 1. [ ] Seeds generator
-1. [ ]
+1. [ ] Generator网页，点击直接生成目标内容的界面。
 
 # 设计原则
 1. 多用callbacks, 方便做定制化。
