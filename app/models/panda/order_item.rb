@@ -16,7 +16,7 @@
 #
 # Foreign Keys
 #
-#  order_id  (order_id => orders.id)
+#  order_id  (order_id => panda_orders.id)
 #
 module Panda
   class OrderItem < ApplicationRecord

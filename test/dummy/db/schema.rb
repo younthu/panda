@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_185720) do
+ActiveRecord::Schema.define(version: 2022_04_10_075560) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_185720) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_panda_admin_users_on_email", unique: true
@@ -56,6 +57,31 @@ ActiveRecord::Schema.define(version: 2021_12_18_185720) do
     t.index ["admin_role_id"], name: "index_panda_admin_users_panda_admin_roles_on_admin_role_id"
     t.index ["admin_user_id", "admin_role_id"], name: "admin_user_admin_id_role_id_index"
     t.index ["admin_user_id"], name: "index_panda_admin_users_panda_admin_roles_on_admin_user_id"
+  end
+
+  create_table "panda_app_versions", force: :cascade do |t|
+    t.string "pre_version"
+    t.string "current_version"
+    t.string "minimal_version"
+    t.string "latest_download_url"
+    t.integer "app_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id"], name: "index_panda_app_versions_on_app_id"
+  end
+
+  create_table "panda_apps", force: :cascade do |t|
+    t.string "name"
+    t.string "platform"
+    t.string "official_site"
+    t.string "support_email"
+    t.string "support_name"
+    t.string "support_phone"
+    t.string "support_wechat"
+    t.date "published_at"
+    t.string "owner_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "panda_devices", force: :cascade do |t|
@@ -247,8 +273,9 @@ ActiveRecord::Schema.define(version: 2021_12_18_185720) do
 
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_roles", column: "admin_role_id"
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_users", column: "admin_user_id"
+  add_foreign_key "panda_app_versions", "panda_apps", column: "app_id"
   add_foreign_key "panda_devices", "panda_users", column: "user_id"
   add_foreign_key "panda_identities", "panda_users", column: "user_id"
-  add_foreign_key "panda_order_items", "orders"
+  add_foreign_key "panda_order_items", "panda_orders", column: "order_id"
   add_foreign_key "panda_profiles", "panda_users", column: "user_id"
 end

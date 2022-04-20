@@ -133,6 +133,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
 1. [ ] 禁用panda的dashboard, settings里面禁用
 1. [ ] App版本控制
+1. [ ] 类似Redmine的插件系统
+1. [ ] 调试
+   1. [ ] 系统探针？
+   1. [ ] 远程日志?
+   1. [ ] 数据库数据记录自诊断
 2. [ ] 测试
    1. [ ] UT
    2. [ ] Postman

@@ -454,6 +454,7 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 5.3)
+  rswag
   sass-rails
   sqlite3
 

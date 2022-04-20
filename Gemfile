@@ -5,6 +5,7 @@ ruby '3.0.3'
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
+gem 'rswag'
 group :development do
   gem 'sqlite3'
 

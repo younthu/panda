@@ -16,7 +16,7 @@
 #
 # Foreign Keys
 #
-#  order_id  (order_id => orders.id)
+#  order_id  (order_id => panda_orders.id)
 #
 
 # This model initially had no columns defined. If you add columns to the
