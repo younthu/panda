@@ -30,3 +30,4 @@ gem "devise", "~> 4.8"
 gem "activeadmin", "~> 2.9"
 
 gem 'aliyun-cloud_sms'
+gem 'rails_param'

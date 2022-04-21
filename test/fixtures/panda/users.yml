@@ -20,7 +20,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  secure_token           :string           default("")
+#  secure_token           :string
 #  tokens                 :text
 #  uid                    :string           default(""), not null
 #  unconfirmed_email      :string
@@ -29,6 +29,7 @@
 #
 # Indexes
 #
+#  index_panda_users_on_auth_token            ("auth_token") UNIQUE
 #  index_panda_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_panda_users_on_email                 (email) UNIQUE
 #  index_panda_users_on_reset_password_token  (reset_password_token) UNIQUE

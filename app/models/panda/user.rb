@@ -20,7 +20,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  secure_token           :string           default("")
+#  secure_token           :string
 #  tokens                 :text
 #  uid                    :string           default(""), not null
 #  unconfirmed_email      :string
@@ -29,6 +29,7 @@
 #
 # Indexes
 #
+#  index_panda_users_on_auth_token            ("auth_token") UNIQUE
 #  index_panda_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_panda_users_on_email                 (email) UNIQUE
 #  index_panda_users_on_reset_password_token  (reset_password_token) UNIQUE
@@ -43,17 +44,14 @@ module Panda
     devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
     include DeviseTokenAuth::Concerns::User
-      alias auth_token create_new_auth_token
+    alias auth_token create_new_auth_token
 
-      include Panda::AppendPhotos
+    has_secure_token :secure_token , length: 32 # secure_token, Token requires a minimum length of 24 characters.
+    include Panda::AppendPhotos
 
-      mount_uploader :avatar, AvatarUploader
-      mount_uploaders :photos, PhotoUploader # 用户头像顶部照片
-      serialize :photos, JSON # If you use SQLite, add this line. if using psql, alter photos to type of json rails g migration add_avatars_to_users photos:json
-
-    def valid_secure_token?(token)
-      secure_token.present? && secure_token == token
-    end
+    mount_uploader :avatar, AvatarUploader
+    mount_uploaders :photos, PhotoUploader # 用户头像顶部照片
+    serialize :photos, JSON # If you use SQLite, add this line. if using psql, alter photos to type of json rails g migration add_avatars_to_users photos:json
 
     def age
       return unless self.birthday

@@ -12,9 +12,11 @@ PATH
       devise
       devise-i18n
       devise_token_auth
+      exception_notification
       kaminari-i18n
       rails
       rails-i18n
+      rails_param
       redis
       redis-namespace
       redis-rails
@@ -180,6 +182,9 @@ GEM
       dry-initializer (~> 3.0)
       dry-schema (~> 1.8, >= 1.8.0)
     erubi (1.10.0)
+    exception_notification (4.5.0)
+      actionmailer (>= 5.2, < 8)
+      activesupport (>= 5.2, < 8)
     ffi (1.15.4)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -300,6 +305,8 @@ GEM
     rails-i18n (6.0.0)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 7)
+    rails_param (1.2.0)
+      rails (>= 3.2.0)
     railties (6.1.4.1)
       actionpack (= 6.1.4.1)
       activesupport (= 6.1.4.1)
@@ -454,6 +461,7 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 5.3)
+  rails_param
   rswag
   sass-rails
   sqlite3

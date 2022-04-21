@@ -103,4 +103,9 @@ Comment
   # run rails g config:install to generate config files
   spec.add_dependency 'config'
 
+  # 参数检查
+  spec.add_dependency 'rails_param'
+
+  #
+  spec.add_dependency 'exception_notification'
 end

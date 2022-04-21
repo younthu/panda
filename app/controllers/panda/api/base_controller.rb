@@ -1,9 +1,18 @@
 class Panda::Api::BaseController < ::ApplicationController
-  include DeviseTokenAuth::Concerns::SetUserByToken
+  layout 'panda/layouts/application'
+
+  if Panda.token_method == :secure_token
+    include AuthenticationPlugin
+  else
+    include DeviseTokenAuth::Concerns::SetUserByToken
+  end
+  include ErrorsPlugin
+  include ParamsPlugin
+  include QuickPlugin
 
   skip_before_action :verify_authenticity_token
+
   before_action :authenticate_user!
-  include DeviseTokenAuth::Concerns::SetUserByToken
 
   rescue_from ActiveRecord::RecordInvalid do |e|
     render json: e.record.errors, status: :unprocessable_entity

@@ -14,13 +14,14 @@ require 'devise'
 
 require "panda/version"
 require "panda/engine"
-
+require 'custom_message_error'
+require 'utils/random.rb'
 
 module Panda
   # this function maps the vars from your app into your engine
-  self.mattr_accessor :available_login_validations, :default_login_validation
-  self.available_login_validations = [:password, :secure_token]
-  self.default_login_validation = :password
+  self.mattr_accessor :token_method # 是用secure_token 还是 devise token
+  # self.token_method = :devise_token
+  self.token_method = :secure_token
   # add default values of more config vars here
 
   def self.setup(&block)

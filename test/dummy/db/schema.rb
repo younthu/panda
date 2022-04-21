@@ -193,9 +193,10 @@ ActiveRecord::Schema.define(version: 2022_04_10_075560) do
     t.integer "gender"
     t.string "mobile"
     t.text "tokens"
+    t.string "secure_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "secure_token", default: ""
+    t.index "\"auth_token\"", name: "index_panda_users_on_auth_token", unique: true
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_panda_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_users_on_reset_password_token", unique: true
