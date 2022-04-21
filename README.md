@@ -87,7 +87,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
    1. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
-   1. 切换token认证方式需要去panda.rb里面设置token_method
+   1. 切换token认证方式需要去panda.rb里面设置token_method, 用postman测试过myinfo api, secure_token是工作的.
+   1.
 1. [x] Login with wechat
 1. [x] User
 1. [x] 后台用户权限管理
