@@ -155,7 +155,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-
+45. [ ] 技术文档,gitbook.
 
 # Rails generators
 
