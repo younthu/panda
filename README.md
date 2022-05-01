@@ -7,7 +7,7 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 1. Add gems
 	1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
 	1. Add `gem 'annotate'` to development group.
-	1.
+	1. Add `  mount Panda::Engine => "/panda"` to `routes.rb`
 1. `bundle install`
 1. `rails g config:install`
    1. copy `test/dummy/config/settings.yml` to `config/settings.yml`
@@ -56,7 +56,7 @@ rails panda:install:migrations
 1. run dummy app in the root folder: 'rails s'.
    1. 魔法在`panda/bin/rails`里面. `APP_PATH = File.expand_path('../test/dummy/config/application', __dir__)`
 1. postman scripts.
-1. 后台登录: http://localhost:3000/admin
+1. 后台登录: `http://localhost:3000/admin`
 
 ## Development
 1. 更新版本号: `lib/panda/version`
@@ -73,86 +73,99 @@ Contribution directions go here.
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Roadmap
-1. [ ] User
-	1. [x] User model
-	1. [x] Rest api for Avatar upload
-	1. [x] Identity model
-	1. [x] Profile model
-1. [ ] Login with devise
+1. [x] User
+    1. [x] User model
+    1. [x] Rest api for Avatar upload
+    1. [x] Identity model
+    1. [x] Profile model
+2. [ ] Login with devise
     1. [x] 手机登录
-	1. [x] 微信登录
-	1. [x] 邮箱登录
-	1. [x] 账号密码登录
-	1. [ ] 苹果登录
-1. [x] 基于Secure_token的token管理和身份认证.
+    1. [x] 微信登录
+    1. [x] 邮箱登录
+    1. [x] 账号密码登录
+    1. [ ] 苹果登录
+3. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
    1. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
    1. 切换token认证方式需要去panda.rb里面设置token_method, 用postman测试过myinfo api, secure_token是工作的.
    1.
-1. [x] Login with wechat
-1. [x] User
-1. [x] 后台用户权限管理
-1. [x] wx_pay, WechatMiniService from Tekapic.
-1. [x] config gem with settings files.
-1. [ ] 优惠券
-1. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-1. [ ] swagger
-1. [ ] Kaminari pagination
-1. [x] Localization
-1. [ ] ElasticSearch
-1. [ ] Redis
-1. [ ] ELK Log
-1. [ ] Sidekiq
-1. [ ] Puma auto restart. 解决ruby内存泄漏到问题
-1. [ ] OAuth
-1. [ ] JWT
-1. [ ] RPush
-2. [ ] Log rotation
-3. [ ] ActiveAdmin
-   1. [x] 后台
-4. [ ] 朋友圈
-   	1. [ ] 照片
-   	1. [ ] 文字
-	1. [ ] 点赞
-	1. [ ] 评论
-	1. [ ] 搜索
-	1. [ ] 订阅
-5. [ ] Panda installer
-	1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
-	1. [ ]
-1. [ ] 基于数据库的配置
-    1. [ ] config做基于文件的静态配置
-	1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
-1. [ ] 订单系统
-1. [ ] 支付系统
-1. [ ] spree商城
-1. [ ] sentry rails
-1. [ ] newrelic 免费版
-1. [ ] devise authentication in go
-1. [ ] APIs in go
-1. [ ] nginx configuration
-1. [ ] APIs in python
-1. [ ] devise authentication in python
-1. [ ] 工作流引擎
+4. [x] Login with wechat
+5. [x] User
+6. [x] 后台用户权限管理
+   1. [ ] Roles
+   1. [ ] Permissions
+   1. [ ] 角色配置页面, 分管理员和用户
+   1. [ ] 权限配置页面, 分管理员和用
+7. [x] wx_pay, WechatMiniService from Tekapic.
+8. [x] config gem with settings files.
+9. [ ] 优惠券
+10. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
+11. [ ] swagger
+12. [ ] Kaminari pagination
+13. [x] Localization
+14. [ ] ElasticSearch
+15. [ ] Redis
+16. [ ] ELK Log
+17. [ ] Sidekiq
+18. [ ] Puma auto restart. 解决ruby内存泄漏到问题
+19. [ ] OAuth
+20. [ ] JWT
+21. [ ] RPush
+22. [ ] Log rotation
+23. [ ] ActiveAdmin
+    1. [x] 后台
+24. [ ] 朋友圈
+        1. [ ] 照片
+        1. [ ] 文字
+     1. [ ] 点赞
+     1. [ ] 评论
+     1. [ ] 搜索
+     1. [ ] 订阅
+25. [ ] Panda installer
+     1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
+     1. [ ]
+26. [ ] 基于数据库的配置
+     1. [ ] config做基于文件的静态配置
+     1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
+27. [ ] 订单系统
+28. [ ] 支付系统
+29. [ ] spree商城
+30. [ ] sentry rails
+31. [ ] newrelic 免费版
+32. [ ] devise authentication in go
+33. [ ] APIs in go
+34. [ ] nginx configuration
+35. [ ] APIs in python
+36. [ ] devise authentication in python
+37. [ ] 工作流引擎
+38. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+39. [ ] 禁用panda的dashboard, settings里面禁用
+40. [ ] App版本控制
+41. [ ] 类似Redmine的插件系统
+42. [ ] 调试
+    1. [ ] 系统探针？
+    1. [ ] 远程日志?
+    1. [ ] 数据库数据记录自诊断
+43. [ ] 测试
+    1. [ ] UT
+    2. [ ] Postman
+    3. [ ] Jmeter
+44. Docker
+    1. [ ] Docker文件
+    2. [ ] Docker-compose文件
+    3. [ ] Docker-compose for dummy
+    4. [ ] K8S Helm Chart
+
+
+# Rails generators
+
+1. [ ] Docker-compose template generator
+2. [ ] Panda settings generator(config rb and settings yaml)
+3. [ ] Seeds generator
+4. [ ] Generator网页，点击直接生成目标内容的界面。
+5. [ ] API/rspec Generator from Gu
 1. [ ] 小程序generator
 1. [ ] RN app generator
-1. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
-1. [ ] 禁用panda的dashboard, settings里面禁用
-1. [ ] App版本控制
-1. [ ] 类似Redmine的插件系统
-1. [ ] 调试
-   1. [ ] 系统探针？
-   1. [ ] 远程日志?
-   1. [ ] 数据库数据记录自诊断
-2. [ ] 测试
-   1. [ ] UT
-   2. [ ] Postman
-   3. [ ] Jmeter
-1. Docker
-   1. [ ] Docker文件
-   1. [ ] Docker-compose文件
-   1. [ ] Docker-compose for dummy
-
 # 性能问题
 常用来讲，性能问题不可避免。性能问题需要通过微服务架构来解决，规划如下:
 
@@ -162,12 +175,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 4. 两套API必然会遇到用户认证的问题，前期可以两边各自实现，到后期可以考虑用kong之类的网关工具做用户认证。
 5. 以后可以用这套模板代码批量做系统。
 5. 短期内(1到2年)只需要集中精力在第1点就可以了。
-# Rails generators
 
-1. [ ] Docker-compose template generator
-1. [ ] Panda settings generator(config rb and settings yaml)
-1. [ ] Seeds generator
-1. [ ] Generator网页，点击直接生成目标内容的界面。
 
 # 设计原则
 1. 多用callbacks, 方便做定制化。
