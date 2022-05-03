@@ -9,7 +9,18 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('swagger/templates', __dir__)
 
   class_option :name, type: :string, default: 'plural_name'
+  class_option :module, type: :string, default: '' # 这个API放哪个目录(module)下
 
+
+  def module_prefix
+    options['module'].present? ? "#{options['module'].capitalize}::" : ""
+  end
+
+  def folder_prefix
+    options['module'].present? ? "#{options['module']}/" : ""
+  end
+
+  # create_打头的方法会被自动call到
   def create_swagger_file
     unless Class.const_defined?(classify_name)
       puts "请先执行 rails g model 生成对应model"
@@ -29,11 +40,9 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
 
     FILE
 
-    create_file "app/controllers/spark/#{plural_name}_controller.rb", <<~FILE
+    create_file "app/controllers/#{folder_prefix}#{plural_name}_controller.rb", <<~FILE
       # frozen_string_literal: true
-
-      module Spark
-        class #{classify_name}sController < ApplicationController
+        class #{module_prefix}#{plural_name}Controller < ApplicationController
           expose(:result) { #{classify_name}.find(params[:id]) }
           expose(:payload) { #{classify_name}.params_permit(params) }
 
@@ -69,7 +78,6 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
             head 204
           end
         end
-      end
 
     FILE
 
