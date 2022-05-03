@@ -1,0 +1,1 @@
+1. Spark Generator usage: `rails g spark panda/panda::app --name 留言 -f`

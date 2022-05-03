@@ -166,9 +166,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 2. [ ] Panda settings generator(config rb and settings yaml)
 3. [ ] Seeds generator
 4. [ ] Generator网页，点击直接生成目标内容的界面。
-5. [ ] API/rspec Generator from Gu
-1. [ ] 小程序generator
-1. [ ] RN app generator
+5. [x] API/rspec Generator from Gu
+6. [ ] 小程序generator
+7. [ ] React Native app generator
+
+
 # 性能问题
 常用来讲，性能问题不可避免。性能问题需要通过微服务架构来解决，规划如下:
 
