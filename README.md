@@ -135,29 +135,30 @@ The gem is available as open source under the terms of the [MIT License](https:/
 32. [ ] devise authentication in go
 33. [ ] MQTT
 34. [ ] Websocket
-35. [ ] APIs in go
-36. [ ] nginx configuration
-37. [ ] APIs in python
-38. [ ] devise authentication in python
-39. [ ] 工作流引擎
-40. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
-41. [ ] 禁用panda的dashboard, settings里面禁用
-42. [ ] App版本控制
-43. [ ] 类似Redmine的插件系统
-44. [ ] 调试
+35. [ ] Message Queue, kafka, 削峰填谷
+36. [ ] APIs in go
+37. [ ] nginx configuration
+38. [ ] APIs in python
+39. [ ] devise authentication in python
+40. [ ] 工作流引擎
+41. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+42. [ ] 禁用panda的dashboard, settings里面禁用
+43. [ ] App版本控制
+44. [ ] 类似Redmine的插件系统
+45. [ ] 调试
     1. [ ] 系统探针？
     1. [ ] 远程日志?
     1. [ ] 数据库数据记录自诊断
-45. [ ] 测试
+46. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-46. Docker
+47. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-47. [ ] 技术文档,gitbook.
+48. [ ] 技术文档,gitbook.
 
 # Rails generators
 
