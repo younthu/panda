@@ -20,7 +20,8 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
     options['module'].present? ? "#{options['module']}/" : ""
   end
 
-  # create_打头的方法会被自动call到
+  # create_打头的方法会被自动call到, When a generator is invoked, each public method in the generator is executed sequentially in the order that it is defined. Finally, we invoke the create_file method that will create a file at the given destination with the given content. If you are familiar with the Rails Application Templates API, you'll feel right at home with the new generators API.
+  desc "创建api controller, rspec文件和admin文件"
   def create_swagger_file
     unless Class.const_defined?(classify_name)
       puts "请先执行 rails g model 生成对应model"

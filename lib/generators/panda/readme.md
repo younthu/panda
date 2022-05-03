@@ -1,1 +1,1 @@
-1. Spark Generator usage: `rails g spark panda/panda::app --name 留言 -f`
+1. Spark Generator usage: ` rails g panda:api panda/panda::app --name 'app版本管理' --module 'test' -f`
