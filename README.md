@@ -5,17 +5,18 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 # Quick start
 
 1. Add gems
-	1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
-	1. Add `gem 'annotate'` to development group.
-	1. Add `  mount Panda::Engine => "/panda"` to `routes.rb`
-1. `bundle install`
-1. `rails g config:install`
+    1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
+    1. Add `gem 'annotate'` to development group.
+    1. Add `  mount Panda::Engine => "/panda"` to `routes.rb`
+2. `bundle install`
+3. `rails g config:install`
    1. copy `test/dummy/config/settings.yml` to `config/settings.yml`
-1. `rails db:create && rails db:migrate`
-1. start server: `rails s`
-1. start sidekiq(optional): `sidekiq`
-1. start rpush(optional): `rpush start`
-1. check app info: `rails app:about`
+4. `rails g panda:install`
+5. `rails db:create && rails db:migrate`
+6. start server: `rails s`
+7. start sidekiq(optional): `sidekiq`
+8. start rpush(optional): `rpush start`
+9. check app info: `rails app:about`
 
 
 # Setup
@@ -39,10 +40,12 @@ rails panda:install:migrations
 ## Rpush
 
 1. start rpush(optional): `rpush start`
-	1. Both two commands below work in mac, but, not in linux.
-	1. send notification to a device: `rails rpush:p8push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
-	1. send notification to device: `rails rpush:push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
-	1.
+    1. Both two commands below work in mac, but, not in linux.
+    1. send notification to a device: `rails rpush:p8push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
+    1. send notification to device: `rails rpush:push_to_device["你好","BF1F297A3B62D1517BB19D5D67BD0BC72D438F94F016DAD6E2B175AE01BFC38D"]`
+2. 升级rpush:
+   1. 升级gem包: `bundle update rpush`
+   2. 重新生成migration files: `rpush init`
 
 ## 微信支付
 
