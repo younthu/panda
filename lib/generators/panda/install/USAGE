@@ -1,0 +1,8 @@
+Description:
+    给应用安装必要的panda文件，初始化配置, 安装路由
+
+Example:
+    bin/rails generate panda:install
+
+    This will create:
+        what/will/it/create
