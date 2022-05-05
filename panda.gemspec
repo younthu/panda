@@ -108,4 +108,7 @@ Comment
 
   #
   spec.add_dependency 'exception_notification'
+
+  # cors
+  spec.add_dependency 'rack-cors'
 end

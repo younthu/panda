@@ -104,8 +104,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 8. [x] config gem with settings files.
 9. [ ] 优惠券
 10. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-11. [x] swagger
-12. [x] Kaminari pagination
+11. [ ] swagger
+12. [ ] Kaminari pagination
 13. [x] Localization
 14. [ ] ElasticSearch
 15. [ ] Redis
@@ -113,6 +113,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 17. [ ] Sidekiq
 18. [ ] Puma auto restart. 解决ruby内存泄漏到问题
 19. [x] CORS
+     1. 默认关闭CORS
+        [//]: # (   2. `rails g panda:install` 会生成`config/cors/initilaizer.rb`)
 20. [ ] OAuth
 21. [ ] JWT
 22. [ ] RPush

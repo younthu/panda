@@ -14,6 +14,7 @@ PATH
       devise_token_auth
       exception_notification
       kaminari-i18n
+      rack-cors
       rails
       rails-i18n
       rails_param
@@ -280,6 +281,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.1.5.1)

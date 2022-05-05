@@ -3,6 +3,8 @@ Gem.loaded_specs['panda'].dependencies.each do |d|
   # puts "Loading #{d.name}"
   if d.name == 'aliyun-cloud_sms' # aliyun-cloud_sms require path里面没有aliyun-cloud_sms.rb 详见doc/issues/aliyun_cloud_sm_cannot-load.md
     require 'aliyun/cloud_sms'
+  elsif d.name == 'rack-cors'
+    require 'rack/cors'
   else
     require d.name
   end
