@@ -84,10 +84,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 2. [ ] Login with devise
     1. [x] 手机登录
     1. [x] 微信登录
-    1. [x] 邮箱登录
-    1. [x] 账号密码登录
-    2. [ ] 扫码登陆
-    3. [ ] 苹果登录
+    2. [ ] 通过关注微信公众号来绑定账号
+    3. [x] 邮箱登录
+    4. [x] 账号密码登录
+    5. [ ] 扫码登陆
+    6. [ ] 苹果登录
 3. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
    1. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
