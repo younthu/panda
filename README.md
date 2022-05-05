@@ -104,68 +104,69 @@ The gem is available as open source under the terms of the [MIT License](https:/
 8. [x] config gem with settings files.
 9. [ ] 优惠券
 10. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-11. [ ] swagger
-12. [ ] Kaminari pagination
+11. [x] swagger
+12. [x] Kaminari pagination
 13. [x] Localization
 14. [ ] ElasticSearch
 15. [ ] Redis
 16. [ ] ELK Log
 17. [ ] Sidekiq
 18. [ ] Puma auto restart. 解决ruby内存泄漏到问题
-19. [ ] OAuth
-20. [ ] JWT
-21. [ ] RPush
-22. [ ] Log rotation
-23. [ ] ActiveAdmin
+19. [x] CORS
+20. [ ] OAuth
+21. [ ] JWT
+22. [ ] RPush
+23. [ ] Log rotation
+24. [ ] ActiveAdmin
     1. [x] 后台
-24. [ ] 朋友圈
+25. [ ] 朋友圈
         1. [ ] 照片
         1. [ ] 文字
      1. [ ] 点赞
      1. [ ] 评论
      1. [ ] 搜索
      1. [ ] 订阅
-25. [ ] Panda installer
+26. [ ] Panda installer
      1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
      1. [ ]
-26. [ ] 基于数据库的配置
+27. [ ] 基于数据库的配置
      1. [ ] config做基于文件的静态配置
      1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
-27. [ ] 订单系统
-28. [ ] 支付系统
-29. [ ] spree商城
-30. [ ] sentry rails
-31. [ ] newrelic 免费版
-32. [ ] devise authentication in go
-33. [ ] MQTT
-34. [ ] Websocket
-35. [ ] Message Queue, kafka, 削峰填谷
-36. [ ] APIs in go
-37. [ ] nginx configuration
-38. [ ] APIs in python
-39. [ ] devise authentication in python
-40. [ ] 工作流引擎
-41. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
-42. [ ] 禁用panda的dashboard, settings里面禁用
-43. [ ] App版本控制
-44. [ ] 类似Redmine的插件系统
-45. [ ] 调试
+28. [ ] 订单系统
+29. [ ] 支付系统
+30. [ ] spree商城
+31. [ ] sentry rails
+32. [ ] newrelic 免费版
+33. [ ] devise authentication in go
+34. [ ] MQTT
+35. [ ] Websocket
+36. [ ] Message Queue, kafka, 削峰填谷
+37. [ ] APIs in go
+38. [ ] nginx configuration
+39. [ ] APIs in python
+40. [ ] devise authentication in python
+41. [ ] 工作流引擎
+42. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+43. [ ] 禁用panda的dashboard, settings里面禁用
+44. [ ] App版本控制
+45. [ ] 类似Redmine的插件系统
+46. [ ] 调试
     1. [ ] 系统探针？
     1. [ ] 远程日志?
     1. [ ] 数据库数据记录自诊断
-46. [ ] 测试
+47. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-47. Docker
+48. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-5. 运维
+49. 运维
     6. [ ] 拷贝ansible scripts from yoga
     7. [ ] 拷贝ansible scripts with panda:install
-48. [ ] 技术文档,gitbook.
+50. [ ] 技术文档,gitbook.
 
 # Rails generators
 
