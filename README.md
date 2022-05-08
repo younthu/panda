@@ -167,8 +167,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
 49. 运维
-    6. [ ] 拷贝ansible scripts from yoga
-    7. [ ] 拷贝ansible scripts with panda:install
+    1. [ ] 拷贝ansible scripts from yoga
+    2. [ ] 拷贝ansible scripts with panda:install
 50. [ ] 技术文档,gitbook.
 
 # Rails generators
