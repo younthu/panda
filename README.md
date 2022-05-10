@@ -153,23 +153,25 @@ The gem is available as open source under the terms of the [MIT License](https:/
 43. [ ] 禁用panda的dashboard, settings里面禁用
 44. [ ] App版本控制
 45. [ ] 类似Redmine的插件系统
-46. [ ] 调试
+46. [ ] 积分系统
+47. [ ] 虚拟货币系统
+48. [ ] 调试
     1. [ ] 系统探针？
     1. [ ] 远程日志?
     1. [ ] 数据库数据记录自诊断
-47. [ ] 测试
+49. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-48. Docker
+50. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-49. 运维
+51. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
-50. [ ] 技术文档,gitbook.
+52. [ ] 技术文档,gitbook.
 
 # Rails generators
 
