@@ -96,24 +96,25 @@ The gem is available as open source under the terms of the [MIT License](https:/
    1.
 4. [x] Login with wechat
 5. [x] User
-6. [x] 后台用户权限管理
+   6. [ ] 会员等级 
+7. [x] 后台用户权限管理
    1. [ ] Roles
    1. [ ] Permissions
    1. [ ] 角色配置页面, 分管理员和用户
    1. [ ] 权限配置页面, 分管理员和用
-7. [x] wx_pay, WechatMiniService from Tekapic.
-8. [x] config gem with settings files.
-9. [ ] 优惠券
-10. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-11. [ ] swagger
-12. [ ] Kaminari pagination
-13. [x] Localization
-14. [ ] ElasticSearch
-15. [ ] Redis
-16. [ ] ELK Log
-17. [ ] Sidekiq
-18. [ ] Puma auto restart. 解决ruby内存泄漏到问题
-19. [x] CORS
+8. [x] wx_pay, WechatMiniService from Tekapic.
+9. [x] config gem with settings files.
+10. [ ] 优惠券
+11. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
+12. [ ] swagger
+13. [ ] Kaminari pagination
+14. [x] Localization
+15. [ ] ElasticSearch
+16. [ ] Redis
+17. [ ] ELK Log
+18. [ ] Sidekiq
+19. [ ] Puma auto restart. 解决ruby内存泄漏到问题
+20. [x] CORS
      1. 默认关闭CORS
         [//]: # (   2. `rails g panda:install` 会生成`config/cors/initilaizer.rb`)
 20. [ ] OAuth
