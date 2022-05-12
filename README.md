@@ -97,6 +97,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 4. [x] Login with wechat
 5. [x] User
    6. [ ] 会员等级 
+   7. [ ] captcha
 7. [x] 后台用户权限管理
    1. [ ] Roles
    1. [ ] Permissions
