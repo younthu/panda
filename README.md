@@ -185,7 +185,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 3. [ ] Seeds generator
 4. [ ] Generator网页，点击直接生成目标内容的界面。
 5. [x] API/rspec Generator from Gu
-   1. 
+   1. 说明见`lib/generators/panda/readme.md`
 6. [ ] 小程序generator
 7. [ ] React Native app generator
 
