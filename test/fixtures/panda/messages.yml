@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender: one
+  sender_type: Sender
+  receiver: one
+  receiver_type: Receiver
+  payload: one
+  payload_type: Payload
+  body: MyString
+  read: false
+  session_id: MyString
+  msg_type: MyString
+
+two:
+  sender: two
+  sender_type: Sender
+  receiver: two
+  receiver_type: Receiver
+  payload: two
+  payload_type: Payload
+  body: MyString
+  read: false
+  session_id: MyString
+  msg_type: MyString
