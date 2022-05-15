@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_10_075560) do
+ActiveRecord::Schema.define(version: 2022_05_15_162317) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -115,6 +115,24 @@ ActiveRecord::Schema.define(version: 2022_04_10_075560) do
     t.index ["token"], name: "index_panda_identities_on_token"
     t.index ["uid"], name: "index_panda_identities_on_uid"
     t.index ["user_id"], name: "index_panda_identities_on_user_id"
+  end
+
+  create_table "panda_messages", force: :cascade do |t|
+    t.string "sender_type", null: false
+    t.integer "sender_id", null: false
+    t.string "receiver_type", null: false
+    t.integer "receiver_id", null: false
+    t.string "payload_type", null: false
+    t.integer "payload_id", null: false
+    t.string "body"
+    t.boolean "read"
+    t.string "session_id"
+    t.string "msg_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["payload_type", "payload_id"], name: "index_panda_messages_on_payload"
+    t.index ["receiver_type", "receiver_id"], name: "index_panda_messages_on_receiver"
+    t.index ["sender_type", "sender_id"], name: "index_panda_messages_on_sender"
   end
 
   create_table "panda_order_items", force: :cascade do |t|
