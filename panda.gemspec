@@ -111,4 +111,10 @@ Comment
 
   # cors
   spec.add_dependency 'rack-cors'
+
+  # jbuilder
+  spec.add_dependency 'jbuilder'
+
+  # oj, Optimized JSON
+  spec.add_dependency 'oj'
 end

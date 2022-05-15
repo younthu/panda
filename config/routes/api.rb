@@ -47,6 +47,8 @@ Panda::Engine.routes.draw do
           post :comment
         end
       end
+
+      resources :messages
     end
 
 

@@ -5,10 +5,17 @@ module Panda::BaseGenerator
     plural_name.singularize
   end
 
+  # 把'/'换成'_', `panda/message` => `panda_message`
+  def singular_plural_name_no_slash
+    plural_name.singularize.gsub '/','_'
+  end
+
+  # 生成类名, 如Panda::Message
   def classify_name
     plural_name.classify
   end
 
+  # 生成scope
   def classify_scope
     scope.classify
   end
@@ -53,7 +60,7 @@ module Panda::BaseGenerator
       next if column.name == 'id'
 
       if column.name.index('_id')
-        "#{column.name}: #{singular_plural_name}.#{column.name}"
+        "#{column.name}: #{singular_plural_name_no_slash}.#{column.name}"
       else
         case column.type.to_s
         when 'string'
@@ -78,6 +85,6 @@ module Panda::BaseGenerator
   end
 
   def origin_columns
-    singular_plural_name.camelize.constantize.columns.dup
+    classify_name.camelize.constantize.columns.dup
   end
 end

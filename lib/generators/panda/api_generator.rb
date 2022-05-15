@@ -9,7 +9,7 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('swagger/templates', __dir__)
 
   class_option :name, type: :string, default: 'plural_name'
-  class_option :module, type: :string, default: '' # 这个API放哪个目录(module)下
+  class_option :module, type: :string, default: '' # 这个API放哪个目录(module)下, 可以用'/'来制定子目录
 
 
   def module_prefix
@@ -43,7 +43,7 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
 
     create_file "app/controllers/#{folder_prefix}#{plural_name}_controller.rb", <<~FILE
       # frozen_string_literal: true
-        class #{module_prefix}#{plural_name}Controller < ApplicationController
+        class #{module_prefix}#{classify_name.pluralize}Controller < ApplicationController
           expose(:result) { #{classify_name}.find(params[:id]) }
           expose(:payload) { #{classify_name}.params_permit(params) }
 
@@ -90,8 +90,8 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
       describe '#{chinese_name} API', type: :request, swagger_doc: '#{scope}/swagger.json' do
         let(:user) { create(:user) }
         let(:Authorization) { user.auth_token }
-        let(:#{singular_plural_name}) { create(:#{singular_plural_name}, user: user) }
-        let(:id) { #{singular_plural_name}.id }
+        let(:#{singular_plural_name_no_slash}) { create(:#{singular_plural_name_no_slash}, user: user) }
+        let(:id) { #{singular_plural_name_no_slash}.id }
 
         path "/#{scope}/#{plural_name}" do
           get '#{chinese_name} 列表' do
@@ -103,7 +103,7 @@ class Panda::ApiGenerator < Rails::Generators::NamedBase
 
             response 200, '请求成功' do
               before do
-                #{singular_plural_name}
+                #{singular_plural_name_no_slash}
               end
 
               after do |example|
