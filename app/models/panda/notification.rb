@@ -4,13 +4,13 @@
 #
 #  id           :integer          not null, primary key
 #  body         :string
-#  payload_type :string           not null
-#  read         :boolean
+#  payload_type :string
+#  read         :boolean          default(FALSE)
 #  sender_type  :string
-#  type         :string
+#  type         :string           default("notification")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  payload_id   :integer          not null
+#  payload_id   :integer
 #  receiver_id  :integer          not null
 #  sender_id    :integer
 #

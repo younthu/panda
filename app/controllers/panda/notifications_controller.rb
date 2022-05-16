@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-  class Panda::Api::MessagesController < Panda::Api::BaseController
-    expose(:result) { Panda::Message.find(params[:id]) }
-    expose(:payload) { Panda::Message.params_permit(params) }
+  class Panda::NotificationsController < ApplicationController
+    expose(:result) { Panda::Notification.find(params[:id]) }
+    expose(:payload) { Panda::Notification.params_permit(params) }
 
     def show
       result
@@ -10,7 +10,7 @@
     end
 
     def index
-      @result = Panda::Message.recent.page(page).per(per)
+      @result = Panda::Notification.recent.page(page).per(per)
 
       paginate @result
 
@@ -18,7 +18,7 @@
     end
 
     def create
-      @result = Panda::Message.create! payload.merge!(sender: current_user, receiver: User.find(params[:receiver_id]))
+      @result = Panda::Notification.create! payload
 
       render :intelligence
     end

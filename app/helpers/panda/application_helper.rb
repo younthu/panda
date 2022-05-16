@@ -34,6 +34,10 @@ module Panda::ApplicationHelper
       return {} if obj.blank?
 
       render_json_custom(json, obj, accepts, excepts, extras, partials)
+    when 'Panda::ApplicationRecord'
+      return {} if obj.blank?
+
+      render_json_custom(json, obj, accepts, excepts, extras, partials)
     else
       {}
     end

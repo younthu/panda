@@ -122,12 +122,12 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.integer "sender_id", null: false
     t.string "receiver_type", null: false
     t.integer "receiver_id", null: false
-    t.string "payload_type", null: false
-    t.integer "payload_id", null: false
+    t.string "payload_type"
+    t.integer "payload_id"
     t.string "body"
-    t.boolean "read"
+    t.boolean "read", default: false
     t.string "session_id"
-    t.string "msg_type"
+    t.string "type", default: "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_messages_on_payload"
@@ -139,11 +139,11 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.string "sender_type"
     t.integer "sender_id"
     t.integer "receiver_id", null: false
-    t.string "payload_type", null: false
-    t.integer "payload_id", null: false
+    t.string "payload_type"
+    t.integer "payload_id"
     t.string "body"
-    t.boolean "read"
-    t.string "type"
+    t.boolean "read", default: false
+    t.string "type", default: "notification"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_notifications_on_payload"
