@@ -25,5 +25,6 @@ module QueryAble
     scope :created_between, ->(start_at, end_at) { where(created_at: start_at..end_at) if start_at.present? && end_at.present? }
 
     scope :like, ->(column, content) { where("#{column} LIKE ?", "%#{content}%") if content.present? }
+
   end
 end

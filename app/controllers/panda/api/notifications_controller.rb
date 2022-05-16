@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-  class Panda::NotificationsController < ApplicationController
+  class Panda::Api::NotificationsController < ApplicationController
     expose(:result) { Panda::Notification.find(params[:id]) }
     expose(:payload) { Panda::Notification.params_permit(params) }
 

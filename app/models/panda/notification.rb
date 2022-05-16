@@ -4,10 +4,10 @@
 #
 #  id           :integer          not null, primary key
 #  body         :string
+#  noti_type    :string           default("notification")
 #  payload_type :string
 #  read         :boolean          default(FALSE)
 #  sender_type  :string
-#  type         :string           default("notification")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  payload_id   :integer

@@ -7,7 +7,7 @@ class CreatePandaMessages < ActiveRecord::Migration[6.1]
       t.string :body, comment: '消息内容'
       t.boolean :read, default: false, comment: '消息是否已读'
       t.string :session_id, comment: '会话id'
-      t.string :type, default: 'message',  comment: '消息类型, 可以是通知，也可以是用户消息'
+      t.string :msg_type, default: 'message',  comment: '消息类型, 可以是通知，也可以是用户消息'
 
       t.timestamps
     end

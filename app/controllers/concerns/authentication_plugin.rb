@@ -10,7 +10,7 @@ module AuthenticationPlugin
   private
 
   def current_user
-    @current_user ||= User.where(secure_token: request_token).first
+    @current_user ||= Panda::User.where(secure_token: request_token).first
   end
 
   def request_token

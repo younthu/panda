@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.string "body"
     t.boolean "read", default: false
     t.string "session_id"
-    t.string "type", default: "message"
+    t.string "msg_type", default: "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_messages_on_payload"
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.integer "payload_id"
     t.string "body"
     t.boolean "read", default: false
-    t.string "type", default: "notification"
+    t.string "noti_type", default: "notification"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_notifications_on_payload"

@@ -4,11 +4,11 @@
 #
 #  id            :integer          not null, primary key
 #  body          :string
+#  msg_type      :string           default("message")
 #  payload_type  :string
 #  read          :boolean          default(FALSE)
 #  receiver_type :string           not null
 #  sender_type   :string           not null
-#  type          :string           default("message")
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  payload_id    :integer
