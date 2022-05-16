@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_15_162317) do
+ActiveRecord::Schema.define(version: 2022_05_16_105204) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -133,6 +133,22 @@ ActiveRecord::Schema.define(version: 2022_05_15_162317) do
     t.index ["payload_type", "payload_id"], name: "index_panda_messages_on_payload"
     t.index ["receiver_type", "receiver_id"], name: "index_panda_messages_on_receiver"
     t.index ["sender_type", "sender_id"], name: "index_panda_messages_on_sender"
+  end
+
+  create_table "panda_notifications", force: :cascade do |t|
+    t.string "sender_type"
+    t.integer "sender_id"
+    t.integer "receiver_id", null: false
+    t.string "payload_type", null: false
+    t.integer "payload_id", null: false
+    t.string "body"
+    t.boolean "read"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["payload_type", "payload_id"], name: "index_panda_notifications_on_payload"
+    t.index ["receiver_id"], name: "index_panda_notifications_on_receiver_id"
+    t.index ["sender_type", "sender_id"], name: "index_panda_notifications_on_sender"
   end
 
   create_table "panda_order_items", force: :cascade do |t|
@@ -295,6 +311,7 @@ ActiveRecord::Schema.define(version: 2022_05_15_162317) do
   add_foreign_key "panda_app_versions", "panda_apps", column: "app_id"
   add_foreign_key "panda_devices", "panda_users", column: "user_id"
   add_foreign_key "panda_identities", "panda_users", column: "user_id"
+  add_foreign_key "panda_notifications", "panda_users", column: "receiver_id"
   add_foreign_key "panda_order_items", "panda_orders", column: "order_id"
   add_foreign_key "panda_profiles", "panda_users", column: "user_id"
 end

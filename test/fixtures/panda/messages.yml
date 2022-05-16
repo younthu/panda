@@ -22,7 +22,6 @@
 #  index_panda_messages_on_receiver  (receiver_type,receiver_id)
 #  index_panda_messages_on_sender    (sender_type,sender_id)
 #
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   sender: one
