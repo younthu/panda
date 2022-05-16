@@ -81,6 +81,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
     1. [x] Rest api for Avatar upload
     1. [x] Identity model
     1. [x] Profile model
+    2. [ ] 账户注销
 2. [ ] Login with devise
     1. [x] 手机登录
     1. [x] 微信登录
