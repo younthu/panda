@@ -82,8 +82,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     1. [x] Identity model
     1. [x] Profile model
     2. [ ] 账户注销
-    3. [ ] 聊天
-    4. [ ] 站内信
+    6. [ ] 会员等级 
+    7. [ ] captcha
 2. [ ] Login with devise
     1. [x] 手机登录
     1. [x] 微信登录
@@ -92,6 +92,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     4. [x] 账号密码登录
     5. [ ] 扫码登陆
     6. [ ] 苹果登录
+3. [ ] 聊天
+4. [ ] 站内信
 3. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
    1. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
@@ -99,11 +101,9 @@ The gem is available as open source under the terms of the [MIT License](https:/
    1.
 4. [x] Login with wechat
 5. [x] User
-   6. [ ] 会员等级 
-   7. [ ] captcha
 7. [x] 后台用户权限管理
-   1. [ ] Roles
-   1. [ ] Permissions
+   1. [x] Roles
+   1. [x] Permissions
    1. [ ] 角色配置页面, 分管理员和用户
    1. [ ] 权限配置页面, 分管理员和用
 8. [x] wx_pay, WechatMiniService from Tekapic.
