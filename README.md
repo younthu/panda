@@ -178,6 +178,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
 53. [ ] 技术文档,gitbook.
+54. [ ] 用户基本的API request频率限制, 防止攻击.
 
 # Rails generators
 
