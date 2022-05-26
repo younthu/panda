@@ -23,6 +23,7 @@
     end
 
     def create
+      param! :receiver_id, Integer, required: true
       @result = Panda::Message.create! payload.merge!(sender: current_user, receiver: Panda::User.find(params[:receiver_id]))
 
       render :intelligence
