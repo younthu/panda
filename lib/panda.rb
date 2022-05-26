@@ -24,6 +24,10 @@ module Panda
   self.mattr_accessor :token_method # 是用secure_token 还是 devise token
   # self.token_method = :devise_token
   self.token_method = :secure_token
+
+  # 是否默认加载panda dashboard
+  self.mattr_accessor :enable_panda_dashboard
+  self.enable_panda_dashboard = true
   # add default values of more config vars here
 
   def self.setup(&block)

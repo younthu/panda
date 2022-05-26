@@ -11,7 +11,7 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 2. `bundle install`
 3. `rails g config:install`
    1. copy `test/dummy/config/settings.yml` to `config/settings.yml`
-4. `rails g panda:install`
+4. `rails g panda:install & rails g panda:initializer`
 5. `rails db:create && rails db:migrate`
 6. start server: `rails s`
 7. start sidekiq(optional): `sidekiq`

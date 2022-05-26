@@ -1,4 +1,4 @@
-if Settings[:enable_panda_dashboard]
+if Settings[:enable_panda_dashboard] or Panda.token_method
   ActiveAdmin.register_page "Dashboard" do
     menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
