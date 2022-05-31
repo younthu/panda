@@ -92,7 +92,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     4. [x] 账号密码登录
     5. [ ] 扫码登陆
     6. [ ] 苹果登录
-3. [ ] 聊天
+7. [ ] Feature Toggle
+3. [x] 聊天
 4. [ ] 站内信
 3. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
