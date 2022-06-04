@@ -144,6 +144,9 @@ The gem is available as open source under the terms of the [MIT License](https:/
      1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
 28. [ ] 订单系统
 29. [ ] 支付系统
+    1.  [ ] 微信支付
+    2.  [ ] 支付宝支付
+    3.  [ ] 苹果支付
 30. [ ] spree商城
 31. [ ] sentry rails
 32. [ ] newrelic 免费版
@@ -165,8 +168,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 48. [ ] 抽奖系统
 49. [ ] 调试
     1. [ ] 系统探针？
-    1. [ ] 远程日志?
-    1. [ ] 数据库数据记录自诊断
+    2. [ ] 远程日志?
+    3. [ ] 数据库数据记录自诊断
 50. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
