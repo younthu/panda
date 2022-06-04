@@ -84,6 +84,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
     2. [ ] 账户注销
     6. [ ] 会员等级 
     7. [ ] captcha
+    8. [ ] 新用户邀请
 2. [ ] Login with devise
     1. [x] 手机登录
     1. [x] 微信登录
