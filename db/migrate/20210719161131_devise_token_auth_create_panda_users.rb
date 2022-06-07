@@ -52,7 +52,7 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
     add_index :panda_users, [:uid, :provider],     unique: true
     add_index :panda_users, :reset_password_token, unique: true
     add_index :panda_users, :confirmation_token,   unique: true
-    add_index :panda_users, :auth_token, unique: true
+    add_index :panda_users, :secure_token, unique: true
     # add_index :users, :unlock_token,         unique: true
   end
 end
