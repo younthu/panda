@@ -69,6 +69,10 @@ rails panda:install:migrations
 
 ## Rails tasks
 
+## Overriding Models and Controller
+
+[Overriding Models and Controller](https://edgeguides.rubyonrails.org/engines.html#overriding-models-and-controllers)
+
 ## Contributing
 Contribution directions go here.
 

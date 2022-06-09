@@ -1,7 +1,9 @@
 module Panda
-  module Api
-  class UsersController < BaseController
-    skip_before_action :authenticate_user!, only: :create
+  class UsersController < ActionController::Base
+
+    def show
+      render json: { message: 'ok2'}
+    end
 
     def create
       user = Panda::User.create! params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
@@ -17,7 +19,8 @@ module Panda
     end
 
     def my_info
-      render json: current_user
+      # render json: current_user
+      render json: { message: 'ok'}
     end
 
     # 绑定苹果device token
@@ -61,6 +64,5 @@ module Panda
 
       render json: u, include: [ :photos]
     end
-  end
   end
 end

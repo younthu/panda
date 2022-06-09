@@ -13,6 +13,14 @@ end
 Panda::Engine.routes.draw do
   devise_for :users, path: "users", class_name: "Panda::User", controllers: { sessions: 'user/sessions', class_name: "Panda::User" }
 
+  scope :api do
+    scope :v1 do
+      resources :users do
+        get :my_info
+      end
+    end
+  end
+
   namespace :api do
     scope :v1 do
       mount_devise_token_auth_for 'Panda::User', at: 'users', controllers: {
