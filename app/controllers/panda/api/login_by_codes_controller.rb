@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Panda::Api::LoginByCodesController < ::ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token if self.respond_to? :verify_authenticity_token
 
   include ActionView::Rendering
   def render_to_body(options)

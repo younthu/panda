@@ -5,7 +5,7 @@ module Panda
     module Users
       # api register with email
       class RegistrationsController < ::DeviseTokenAuth::RegistrationsController
-        skip_before_action :verify_authenticity_token
+        skip_before_action :verify_authenticity_token if self.respond_to? :verify_authenticity_token
 
         before_action :configure_sign_up_params
 
