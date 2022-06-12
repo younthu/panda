@@ -31,8 +31,6 @@ Panda::Engine.routes.draw do
         post :bind_ios_device_token
       end
 
-      resources :sms, only: [:create]
-
       resources :orders do
         collection do
           post :wechat_mini_notify
