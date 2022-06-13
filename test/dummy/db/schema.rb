@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_105204) do
+ActiveRecord::Schema.define(version: 2022_06_13_072935) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -24,6 +24,34 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.integer "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "panda_admin_roles", force: :cascade do |t|
@@ -230,10 +258,10 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.string "secure_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"auth_token\"", name: "index_panda_users_on_auth_token", unique: true
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_panda_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_users_on_reset_password_token", unique: true
+    t.index ["secure_token"], name: "index_panda_users_on_secure_token", unique: true
     t.index ["uid", "provider"], name: "index_panda_users_on_uid_and_provider", unique: true
   end
 
@@ -306,6 +334,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_105204) do
     t.index ["delivered", "failed", "processing", "deliver_after", "created_at"], name: "index_rpush_notifications_multi", where: "NOT delivered AND NOT failed"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_roles", column: "admin_role_id"
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_users", column: "admin_user_id"
   add_foreign_key "panda_app_versions", "panda_apps", column: "app_id"
