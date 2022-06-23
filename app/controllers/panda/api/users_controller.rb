@@ -20,6 +20,12 @@ module Panda
       render json: current_user
     end
 
+    def me
+      @result = current_user
+
+      render :intelligence
+    end
+
     # 绑定苹果device token
     def bind_ios_device_token
       token = params[:token]
