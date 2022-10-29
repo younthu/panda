@@ -280,6 +280,14 @@ The gem is available as open source under the terms of the [MIT License](https:/
 	1. 打印exception in json: `config.debug_exception_response_format = :api`
 	1. https://www.wyeworks.com/blog/2016/01/12/improvements-to-error-responses-in-rails-5-api-mode/
 
+## 更改json的渲染layout
+继承Panda::Api:BaseController以后就会默认使用带分页功能的layout, 
+ 有几种办法可以避免用panda带的layout
+1. 在API里面通过layout指令来指定模版: `layout 'panda/layouts/application'`, 具体参考 `Panda::Api::BaseController`.
+2. 在controller里指定不使用layout: `layout false`, 具体参考 `Panda::Api::BaseController`.
+3. render的时候不使用layout: `render :index, layout: false`
+
+
 ## mount activeadmin inside engine
 1. [Define a resource inside an engine](https://github.com/activeadmin/activeadmin/wiki/Define-a-resource-inside-an-engine)
 1. [Example Engines](https://github.com/activeadmin/activeadmin/wiki#engines-gems)

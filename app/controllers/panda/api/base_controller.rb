@@ -1,5 +1,6 @@
 class Panda::Api::BaseController < ::ApplicationController
   layout 'panda/layouts/application'
+  skip_before_action :verify_authenticity_token
 
   if Panda.token_method == :secure_token
     include AuthenticationPlugin
@@ -12,7 +13,6 @@ class Panda::Api::BaseController < ::ApplicationController
 
   helper :'panda/application'
 
-  skip_before_action :verify_authenticity_token if self.respond_to? :verify_authenticity_token
 
   before_action :authenticate_user!
 

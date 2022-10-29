@@ -3,7 +3,7 @@ module Panda
   module Api
     module Users
       class SessionsController < ::DeviseTokenAuth::SessionsController
-        skip_before_action :verify_authenticity_token if self.respond_to? :verify_authenticity_token
+        skip_before_action :verify_authenticity_token #if self.respond_to? :verify_authenticity_token
 
         include DeviseTokenAuth::Concerns::SetUserByToken
         # include Devise::Controllers::Rememberable
