@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Panda::Engine => "/panda"
+  mount Panda::Engine => "/"
 end

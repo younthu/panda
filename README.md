@@ -252,7 +252,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 1. 自定义migration files加载路径:
    ~~~ruby
    # ./test/test_helper.rb
-   ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]`
+   ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
    ~~~
 
    Rails Engine会根据变量`ENGINE_ROOT`自动添加migrate path:
