@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users,  ActiveAdmin::Devise.config.merge(class_name: "Panda::AdminUser")
 
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
 end
 
 Panda::Engine.routes.draw do

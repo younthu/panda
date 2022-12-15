@@ -10,11 +10,8 @@ require_relative 'routes/api'
 # https://guides.rubyonrails.org/v5.1/autoloading_and_reloading_constants.html
 draw_apis
 
-
 Panda::Engine.routes.draw do
 
-  mount Rswag::Ui::Engine => '/api-docs'
-  mount Rswag::Api::Engine => '/api-docs'
   # devise_for :admin_users, class_name: "Panda::AdminUser"
   # devise_for :users, controllers: { sessions: 'user/sessions' }
 

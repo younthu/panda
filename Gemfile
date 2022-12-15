@@ -5,6 +5,7 @@ ruby '3.1.1'
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
+gem 'rails', "~> 7.0.4"
 gem 'rswag'
 gem 'jbuilder'
 group :development do

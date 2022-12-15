@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_072935) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -19,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.integer "resource_id"
     t.string "author_type"
     t.integer "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
@@ -31,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "record_type", null: false
     t.integer "record_id", null: false
     t.integer "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -44,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -59,8 +58,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "description"
     t.string "resource_type"
     t.integer "resource_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "admin_role_name_resource_type_and_id_index"
     t.index ["name"], name: "index_panda_admin_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_panda_admin_roles_on_resource"
@@ -70,11 +69,11 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_panda_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_admin_users_on_reset_password_token", unique: true
   end
@@ -93,8 +92,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "minimal_version"
     t.string "latest_download_url"
     t.integer "app_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["app_id"], name: "index_panda_app_versions_on_app_id"
   end
 
@@ -108,8 +107,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "support_wechat"
     t.date "published_at"
     t.string "owner_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "panda_devices", force: :cascade do |t|
@@ -121,8 +120,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "os_full_version"
     t.string "device_name"
     t.string "device_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_panda_devices_on_user_id"
   end
 
@@ -135,8 +134,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "refresh_token"
     t.string "scopes"
     t.integer "expires_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["provider"], name: "index_panda_identities_on_provider"
     t.index ["refresh_token"], name: "index_panda_identities_on_refresh_token"
     t.index ["status"], name: "index_panda_identities_on_status"
@@ -156,8 +155,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.boolean "read", default: false
     t.string "session_id"
     t.string "msg_type", default: "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_messages_on_payload"
     t.index ["receiver_type", "receiver_id"], name: "index_panda_messages_on_receiver"
     t.index ["sender_type", "sender_id"], name: "index_panda_messages_on_sender"
@@ -172,8 +171,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "body"
     t.boolean "read", default: false
     t.string "noti_type", default: "notification"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["payload_type", "payload_id"], name: "index_panda_notifications_on_payload"
     t.index ["receiver_id"], name: "index_panda_notifications_on_receiver_id"
     t.index ["sender_type", "sender_id"], name: "index_panda_notifications_on_sender"
@@ -183,8 +182,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.integer "order_id", null: false
     t.string "item_type", null: false
     t.integer "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["item_type", "item_id"], name: "index_panda_order_items_on_item"
     t.index ["order_id"], name: "index_panda_order_items_on_order_id"
   end
@@ -198,8 +197,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "title"
     t.string "code"
     t.integer "price_in_cent"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id"], name: "index_panda_orders_on_owner"
   end
 
@@ -218,8 +217,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.integer "actual_pay_in_cent"
     t.string "channel"
     t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["payee_type", "payee_id"], name: "index_panda_payments_on_payee"
     t.index ["payer_type", "payer_id"], name: "index_panda_payments_on_payer"
     t.index ["payment_method_type", "payment_method_id"], name: "index_panda_payments_on_payment_method"
@@ -229,8 +228,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
   create_table "panda_profiles", force: :cascade do |t|
     t.string "store"
     t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_panda_profiles_on_user_id"
   end
 
@@ -239,12 +238,12 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "uid", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
+    t.datetime "reset_password_sent_at", precision: nil
     t.boolean "allow_password_change", default: false
-    t.datetime "remember_created_at"
+    t.datetime "remember_created_at", precision: nil
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: nil
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
     t.string "email"
     t.string "name"
@@ -256,12 +255,12 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.string "mobile"
     t.text "tokens"
     t.string "secure_token"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "\"auth_token\"", name: "index_panda_users_on_auth_token", unique: true
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_panda_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_users_on_reset_password_token", unique: true
-    t.index ["secure_token"], name: "index_panda_users_on_secure_token", unique: true
     t.index ["uid", "provider"], name: "index_panda_users_on_uid_and_provider", unique: true
   end
 
@@ -271,14 +270,14 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.text "certificate"
     t.string "password"
     t.integer "connections", default: 1, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "type", null: false
     t.string "auth_key"
     t.string "client_id"
     t.string "client_secret"
     t.string "access_token"
-    t.datetime "access_token_expiration"
+    t.datetime "access_token_expiration", precision: nil
     t.text "apn_key"
     t.string "apn_key_id"
     t.string "team_id"
@@ -288,9 +287,9 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
 
   create_table "rpush_feedback", force: :cascade do |t|
     t.string "device_token", limit: 64
-    t.datetime "failed_at", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "failed_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "app_id"
     t.index ["device_token"], name: "index_rpush_feedback_on_device_token"
   end
@@ -303,14 +302,14 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.text "data"
     t.integer "expiry", default: 86400
     t.boolean "delivered", default: false, null: false
-    t.datetime "delivered_at"
+    t.datetime "delivered_at", precision: nil
     t.boolean "failed", default: false, null: false
-    t.datetime "failed_at"
+    t.datetime "failed_at", precision: nil
     t.integer "error_code"
     t.text "error_description"
-    t.datetime "deliver_after"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deliver_after", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "alert_is_json", default: false, null: false
     t.string "type", null: false
     t.string "collapse_key"
@@ -319,7 +318,7 @@ ActiveRecord::Schema.define(version: 2022_06_13_072935) do
     t.integer "app_id", null: false
     t.integer "retries", default: 0
     t.string "uri"
-    t.datetime "fail_after"
+    t.datetime "fail_after", precision: nil
     t.boolean "processing", default: false, null: false
     t.integer "priority"
     t.text "url_args"
