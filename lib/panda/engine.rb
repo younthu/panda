@@ -23,5 +23,11 @@ module Panda
         end
       end
     end
+
+    # 加载本地化文件
+    config.before_initialize do
+      config.i18n.load_path += Dir["#{config.root}/config/locales/**/*.yml"]
+    end
+
   end
 end

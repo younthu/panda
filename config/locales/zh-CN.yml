@@ -41,6 +41,9 @@
       user: # 单数复数
         one: "用户"
         other: "用户"
+      panda/user:
+        one: '用户'
+        other: '用户'
       comment:
         one: "评论"
         other: "评论"
@@ -112,7 +115,7 @@
         country: '国家'
         id_card: '身份证号码'
         phone_number: '电话号码'
-      user:
+      user: &user
         <<: *common
         id: '编号'
         name: '姓名'
@@ -148,6 +151,8 @@
         apps: '申请'
         invitation_code: '邀请码'
         whitelisted_jwts: 'jwt白名单'
+      panda/user:
+        <<: *user
       moment:
         <<: *common
         location: '位置坐标'
