@@ -1,17 +1,50 @@
 module Panda
   module Api
   class UsersController < BaseController
-    skip_before_action :authenticate_user!, only: :create
+    skip_before_action :authenticate_user!, only: [:create, :sms, :sms_login]
+
+    def sms_login
+      param! :mobile, String, required: true
+      param! :code, String, required: true
+      param! :invite_code, String, required: false
+
+      SecurityCodeService.new(params[:mobile]).verify(params[:code])
+      @result = Panda::User.find_or_create_by(mobile: params[:mobile])
+
+      if params[:invite_code].present? # 新用户邀请
+        raise CustomMessageError.new(422, '不能填写本人邀请码') if @result.invite_code == params[:invite_code]
+
+        invest_user = Panda::User.where(invite_code: params[:invite_code]).first
+
+        raise CustomMessageError.new(422, '邀请码错误') if invest_user.blank?
+
+        raise CustomMessageError.new(422, '不能循环邀请') if invest_user.parent == @result
+
+        @result.update(parent: invest_user)
+
+      end
+
+      extras
+      render json: @result, methods: :auth_token
+    end
+
+    def sms
+      param! :mobile, String, required: true
+
+      SecurityCodeService.new(params[:mobile]).invoke
+
+      head :created
+    end
 
     def create
-      user = Panda::User.create! params.require(:user).permit(:name, :nickname, :email, :mobile, :password)
+      user = Panda::User.create! params.permit(:name, :nickname, :email, :mobile, :password)
 
       render json: user, methods: :auth_token
     end
 
     # TODO: Fixme
     def upload_avatar
-      current_user.update({avatar: params[:user][:avatar]})
+      current_user.update({avatar: params[:avatar]})
       current_user.reload
       my_info
     end
@@ -46,7 +79,7 @@ module Panda
     # 上传个人照片
     def append_photo
       u = current_user
-      u.append_images params[:user][:photos] if params[:user][:photos]
+      u.append_images params[:photos] if params[:photos]
 
       render json: current_user, include: [:photos]
     end

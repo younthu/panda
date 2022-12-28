@@ -4,3 +4,11 @@
    3. `--name`, 这个功能的中文名
    4. `--module`, 这个功能所属的模块, 也是namespace, 用于放置api文件所在的目录
    5. `-f`, 强制生成文件
+
+# generators:
+  1. rails g panda:install
+
+
+# Notes
+1. [自定义migration generators](https://stackoverflow.com/questions/39399016/add-migrations-to-a-rails-engines-install-generator)
+2. 

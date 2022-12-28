@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-module Paymanager
   class WechatMiniService
     WECHAT_NOTIFY_URL = 'https://tekapic.ilibrary.me/api/v1/orders/wechat_mini_notify'
 
@@ -77,4 +76,3 @@ module Paymanager
       WxPay::Service.invoke_transfer transfer
     end
   end
-end

@@ -31,6 +31,8 @@ Panda::Engine.routes.draw do
         post :upload_avatar
         post :append_photo
         post :bind_ios_device_token
+        post :sms_login
+        post :sms
       end
 
       resources :orders do
