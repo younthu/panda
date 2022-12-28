@@ -45,6 +45,9 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
       # secure token
       t.string :secure_token
 
+      # paranoid
+      t.datetime :deleted_at, comment: '软删除'
+
       t.timestamps
     end
 
@@ -53,6 +56,7 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
     add_index :panda_users, :reset_password_token, unique: true
     add_index :panda_users, :confirmation_token,   unique: true
     add_index :panda_users, :secure_token, unique: true
+    add_index :panda_users, :deleted_at
     # add_index :users, :unlock_token,         unique: true
   end
 end
