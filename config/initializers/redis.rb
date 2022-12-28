@@ -5,13 +5,13 @@ redis_params = {
   port: Settings.redis.port,
   id: nil
 }
-redis_params.merge(password: Settings.redis.password) if Settings.redis.password
+redis_params.merge!(password: Settings.redis.password) if Settings.redis.password
 
 sidekiq_redis_params = {
   url: "redis://#{Settings.redis.host}:#{Settings.redis.port}/#{Settings.redis.sidekiq_db}",
   namespace: Settings.redis.namespace
 }
-sidekiq_redis_params.merge(password: Settings.redis.password) if Settings.redis.password
+sidekiq_redis_params.merge!(password: Settings.redis.password) if Settings.redis.password
 
 $redis = Redis::Namespace.new(
   Settings.redis.namespace,
