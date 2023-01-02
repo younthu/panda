@@ -61,11 +61,12 @@ class Panda::PhotoUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    g = ::MiniMagick::Image.open(file.file)[:dimensions]
-    if self.parent_version&.file
-      g = ::MiniMagick::Image.open(self.parent_version.file.file)[:dimensions]
-    end
-    "#{original_filename}.wxh.#{g[0]}x#{g[1]}.#{file.extension}" if original_filename
-  end
+  # 把长宽信息写进文件名里，供客户端布局用
+  # def filename
+  #   g = ::MiniMagick::Image.open(file.file)[:dimensions]
+  #   if self.parent_version&.file
+  #     g = ::MiniMagick::Image.open(self.parent_version.file.file)[:dimensions]
+  #   end
+  #   "#{original_filename}.wxh.#{g[0]}x#{g[1]}.#{file.extension}" if original_filename
+  # end
 end
