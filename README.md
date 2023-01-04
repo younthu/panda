@@ -193,8 +193,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 1. [ ] Docker-compose template generator
 2. [ ] Panda settings generator(config rb and settings yaml)
-    3. [ ] ansible scripts
-    4. [ ]  
+    1. [ ] ansible scripts
+    2. [ ]  
 3. [ ] Seeds generator
 4. [ ] Generator网页，点击直接生成目标内容的界面。
 5. [x] API/rspec Generator from Gu
