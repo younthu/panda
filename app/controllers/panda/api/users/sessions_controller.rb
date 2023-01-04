@@ -25,7 +25,7 @@ module Panda
           user = User.where(mobile: mobile).last # 修复bug: 一个手机号被注册多个用户的情况下，以最新的账号为准。
           if user and user.valid_password?(password)
             sign_in :user, user
-            set_user_by_token
+            # set_user_by_token
 
             session[:current_user_id] = current_user&.id
 
