@@ -28,12 +28,16 @@ Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了re
 rails panda:install:migrations
 ~~~
 
+# Demo
+本项目包含一个dummy测试项目，可以通过docker-compose快速启动。
+
 # 目录结构
 1. 遵循传统的Rails项目结构。
 2. 这是一个Rails Engine, 多了一个Dummy App，所以代码目录结构在细节上和传统Rails项目有区别。
 3.
 # Settings
 见[./config/readme.md](./config/readme.md)
+
 
 # Features
 
