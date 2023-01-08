@@ -29,7 +29,10 @@ rails panda:install:migrations
 ~~~
 
 # Demo
-本项目包含一个dummy测试项目，可以通过docker-compose快速启动。
+本项目包含一个dummy测试项目，可以通过docker-compose快速启动, 也可以手动在本地启动.
+## Docker compose快速启动
+
+## 本地手动启动
 
 # 目录结构
 1. 遵循传统的Rails项目结构。
