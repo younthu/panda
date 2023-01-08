@@ -1,21 +1,26 @@
-FROM ruby:3.1.0
+FROM ruby:3.1.1
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
-
-RUN mkdir /app
 WORKDIR /app
-COPY ./Gemfile /app/Gemfile
-COPY ./Gemfile.lock /app/Gemfile.lock
 
-RUN gem install bundler:2.2.22
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+RUN apt-get install libmagickwand-dev
+
+COPY Gemfile Gemfile.lock ./
+
+# 下面两行是panda engine专用，不要进docker template
+COPY panda.gemspec* ./
+COPY lib/panda/version* ./lib/panda/
+
+RUN gem install bundler
+
+RUN gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ \
+    && bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+
 RUN bundle install
 
-COPY . /app
-
-RUN yarn install --check-files
-RUN bundle exec rake assets:precompile
+COPY ./ ./
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 EXPOSE 3000

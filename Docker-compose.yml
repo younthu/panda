@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db:
+    image: postgres:12.2
+#    ports:
+#      - "5432:5432"
+    expose:
+      - "5432"
+    environment:
+      - PGDATA=/var/www/postgresql/data
+      - POSTGRES_PASSWORD=panda#$!*.
+#      - POSTGRES_USER=postgres
+    volumes:
+      - '/var/www/postgresql:/var/www/postgresql'
+#      - /var/www/postgresql/:/var/lib/postgresql/data
+    networks:
+      - panda-priv  # 连接数据库用
+  web:
+    # image: panda
+    build: .
+    container_name: panda
+#    command: bash -c "foreman start -f Procfile.dev-server"
+    volumes:
+      - '$PWD:/var/www/panda'
+    ports:
+     - '3000:3000'
+    networks:
+      - panda-net   # 和nginx通信用
+      - panda-priv  # 连接数据库用
+    environment:
+        - DG_POSTGRES_HOST=db
+        - DG_POSTGRES_PORT=5432
+        - POSTGRES_DB=panda
+        - POSTGRES_PASSWORD=panda#$!*.
+        - POSTGRES_USER=postgres
+        - RAILS_ENV=production
+        - RAILS_SERVE_STATIC_FILES=true
+        - SECRET_KEY_BASE=ae4d24355c8fae315038733c784c001960e4a6a1d60ba7dd2f3ebece3e97f31544d883a32c91f53fa50d5ccb02011be3ac5cd368a107327f8384340ec87bc41d
+#        - 'REDIS_URL=redis://redis:6379'
+networks:
+  panda-priv:
+  panda-net:
+    name: panda-net
