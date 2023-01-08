@@ -1,5 +1,16 @@
 version: '3'
 services:
+  redis:
+    image: redis:latest
+    restart: "no"
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf 
+      - ./data:/data      
+    command: redis-server /etc/redis/redis.conf 
+    privileged: true
   db:
     image: postgres:12.2
 #    ports:
