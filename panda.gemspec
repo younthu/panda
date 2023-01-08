@@ -117,4 +117,18 @@ Comment
 
   # oj, Optimized JSON
   spec.add_dependency 'oj'
+
+  # mqtt
+  spec.add_dependency 'mqtt'
+
+  spec.post_install_message = <<~EOM
+    
+    Welcome to Panda!
+    
+    1. please install migration files via `rails g panda:install:migrations`
+    2. 如果使用mqtt, 请启动mqtt进程.
+    3. 更多流程，请看doc/setup.md.
+    4. 如果想快速
+
+  EOM
 end

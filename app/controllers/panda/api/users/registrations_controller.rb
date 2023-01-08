@@ -14,7 +14,7 @@ module Panda
         end
 
         def create
-          identity = Identity.find_by(uid: params[:email].try(:strip).try(:downcase), provider: :email)
+          identity = Identity.find_by(uid: params[:mobile].try(:strip).try(:downcase), provider: :mobile)
           if identity && identity.status == 'linkedin'
             render(json: { error: I18n.t('user.sign_up.already_exists_linkedin_login_account') }, status: 403)
             return
@@ -44,7 +44,7 @@ module Panda
         private
 
         def configure_sign_up_params
-          devise_parameter_sanitizer.permit(:sign_up, keys: [profile_attributes: %i[name company_name job_title]])
+          devise_parameter_sanitizer.permit(:sign_up, keys: [])
         end
       end
     end

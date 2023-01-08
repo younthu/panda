@@ -11,4 +11,11 @@
    end
    ~~~
    可以在console里面通过命令`$ user.password=`来获取代码地址.
-3. 
+
+原因:
+在目标app里面,有个文件`user_override.rb`, 里面有对`Panda::User`做修改, 生成了随机password:
+~~~ruby
+before_validation do 
+   self.password = Utils::Random.digital_code(8)
+end
+~~~
