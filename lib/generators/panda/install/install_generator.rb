@@ -8,12 +8,14 @@ class Panda::InstallGenerator < Rails::Generators::Base
 
   # 拷贝migration files
   def install_migration_files
-    # TODO:
+
   end
 
-  # 安装 user的内容到user.rb
+  # 安装 user的内容到user.rb和user migration
   def install_user_model
     # TODO: 把user的扩展安装到user.rb里面去
+    copy_file "user.rb", "app/models/"
+    puts "用户模型已经生成，请通过rails g panda:install:migrations来安装"
   end
 
   def install_docker_files

@@ -23,10 +23,11 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 
 Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了rest api登录的基本功能.
 
-安装迁移文件:
-~~~sh
-rails panda:install:migrations
-~~~
+1. 安装panda文件: 'rails g panda:install'
+2. 安装迁移文件:
+    ~~~sh
+    rails panda:install:migrations
+    ~~~
 
 # Demo
 本项目包含一个dummy测试项目，可以通过docker-compose快速启动, 也可以手动在本地启动.
