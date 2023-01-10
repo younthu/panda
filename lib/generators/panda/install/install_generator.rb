@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Rails generator tutorial: https://guides.rubyonrails.org/generators.html
+# Thor tutorial: https://www.rubydoc.info/gems/thor/Thor/Actions
 class Panda::InstallGenerator < Rails::Generators::Base
   source_root File.expand_path('templates', __dir__)
 
@@ -18,9 +22,19 @@ class Panda::InstallGenerator < Rails::Generators::Base
     puts "用户模型已经生成，请通过rails g panda:install:migrations来安装"
   end
 
+  def install_deploy_scripts
+    copy_file "ssh_deploy.sh", "ssh_deploy.sh"
+  end
+
   def install_docker_files
+    folder_name = File.basename(Dir.getwd)
+    app_name = ask("App的英文名叫什么? [#{folder_name}]")
+    app_name = folder_name if app_name.blank?
+
+    db_password=SecureRandom.base58(18)
+    puts "app_name = #{app_name}"
     # TODO, 用模板方法去做定制化.
-    copy_file "Docker-compose.yml", "Docker-compose.yml"
+    template "Docker-compose.yml.erb", "Docker-compose.yml", {app_name: app_name, db_password:}
     copy_file "Dockerfile", "Dockerfile"
     copy_file "entrypoint.sh", "entrypoint.sh"
   end

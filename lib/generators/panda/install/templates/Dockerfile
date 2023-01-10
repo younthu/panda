@@ -9,10 +9,6 @@ RUN apt-get install libmagickwand-dev
 
 COPY Gemfile Gemfile.lock ./
 
-# 下面两行是panda engine专用，不要进docker template
-COPY panda.gemspec* ./
-COPY lib/panda/version* ./lib/panda/
-
 RUN gem install bundler
 
 RUN gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ \
