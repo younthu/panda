@@ -2,6 +2,7 @@ module Panda
   module Api
   class UsersController < BaseController
     skip_before_action :authenticate_user!, only: [:create, :sms, :sms_login]
+    Panda::User = const_get(::Panda.userClassName.classify)
 
     def sms_login
       param! :mobile, String, required: true

@@ -22,8 +22,13 @@ require 'utils/random.rb'
 module Panda
   # this function maps the vars from your app into your engine
   self.mattr_accessor :token_method # 是用secure_token 还是 devise token
+
   # self.token_method = :devise_token
   self.token_method = :secure_token
+
+  # User model class, "User" by default
+  self.mattr_accessor :userClassName
+  self.userClassName = "User"
 
   # 是否默认加载panda dashboard
   self.mattr_accessor :enable_panda_dashboard

@@ -12,8 +12,8 @@ class User < ApplicationRecord
   has_secure_token :secure_token , length: 32 # secure_token, Token requires a minimum length of 24 characters.
   include Panda::AppendPhotos
 
-  # mount_uploader :avatar, AvatarUploader
-  mount_uploaders :photos, PhotoUploader # 用户头像顶部照片
+  mount_uploader :avatar, Panda::AvatarUploader
+  mount_uploaders :photos, Panda::PhotoUploader # 用户头像顶部照片
   serialize :photos, JSON # If you use SQLite, add this line. if using psql, alter photos to type of json rails g migration add_avatars_to_users photos:json
 
   def age

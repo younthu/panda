@@ -255,12 +255,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
     t.string "mobile"
     t.text "tokens"
     t.string "secure_token"
+    t.datetime "deleted_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "\"auth_token\"", name: "index_panda_users_on_auth_token", unique: true
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
+    t.index ["deleted_at"], name: "index_panda_users_on_deleted_at"
     t.index ["email"], name: "index_panda_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_panda_users_on_reset_password_token", unique: true
+    t.index ["secure_token"], name: "index_panda_users_on_secure_token", unique: true
     t.index ["uid", "provider"], name: "index_panda_users_on_uid_and_provider", unique: true
   end
 
@@ -277,7 +279,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
     t.string "client_id"
     t.string "client_secret"
     t.string "access_token"
-    t.datetime "access_token_expiration", precision: nil
+    t.datetime "access_token_expiration"
     t.text "apn_key"
     t.string "apn_key_id"
     t.string "team_id"

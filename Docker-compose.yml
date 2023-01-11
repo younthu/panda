@@ -12,14 +12,14 @@ services:
     command: redis-server /etc/redis/redis.conf 
     privileged: true
   db:
-    image: postgres:12.2
+    image: postgres:latest
 #    ports:
 #      - "5432:5432"
     expose:
       - "5432"
     environment:
       - PGDATA=/var/www/postgresql/data
-      - POSTGRES_PASSWORD=panda#$!*.
+      - POSTGRES_PASSWORD=b69EhDHav4xF5d6jf7
 #      - POSTGRES_USER=postgres
     volumes:
       - '/var/www/postgresql:/var/www/postgresql'
@@ -42,7 +42,7 @@ services:
         - DG_POSTGRES_HOST=db
         - DG_POSTGRES_PORT=5432
         - POSTGRES_DB=panda
-        - POSTGRES_PASSWORD=panda#$!*.
+        - POSTGRES_PASSWORD=b69EhDHav4xF5d6jf7
         - POSTGRES_USER=postgres
         - RAILS_ENV=production
         - RAILS_SERVE_STATIC_FILES=true
