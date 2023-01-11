@@ -6,8 +6,6 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 
 1. Add gems
     1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
-    1. Add `gem 'annotate'` to development group.
-    1. Add `  mount Panda::Engine => "/panda"` to `routes.rb`
 2. `bundle install`
 3. `rails g config:install`
    1. copy `test/dummy/config/settings.yml` to `config/settings.yml`

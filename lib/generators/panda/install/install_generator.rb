@@ -15,11 +15,15 @@ class Panda::InstallGenerator < Rails::Generators::Base
 
   end
 
+  # 安装依赖的gems
+  def install_gems
+    gem "annotate", group: :development
+  end
   # 安装 user的内容到user.rb和user migration
   def install_user_model
     # TODO: 把user的扩展安装到user.rb里面去
     copy_file "user.rb", "app/models/"
-    puts "用户模型已经生成，请通过rails g panda:install:migrations来安装"
+    puts "用户模型已经生成，请通过rails g panda:install:migrations来安装migration files"
   end
 
   def install_deploy_scripts
