@@ -61,6 +61,6 @@ Panda::Engine.routes.draw do
       post :bindWechat
     end
   end
-end
+end if Object.const_defined? Panda.userClassName.classify
 
 end

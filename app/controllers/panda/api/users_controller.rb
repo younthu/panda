@@ -2,7 +2,6 @@ module Panda
   module Api
   class UsersController < BaseController
     skip_before_action :authenticate_user!, only: [:create, :sms, :sms_login]
-    Panda::User = const_get(::Panda.userClassName.classify)
 
     def sms_login
       param! :mobile, String, required: true
@@ -10,12 +9,12 @@ module Panda
       param! :invite_code, String, required: false
 
       SecurityCodeService.new(params[:mobile]).verify(params[:code])
-      @result = Panda::User.find_or_create_by(mobile: params[:mobile])
+      @result = Panda.User.find_or_create_by(mobile: params[:mobile])
 
       if params[:invite_code].present? # 新用户邀请
         raise CustomMessageError.new(422, '不能填写本人邀请码') if @result.invite_code == params[:invite_code]
 
-        invest_user = Panda::User.where(invite_code: params[:invite_code]).first
+        invest_user = Panda.User.where(invite_code: params[:invite_code]).first
 
         raise CustomMessageError.new(422, '邀请码错误') if invest_user.blank?
 
@@ -38,7 +37,7 @@ module Panda
     end
 
     def create
-      user = Panda::User.create! params.permit(:name, :nickname, :email, :mobile, :password)
+      user = Panda.User.create! params.permit(:name, :nickname, :email, :mobile, :password)
 
       render json: user, methods: :auth_token
     end

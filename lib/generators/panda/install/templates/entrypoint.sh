@@ -12,7 +12,7 @@ rm -f /app/tmp/pids/server.pid
   echo "mkdir -p tmp/pids; bundle exec puma -C test/dummy/config/puma.rb"
   mkdir -p tmp/pids;
   bundle install;
-  bundle exec rails app:assets:precompile; # 进docker template的时候不要加app:前缀。
+  bundle exec rails assets:precompile;
 # bundle exec puma -C test/dummy/config/puma.rb; # docker template里面puma路径应该为config/puma.rb
  bundle exec rails s;
 #elif [ "$SERVICE_TYPE" == 'sidekiq' ]; then

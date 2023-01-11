@@ -20,6 +20,7 @@ require 'custom_message_error'
 require 'utils/random.rb'
 
 module Panda
+
   # this function maps the vars from your app into your engine
   self.mattr_accessor :token_method # 是用secure_token 还是 devise token
 
@@ -34,6 +35,10 @@ module Panda
   self.mattr_accessor :enable_panda_dashboard
   self.enable_panda_dashboard = true
   # add default values of more config vars here
+
+  def self.User
+    const_get(::Panda.userClassName.classify)
+  end
 
   def self.setup(&block)
     yield self

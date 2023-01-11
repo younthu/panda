@@ -2,12 +2,26 @@
 
 # Rails generator tutorial: https://guides.rubyonrails.org/generators.html
 # Thor tutorial: https://www.rubydoc.info/gems/thor/Thor/Actions
+#
+# Generators can inherit from Rails::Generators::Base. When a generator is invoked, each public method in the generator is executed sequentially in the order that it is defined. ref: https://guides.rubyonrails.org/generators.html#creating-your-first-generator
 class Panda::InstallGenerator < Rails::Generators::Base
   source_root File.expand_path('templates', __dir__)
+  # 模板public方法执行的顺序是按定义的顺序来的。
 
+  # 安装依赖的gems
+  def install_gems
+    gem "annotate", group: :development
+  end
+
+  def install_config
+    generate "config:install"
+    #TODO: copy sample settings file and sample local settings file to target app
+  end
   # 添加panda 路由
   def mount_panda_in_routes
-    insert_into_file 'config/routes.rb', "\n  mount Panda::Engine => '/panda'\n", after: "Rails.application.routes.draw do\n"
+    if yes?("添加 mount Panda::Engine到routes.rb?")
+      insert_into_file 'config/routes.rb', "\n  mount Panda::Engine => '/'\n", after: "Rails.application.routes.draw do\n"
+    end
   end
 
   # 拷贝migration files
@@ -15,10 +29,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
 
   end
 
-  # 安装依赖的gems
-  def install_gems
-    gem "annotate", group: :development
-  end
+
   # 安装 user的内容到user.rb和user migration
   def install_user_model
     # TODO: 把user的扩展安装到user.rb里面去
