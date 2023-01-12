@@ -21,6 +21,7 @@ class User < ApplicationRecord
     self.uid = mobile if uid.blank?
     self.provider = 'mobile' if provider.blank?
     self.nickname = mobile if nickname.blank?
+    self.password = SecureRandom.base58(18) if encrypted_password.blank?
   end
 
   def age
