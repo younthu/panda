@@ -10,6 +10,7 @@ class Panda::Api::BaseController < ::ApplicationController
   include ErrorsPlugin
   include ParamsPlugin
   include QuickPlugin
+  include CrudPlugin
 
   helper :'panda/application'
 
