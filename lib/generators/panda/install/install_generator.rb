@@ -46,6 +46,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
       app_name = ask("container的英文名叫什么? [#{folder_name}]")
       app_name = folder_name if app_name.blank?
       template "ssh_deploy.sh", "ssh_deploy.sh", {app_name: }
+      template "restart.sh", "restart.sh", {app_name: }
     end
   end
 
