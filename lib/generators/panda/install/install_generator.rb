@@ -14,8 +14,9 @@ class Panda::InstallGenerator < Rails::Generators::Base
   end
 
   def install_config
-    generate "config:install"
-    #TODO: copy sample settings file and sample local settings file to target app
+    if yes?("生成settings.yml文件?[Yn]")
+      generate "config:install"
+    end
   end
   # 添加panda 路由
   def mount_panda_in_routes
