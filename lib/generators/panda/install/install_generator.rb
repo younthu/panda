@@ -16,6 +16,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
   def install_config
     if yes?("生成settings.yml文件?[Yn]")
       generate "config:install"
+      copy_file "settings.yml.sample", "settings.local.yml"
     end
   end
   # 添加panda 路由

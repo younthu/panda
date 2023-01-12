@@ -1,0 +1,53 @@
+redis:
+  host: localhost
+  password:
+  namespace: panda
+  port: 6379
+  queue: 0
+  cache: 1
+  object_db: 2
+  sidekiq_db: 3
+  expires_in: 3600
+mailer:
+  from: 1025@163.com
+  address: smtp.163.com
+  port: 465
+  domain: 163.com
+  user_name: xxxxx@163.com
+  password: 'xxxxx'
+  authentication: :login
+  ssl: true
+  exception_recipients:
+    - evil_eve_live@outlook.com
+aliyun:
+  access_key:
+    sms: 'LTAI5tLwkezNf7e6xxxxxxxx'
+    oss: 'LTAI5tLwkezNf7e6xxxxxxxx'
+    sts: 'LTAI5tGmCwWyTndkF7YCYfUu'
+  access_key_secret:
+    sms: 'IrprjvCk2nFqru5A2Sxxxxxxxxxxxxx'
+    oss: 'IrprjvCk2nFqru5A2Sxxxxxxxxxxxxx'
+    sts: 'Odqx6PgGa6byVYa666xxxxxxxxxxxxx'
+  oss:
+    bucket: pandaosss
+    domain: pandaoss.oss-cn-hangzhou.aliyuncs.com
+    role_arn: 'acs:ram::1792xxxxxxxxxxxxx:role/ramosstest'
+express:
+  url: https://wuliu.market.alicloudapi.com/kdi
+  app_key: 20xxxxxxx
+  app_secret: 29ytB07VjM88Jfr7PhFsxxxxxxxxxxxxx
+  app_code: ff6d9a6c2d6c4e559e2xxxxxxxxxxxxx
+sts:
+  access_key_id: 'xxxxxxxxxxxxx'
+  access_key_secret: 'xxxxxxxxxxxxx'
+  role_arn: 'acs:ram::xxxxxxxxxxxxx:role/ramosstest'
+wechat_open:
+  appid: xxxxxxxxxxxxx
+  appsecret: xxxxxxxxxxxxx
+wechat_business_app:
+  mch_id: xxxxxxxxxxxxx
+  secret: xxxxxxxxxxxxx
+sms:
+  template: SMS_xxxxxxxxxxxxx
+  signature_name: panda_sms
+panda:

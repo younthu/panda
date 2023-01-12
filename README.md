@@ -99,21 +99,22 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Roadmap
 1. [x] User
     1. [x] User model
-    1. [x] Rest api for Avatar upload
-    1. [x] Identity model
-    1. [x] Profile model
-    2. [ ] 账户注销
+    2. [x] Rest api for Avatar upload
+    3. [x] Identity model
+    4. [x] Profile model
+    5. [ ] 账户注销
     6. [ ] 会员等级 
     7. [ ] captcha
-    8. [ ] 新用户邀请
+    8. [x] 新用户邀请
 2. [ ] Login with devise
     1. [x] 手机登录
-    1. [x] 微信登录
-    2. [ ] 通过关注微信公众号来绑定账号
-    3. [x] 邮箱登录
-    4. [x] 账号密码登录
-    5. [ ] 扫码登陆
-    6. [ ] 苹果登录
+    2. [ ] 手机自动登录
+    3. [x] 微信登录
+    4. [ ] 通过关注微信公众号来绑定账号
+    5. [x] 邮箱登录
+    6. [x] 账号密码登录
+    7. [ ] 扫码登陆
+    8. [ ] 苹果登录
 7. [ ] Feature Toggle
 3. [x] 聊天
 4. [ ] 站内信

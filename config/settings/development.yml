@@ -1,9 +1,0 @@
-redis:
-  host: localhost
-  namespace: panda
-  port: 6379
-  queue: 0
-  cache: 1
-  object_db: 2
-  sidekiq_db: 3
-  expires_in: 3600
