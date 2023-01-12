@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  self.table_name "panda_users"
+  self.table_name = "panda_users"
   enum gender: {female: 0, male: 1, f: 0, m: 1} # enum usage: https://naturaily.com/blog/ruby-on-rails-enum
 
   # Include default devise modules. Others available are:

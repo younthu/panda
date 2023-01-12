@@ -8,7 +8,7 @@ rm -f /app/tmp/pids/server.pid
 #bundle exec rails s -e production
 
 #if [ "$SERVICE_TYPE" == 'panda' ]; then
-  echo "****************************************start panda puma*****************************************"
+  echo "****************************************start <%= config[:app_name] %> puma*****************************************"
   echo "mkdir -p tmp/pids; bundle exec puma -C test/dummy/config/puma.rb"
   mkdir -p tmp/pids;
   bundle install;

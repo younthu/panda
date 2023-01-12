@@ -3,7 +3,7 @@
 echo "This script runs in host."
 
 git checkout Gemfile.lock
-GIT_SSH_COMMAND='ssh -i /root/.ssh/driftbottle_deploy -o IdentitiesOnly=yes' git pull
-docker exec driftbottle bundle install
-docker exec driftbottle bundle exec rails db:migrate
+GIT_SSH_COMMAND='ssh -i /root/.ssh/id_pub -o IdentitiesOnly=yes' git pull
+docker exec <%= config[:app_name] %> bundle install
+docker exec <%= config[:app_name] %> bundle exec rails db:migrate
 touch tmp/restart.txt
