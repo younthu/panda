@@ -21,7 +21,7 @@ class SecurityCodeService
   end
 
   def verify(code)
-    puts "verify code #{code} == #{Settings.sms.special_code}: #{code == Settings.sms.special_code.to_s}"
+    puts "verify special code #{code} == #{Settings.sms.special_code}: #{code == Settings.sms.special_code.to_s}"
     return true if Settings.sms.special_phones.include? mobile.to_s
     return true if code.to_s == Settings.sms.special_code.to_s
 

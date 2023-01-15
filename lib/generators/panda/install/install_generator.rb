@@ -18,6 +18,8 @@ class Panda::InstallGenerator < Rails::Generators::Base
       generate "config:install"
       copy_file "settings.yml.sample", "settings.local.yml"
     end
+
+    copy_file 'zh-CN.yml', 'zh-CN.yml'
   end
   # 添加panda 路由
   def mount_panda_in_routes
@@ -64,5 +66,9 @@ class Panda::InstallGenerator < Rails::Generators::Base
       copy_file "Dockerfile", "Dockerfile"
       template "entrypoint.sh", "entrypoint.sh", {app_name: app_name, db_password:}
     end
+  end
+
+  def config_activeadmin_addons
+    generate 'activeadmin_addons:install' # 安装activeadmin_addons
   end
 end

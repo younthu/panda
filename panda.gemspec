@@ -51,6 +51,8 @@ Comment
 
   # active_admin
   spec.add_dependency 'activeadmin'
+  spec.add_dependency 'activeadmin_addons'
+  # spec.add_dependency 'activeadmin-searchable_select'  # 这个不需要，它提供的功能在activeadmin_addons里面有。
 
   # Localization
   spec.add_dependency 'rails-i18n'

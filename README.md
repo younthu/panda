@@ -159,11 +159,12 @@ The gem is available as open source under the terms of the [MIT License](https:/
      1. [ ] 搜索
      1. [ ] 订阅
 26. [ ] Panda installer
-     1. [ ] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
-     1. [ ]
+     1. [x] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
+     1. [ ] Install UsersController subclass to target app.
+     2. [ ] Install API views to vendor folder as spree does.
 27. [ ] 基于数据库的配置
      1. [ ] config做基于文件的静态配置
-     1. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
+     2. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
 28. [ ] 订单系统
 29. [ ] 支付系统
     1.  [ ] 微信支付
@@ -188,31 +189,38 @@ The gem is available as open source under the terms of the [MIT License](https:/
 46. [ ] 积分系统
 47. [ ] 虚拟货币系统
 48. [ ] 抽奖系统
-49. [ ] 调试
+49. [ ] 分销系统
+50. [ ] 优惠券
+    1.  [ ] 无门槛现金券
+    2.  [ ] 满减券
+    3.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
+51. [ ] 调试
     1. [ ] 系统探针？
     2. [ ] 远程日志?
     3. [ ] 数据库数据记录自诊断
-50. [ ] 测试
+52. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-51. Docker
+53. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-52. 运维
+54. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
-53. [ ] 技术文档,gitbook.
-54. [ ] 用户基本的API request频率限制, 防止攻击.
+55. [ ] 技术文档,gitbook.
+56. [ ] 用户基本的API request频率限制, 防止攻击.
 
 # Rails generators
 
 1. [ ] Docker-compose template generator
 2. [ ] Panda settings generator(config rb and settings yaml)
     1. [ ] ansible scripts
-    2. [ ]  
+    1. [x] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
+    1. [ ] Install UsersController subclass to target app.
+    2. [ ] Install API views to vendor folder as spree does.
 3. [ ] Seeds generator
 4. [ ] Generator网页，点击直接生成目标内容的界面。
 5. [x] API/rspec Generator from Gu
