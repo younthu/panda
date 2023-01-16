@@ -156,16 +156,16 @@ The gem is available as open source under the terms of the [MIT License](https:/
 30. [ ] ActiveAdmin
     1. [x] 后台
 31. [ ] 朋友圈
-        1. [ ] 照片
-        1. [ ] 文字
-     1. [ ] 点赞
-     1. [ ] 评论
-     1. [ ] 搜索
-     1. [ ] 订阅
+    1. [ ] 照片
+    2. [ ] 文字
+    3. [ ] 点赞
+    4. [ ] 评论
+    5. [ ] 搜索
+    6. [ ] 订阅
 32. [ ] Panda installer
      1. [x] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
-     1. [ ] Install UsersController subclass to target app.
-     2. [ ] Install API views to vendor folder as spree does.
+     2. [ ] Install UsersController subclass to target app.
+     3. [ ] Install API views to vendor folder as spree does.
 33. [ ] 基于数据库的配置
      1. [ ] config做基于文件的静态配置
      2. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
