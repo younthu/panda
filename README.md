@@ -106,6 +106,12 @@ The gem is available as open source under the terms of the [MIT License](https:/
     6. [ ] 会员等级 
     7. [ ] captcha
     8. [x] 新用户邀请
+    9. [ ] 用户行为安全审计
+       1.  [ ] 登录信息记录
+       2.  [ ] 异地登录检测
+       3.  [ ] 实名验证
+       4.  [ ] 所有写操作记录。
+    10. [ ] 
 2. 注册
    1. 邮箱注册
    2. 手机注册
@@ -123,111 +129,111 @@ The gem is available as open source under the terms of the [MIT License](https:/
 6. [ ] Feature Toggle
 7. [x] 聊天
 8. [ ] 站内信
-9. [x] 基于Secure_token的token管理和身份认证.
+9.  [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
-   1. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
-   1. 切换token认证方式需要去panda.rb里面设置token_method, 用postman测试过myinfo api, secure_token是工作的.
+   2. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
+   3. 切换token认证方式需要去panda.rb里面设置token_method, 用postman测试过myinfo api, secure_token是工作的.
    1.
 10. [x] Login with wechat
 11. [x] User
 12. [x] 后台用户权限管理
     1. [x] Roles
-    1. [x] Permissions
-    1. [ ] 角色配置页面, 分管理员和用户
-    1. [ ] 权限配置页面, 分管理员和用
+    2. [x] Permissions
+    3. [ ] 角色配置页面, 分管理员和用户
+    4. [ ] 权限配置页面, 分管理员和用
 13. [x] wx_pay, WechatMiniService from Tekapic.
 14. [x] config gem with settings files.
-16. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-17. [ ] swagger
-18. [ ] Kaminari pagination
-19. [x] Localization
-20. [ ] ElasticSearch
-21. [x] Redis
-22. [ ] ELK Log
-23. [ ] Sidekiq
-24. [ ] Puma auto restart. 解决ruby内存泄漏到问题
-25. [x] CORS
+15. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
+16. [ ] swagger
+17. [ ] Kaminari pagination
+18. [x] Localization
+19. [ ] ElasticSearch
+20. [x] Redis
+21. [ ] ELK Log
+22. [ ] Sidekiq
+23. [ ] Puma auto restart. 解决ruby内存泄漏到问题
+24. [x] CORS
      1. 默认关闭CORS
         [//]: # (   2. `rails g panda:install` 会生成`config/cors/initilaizer.rb`)
-26. [ ] OAuth
-27. [ ] JWT
-28. [ ] RPush
-29. [ ] Log rotation
-30. [ ] ActiveAdmin
+25. [ ] OAuth
+26. [ ] JWT
+27. [ ] RPush
+28. [ ] Log rotation
+29. [ ] ActiveAdmin
     1. [x] 后台
-31. [ ] 朋友圈
+30. [ ] 朋友圈
     1. [ ] 照片
     2. [ ] 文字
     3. [ ] 点赞
     4. [ ] 评论
     5. [ ] 搜索
     6. [ ] 订阅
-32. [ ] Panda installer
+31. [ ] Panda installer
      1. [x] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
      2. [ ] Install UsersController subclass to target app.
      3. [ ] Install API views to vendor folder as spree does.
-33. [ ] 基于数据库的配置
+32. [ ] 基于数据库的配置
      1. [ ] config做基于文件的静态配置
      2. [ ] rails-settings-cached做基于数据库的动态配置管理，给运维人员用.
-34. [ ] 订单系统
-35. [ ] 支付系统
+33. [ ] 订单系统
+34. [ ] 支付系统
     1.  [ ] 微信支付
     2.  [ ] 支付宝支付
     3.  [ ] 苹果支付
-36. [ ] spree商城
-37. [ ] sentry rails
-38. [ ] newrelic 免费版
-39. [ ] devise authentication in go
-40. [ ] MQTT
-41. [ ] Websocket/action cable
-42. [ ] Message Queue, kafka, 削峰填谷
-43. [ ] APIs in go
-44. [ ] nginx configuration
-45. [ ] APIs in python
+35. [ ] spree商城
+36. [ ] sentry rails
+37. [ ] newrelic 免费版
+38. [ ] devise authentication in go
+39. [ ] MQTT
+40. [ ] Websocket/action cable
+41. [ ] Message Queue, kafka, 削峰填谷
+42. [ ] APIs in go
+43. [ ] nginx configuration
+44. [ ] APIs in python
     1.  [ ] secure token authentication in python
     2.  [ ] password authentication in python
-46. [ ] APIs in java
+45. [ ] APIs in java
     1.  [ ] secure token authentication in java
     2.  [ ] password authentication in java
-47. [ ] 工作流引擎
-48. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
-49. [ ] 禁用panda的dashboard, settings里面禁用
-50. [ ] App版本控制
-51. [ ] 用户反馈，投诉建议
-52. [ ] 客服
-53. [ ] 类似Redmine的插件系统
-54. [ ] 积分系统
-55. [ ] 虚拟货币系统
-56. [ ] 抽奖系统
-57. [ ] 签到打卡
-58. [ ] 邀请注册
-59. [ ] 应用内广告, banner
-60. [ ] 分销系统
-61. [ ] 会员卡系统
+46. [ ] 工作流引擎
+47. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
+48. [ ] 禁用panda的dashboard, settings里面禁用
+49. [ ] App版本控制
+50. [ ] 用户反馈，投诉建议
+51. [ ] 客服
+52. [ ] 类似Redmine的插件系统
+53. [ ] 积分系统
+54. [ ] 虚拟货币系统
+55. [ ] 抽奖系统
+56. [ ] 签到打卡
+57. [ ] 邀请注册
+58. [ ] 应用内广告, banner
+59. [ ] 分销系统
+60. [ ] 会员卡系统
     1.  [ ] 等级
     2.  [ ] 金额
-62. [ ] 优惠券
+61. [ ] 优惠券
     1.  [ ] 无门槛现金券
     2.  [ ] 满减券
     3.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
-63. [ ] 调试
+62. [ ] 调试
     1. [ ] 系统探针？
     2. [ ] 远程日志?
     3. [ ] 数据库数据记录自诊断
-64. [ ] 测试
+63. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-65. Docker
+64. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-66. 运维
+65. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
-67. [ ] 技术文档,gitbook.
-68. [ ] 用户基本的API request频率限制, 防止攻击.
+66. [ ] 技术文档,gitbook.
+67. [ ] 用户基本的API request频率限制, 防止攻击.
 
 # Rails generators
 
