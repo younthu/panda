@@ -142,7 +142,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 18. [ ] Kaminari pagination
 19. [x] Localization
 20. [ ] ElasticSearch
-21. [ ] Redis
+21. [x] Redis
 22. [ ] ELK Log
 23. [ ] Sidekiq
 24. [ ] Puma auto restart. 解决ruby内存泄漏到问题
@@ -179,12 +179,16 @@ The gem is available as open source under the terms of the [MIT License](https:/
 38. [ ] newrelic 免费版
 39. [ ] devise authentication in go
 40. [ ] MQTT
-41. [ ] Websocket
+41. [ ] Websocket/action cable
 42. [ ] Message Queue, kafka, 削峰填谷
 43. [ ] APIs in go
 44. [ ] nginx configuration
 45. [ ] APIs in python
-46. [ ] devise authentication in python
+    1.  [ ] secure token authentication in python
+    2.  [ ] password authentication in python
+46. [ ] APIs in java
+    1.  [ ] secure token authentication in java
+    2.  [ ] password authentication in java
 47. [ ] 工作流引擎
 48. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
 49. [ ] 禁用panda的dashboard, settings里面禁用
@@ -199,28 +203,31 @@ The gem is available as open source under the terms of the [MIT License](https:/
 58. [ ] 邀请注册
 59. [ ] 应用内广告, banner
 60. [ ] 分销系统
-61. [ ] 优惠券
+61. [ ] 会员卡系统
+    1.  [ ] 等级
+    2.  [ ] 金额
+62. [ ] 优惠券
     1.  [ ] 无门槛现金券
     2.  [ ] 满减券
     3.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
-62. [ ] 调试
+63. [ ] 调试
     1. [ ] 系统探针？
     2. [ ] 远程日志?
     3. [ ] 数据库数据记录自诊断
-63. [ ] 测试
+64. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-64. Docker
+65. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-65. 运维
+66. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
-66. [ ] 技术文档,gitbook.
-67. [ ] 用户基本的API request频率限制, 防止攻击.
+67. [ ] 技术文档,gitbook.
+68. [ ] 用户基本的API request频率限制, 防止攻击.
 
 # Rails generators
 
