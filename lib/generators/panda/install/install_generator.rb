@@ -19,11 +19,11 @@ class Panda::InstallGenerator < Rails::Generators::Base
       copy_file "settings.yml.sample", "settings.local.yml"
     end
 
-    copy_file 'zh-CN.yml', 'zh-CN.yml'
+    copy_file 'zh-CN.yml', 'config/locales/zh-CN.yml'
   end
   # 添加panda 路由
   def mount_panda_in_routes
-    if yes?("添加 mount Panda::Engine到routes.rb?")
+    if not no?("添加 mount Panda::Engine到routes.rb?[Yn]")
       insert_into_file 'config/routes.rb', "\n  mount Panda::Engine => '/'\n", after: "Rails.application.routes.draw do\n"
     end
   end
@@ -36,14 +36,14 @@ class Panda::InstallGenerator < Rails::Generators::Base
 
   # 安装 user的内容到user.rb和user migration
   def install_user_model
-    if yes?("生成user.rb?")
+    if not no?("生成user.rb?[Yn]")
       copy_file "user.rb", "app/models/user.rb"
       puts "用户模型已经生成，请通过rails g panda:install:migrations来安装migration files"
     end
   end
 
   def install_deploy_scripts
-    if yes?("生成install scripts?[Yn]")
+    if not no?("生成install scripts?[Yn]")
       puts "生成ssh_deploy.sh"
       folder_name = File.basename(Dir.getwd)
       app_name = ask("container的英文名叫什么? [#{folder_name}]")
@@ -54,7 +54,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
   end
 
   def install_docker_files
-    if yes?("生成Docker files?[Yn]")
+    if not no?("生成Docker files?[Yn]")
       folder_name = File.basename(Dir.getwd)
       app_name = ask("App的英文名叫什么? [#{folder_name}]")
       app_name = folder_name if app_name.blank?
