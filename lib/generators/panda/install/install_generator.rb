@@ -65,6 +65,12 @@ class Panda::InstallGenerator < Rails::Generators::Base
       template "Docker-compose.yml.erb", "Docker-compose.yml", {app_name: app_name, db_password:}
       copy_file "Dockerfile", "Dockerfile"
       template "entrypoint.sh", "entrypoint.sh", {app_name: app_name, db_password:}
+
+      #  生成env 文件， 默认.env为development, .env.stage为stage, .env.production为production. 如果需要使用production env，  把.env.production改名为.env, 覆盖.env即可.
+      template "sample.env", ".env", {app_name:, db_password:,  env: "development"}
+      template "sample.env", ".env.development", {app_name:, db_password:,  env: "development"}
+      template "sample.env", ".env.stage", {app_name:, db_password:,  env: "stage"}
+      template "sample.env", ".env.production", {app_name:, db_password:,  env: "production"}
     end
   end
 
