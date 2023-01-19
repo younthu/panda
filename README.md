@@ -111,7 +111,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
        2.  [ ] 异地登录检测
        3.  [ ] 实名验证
        4.  [ ] 所有写操作记录。
-    10. [ ] 
+    10. [ ] 组织结构
+        1.  [ ] 小组/团队
+        2.  [ ] 家庭
+        3.  [ ] 公司
+        4.  [ ] 安全组
 2. 注册
    1. 邮箱注册
    2. 手机注册
@@ -197,6 +201,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     1.  [ ] secure token authentication in java
     2.  [ ] password authentication in java
 47. [ ] 工作流引擎
+    1.  [ ] 请假流程审批
+    2.  [ ] 设计文档审批
 48. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
 49. [ ] 禁用panda的dashboard, settings里面禁用
 50. [ ] 微信分享
@@ -204,45 +210,50 @@ The gem is available as open source under the terms of the [MIT License](https:/
 52. [ ] 点赞/Like
 53. [ ] 浏览历史
 54. [ ] App版本控制
-55. [ ] 用户反馈，投诉建议
-56. [ ] 客服
-57. [ ] 类似Redmine的插件系统
-58. [ ] 积分系统
-59. [ ] 虚拟货币系统
-60. [ ] 抽奖系统
-61. [ ] 签到打卡
-62. [ ] 邀请注册
-63. [ ] 应用内广告, banner
-64. [ ] 分销系统
-65. [ ] 会员卡系统
+56. [ ] 类似Redmine的插件系统
+55. [ ] 用户运营
+    1.  [ ] 用户反馈，投诉建议
+    2.  [ ] 客服
+    3.  [ ] 积分系统
+    4.  [ ] 虚拟货币系统
+    5.  [ ] 抽奖系统
+    6.  [ ] 签到打卡
+    7.  [ ] 邀请注册
+56. [ ] 应用内广告, banner
+57. [ ] 分销系统
+58. [ ] 会员卡系统
     1.  [ ] 等级
     2.  [ ] 金额
-66. [ ] 优惠券
+59. [ ] 优惠券
     1.  [ ] 无门槛现金券
     2.  [ ] 满减券
     3.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
-67. [ ] 调试
+60. [ ] 调试
     1. [ ] 系统探针？
     2. [ ] 远程日志?
     3. [ ] 数据库数据记录自诊断
-68. [ ] 测试
+61. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
     3. [ ] Jmeter
-69. Docker
+62. Docker
     1. [ ] Docker文件
     2. [ ] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
-70. 运维
+63. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
-71. [ ] 技术文档,gitbook.
-72. [ ] 用户基本的API request频率限制, 防止攻击.
+64. [ ] 技术文档,gitbook.
+65. [ ] 用户基本的API request频率限制, 防止攻击.
+66. [ ] 自定义字段
+    1.  [ ] 表内固定自定义字段，省去跨表的成本，数量有限，但是性能好。
+    2.  [ ] 表外自定义字段，像redmine里面的自定义字段，还有spree里面的自定义字段，无限制，但是跨表消耗大一些。
+67. [ ] 
 
 # Rails generators
 
-1. [ ] Docker-compose template generator
+1. [x] Docker-compose template generator
 2. [ ] Panda settings generator(config rb and settings yaml)
     1. [ ] ansible scripts
     1. [x] 添加自动加载路径`routes/*.rb`到`config/application.rb`里面去
@@ -254,6 +265,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
    1. 说明见`lib/generators/panda/readme.md`
 6. [ ] 小程序generator
 7. [ ] React Native app generator
+8. [ ] Ant Design Admin pages Generator
 
 
 # 性能问题
@@ -269,9 +281,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 # 设计原则
 1. 多用callbacks, 方便做定制化。
+2. 先直接做成单体应用，再考虑拆gem, 第三步再考虑拆服务。
+3. 
 ## Notes
 1. Rails Engine和Rails Plugin的区别.
-1. 加载本地gem: `gem 'core', path: '../core'`
+2. 加载本地gem: `gem 'core', path: '../core'`
 
 # Famous engine
 1. Rails is the biggest engine.
