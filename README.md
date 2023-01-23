@@ -219,15 +219,25 @@ The gem is available as open source under the terms of the [MIT License](https:/
     5.  [ ] 抽奖系统
     6.  [ ] 签到打卡
     7.  [ ] 邀请注册
+    8.  [ ] 全局小喇叭
+    9.  [ ] 押金
+    10. [ ] 红包
+    11. [ ] 扫码核验核销
 56. [ ] 应用内广告, banner
 57. [ ] 分销系统
+    1.  [ ] 邀请注册
+    2.  [ ] 会员等级
+    3.  [ ] 
 58. [ ] 会员卡系统
     1.  [ ] 等级
     2.  [ ] 金额
+    3.  [ ] 门票预约
+    4.  [ ] 课程预约
 59. [ ] 优惠券
     1.  [ ] 无门槛现金券
     2.  [ ] 满减券
-    3.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
+    3.  [ ] 兑换券
+    4.  [ ] Spree里面有[优惠券](https://github.com/spree/spree/blob/main/core/app/models/spree/promotion_handler/coupon.rb), 可以参考一下.
 60. [ ] 调试
     1. [ ] 系统探针？
     2. [ ] 远程日志?
@@ -249,7 +259,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 66. [ ] 自定义字段
     1.  [ ] 表内固定自定义字段，省去跨表的成本，数量有限，但是性能好。
     2.  [ ] 表外自定义字段，像redmine里面的自定义字段，还有spree里面的自定义字段，无限制，但是跨表消耗大一些。
-67. [ ] 
+67. [ ] B2B2C后台
 
 # Rails generators
 
@@ -266,6 +276,12 @@ The gem is available as open source under the terms of the [MIT License](https:/
 6. [ ] 小程序generator
 7. [ ] React Native app generator
 8. [ ] Ant Design Admin pages Generator
+9. [ ] 安全审查
+   1.  [ ] 文字审查
+   2.  [ ] 图片审查
+10. [ ] 图片处理，用imagick + sidekiq处理。
+   1.  [ ] 缩略图
+   2.  [ ] 
 
 
 # 性能问题
