@@ -54,6 +54,12 @@ Comment
   spec.add_dependency 'activeadmin_addons'
   # spec.add_dependency 'activeadmin-searchable_select'  # 这个不需要，它提供的功能在activeadmin_addons里面有。
 
+  # require 'ohai' or irb -rohai
+  # system = Ohai::System.new
+  # system.all_plugins
+  # puts system.to_json
+  spec.add_dependency 'ohai' # https://stackoverflow.com/questions/12537317/how-to-use-ohai-gem,
+
   # Localization
   spec.add_dependency 'rails-i18n'
   spec.add_dependency 'devise-i18n'
