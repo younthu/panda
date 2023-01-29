@@ -201,8 +201,9 @@ The gem is available as open source under the terms of the [MIT License](https:/
     1.  [ ] secure token authentication in java
     2.  [ ] password authentication in java
 47. [ ] 工作流引擎
-    1.  [ ] 请假流程审批
-    2.  [ ] 设计文档审批
+    1. [ ] 请假流程审批
+    2. [ ] 设计文档审批
+    3. [ ] 可以参考
 48. [ ] [Rails Settings Cached]( https://github.com/huacnlee/rails-settings-cached )
 49. [ ] 禁用panda的dashboard, settings里面禁用
 50. [ ] 微信分享
@@ -248,8 +249,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
     2. [ ] Postman
     3. [ ] Jmeter
 62. Docker
-    1. [ ] Docker文件
-    2. [ ] Docker-compose文件
+    1. [x] Docker文件
+    2. [x] Docker-compose文件
     3. [ ] Docker-compose for dummy
     4. [ ] K8S Helm Chart
 63. 运维
