@@ -1,4 +1,3 @@
-# require_relative 'image_builder' # 反注释手动加载这个文件
 class Panda::AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
