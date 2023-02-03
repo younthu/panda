@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-  class Panda::Api::MessagesController < Panda::Api::BaseControlle
+  class Panda::Api::MessagesController < Panda::Api::BaseController
     expose(:klass) { Panda::Message }
     expose(:extras) { [] }
 
