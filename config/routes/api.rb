@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # get '/free/attachment/translation/file/:id/*file_name', to: 'download_center#get_free_attachment'
   ActiveAdmin.routes(self)
   devise_for :admin_users,  ActiveAdmin::Devise.config.merge(class_name: "Panda::AdminUser")
-
-  mount Rswag::Ui::Engine => '/api-docs'
-  mount Rswag::Api::Engine => '/api-docs'
+  #
+  # mount Rswag::Ui::Engine => '/api-docs'
+  # mount Rswag::Api::Engine => '/api-docs'
 end
 
 Panda::Engine.routes.draw do

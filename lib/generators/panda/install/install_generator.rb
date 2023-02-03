@@ -11,6 +11,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
   # 安装依赖的gems
   def install_gems
     gem "annotate", group: :development
+    gem "rswag", group: [:development, :test]
   end
 
   def install_config
@@ -76,5 +77,9 @@ class Panda::InstallGenerator < Rails::Generators::Base
 
   def config_activeadmin_addons
     generate 'activeadmin_addons:install' # 安装activeadmin_addons
+  end
+
+  def initialize_gems
+    generate 'rswag:install' # https://github.com/rswag/rswag
   end
 end
