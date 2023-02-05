@@ -25,6 +25,16 @@ Api, rest api controller可以继承Panda::Api::Controller, 这个api包含了re
     rails panda:install:migrations
     ~~~
 
+# 后续步骤
+1. 在`spec/rails_helper.rb`里面添加FactoryBot的初始化代码
+   ~~~ruby 
+   RSpec.configure do |config|
+     config.include FactoryBot::Syntax::Methods
+     config.swagger_dry_run = false
+     FactoryBot.reload
+   ~~~
+1. 
+
 # Demo
 本项目包含一个dummy测试项目，可以通过docker-compose快速启动, 也可以手动在本地启动.
 

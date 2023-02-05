@@ -2,13 +2,13 @@
 
 require 'swagger_helper'
 
-describe '用户消息 API', type: :request, swagger_doc: 'panda/swagger.json' do
+describe '用户消息 API', type: :request, swagger_doc: 'v1/panda_swagger.json' do
   let(:user) { create(:user) }
-  let(:Authorization) { user.auth_token }
-  let(:panda_message) { create(:panda_message, user: user) }
+  let(:Authorization) { user.secure_token }
+  let(:panda_message) { create(:panda_message, receiver: user, sender: user) }
   let(:id) { panda_message.id }
 
-  path "/panda/panda/messages" do
+  path "/api/v1/messages" do
     get '用户消息 列表' do
       tags '用户消息'
       produces 'application/json'
@@ -78,7 +78,7 @@ describe '用户消息 API', type: :request, swagger_doc: 'panda/swagger.json' d
     end
   end
 
-  path "/panda/panda/messages/{id}" do
+  path "/api/v1/messages/{id}" do
     get '用户消息 详情' do
       tags '用户消息'
       produces 'application/json'

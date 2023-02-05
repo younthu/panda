@@ -35,3 +35,20 @@ gem 'aliyun-cloud_sms'
 gem 'rails_param'
 
 gem 'rswag'
+
+group :development, :test do
+  gem 'bullet'
+  gem 'byebug'
+
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'standard', require: false
+
+  gem 'rspec-rails'
+
+  gem 'airborne'
+
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'nokogiri'
+end

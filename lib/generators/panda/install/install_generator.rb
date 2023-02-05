@@ -12,6 +12,20 @@ class Panda::InstallGenerator < Rails::Generators::Base
   def install_gems
     gem "annotate", group: :development
     gem "rswag" #, group: [:development, :test]
+
+    # development, test
+    gem_group :development, :test do
+      gem 'bullet'
+      gem 'byebug'
+      gem 'rubocop-rails'
+      gem 'rubocop-rspec'
+      gem 'standard'
+      gem 'rspec-rails'
+      gem 'airborne'
+      gem 'factory_bot_rails'
+      gem 'faker'
+      gem 'nokogiri'
+    end
   end
 
   def install_config

@@ -4,11 +4,11 @@ require 'swagger_helper'
 
 describe '通知消息 API', type: :request, swagger_doc: 'panda/swagger.json' do
   let(:user) { create(:user) }
-  let(:Authorization) { user.auth_token }
-  let(:panda_notification) { create(:panda_notification, user: user) }
+  let(:Authorization) { user.secure_token }
+  let(:panda_notification) { create(:panda_notification, sender: user) }
   let(:id) { panda_notification.id }
 
-  path "/panda/panda/notifications" do
+  path "/api/v1/notifications" do
     get '通知消息 列表' do
       tags '通知消息'
       produces 'application/json'
