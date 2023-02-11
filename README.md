@@ -266,6 +266,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 63. 运维
     1. [ ] 拷贝ansible scripts from yoga
     2. [ ] 拷贝ansible scripts with panda:install
+    1. [ ] 在线重启app
 64. [ ] 技术文档,gitbook.
 65. [ ] 用户基本的API request频率限制, 防止攻击.
 66. [ ] 自定义字段
