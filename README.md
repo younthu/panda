@@ -254,6 +254,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
     2. [ ] 远程日志?
     3. [ ] 数据库数据记录自诊断
     4. [x] 系统信息&系统配置页面, [chef/ohai](https://github.com/chef/ohai)
+    1. [ ] Impersonate, switch user, 扮演其他账号做测试，调试。
 61. [ ] 测试
     1. [ ] UT
     2. [ ] Postman
