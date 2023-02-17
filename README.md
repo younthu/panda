@@ -121,6 +121,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
        2.  [ ] 异地登录检测
        3.  [ ] 实名验证
        4.  [ ] 所有写操作记录。
+       1. [ ] 禁用账户
     10. [ ] 组织结构
         1.  [ ] 小组/团队
         2.  [ ] 家庭
