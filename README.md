@@ -127,6 +127,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
         2.  [ ] 家庭
         3.  [ ] 公司
         4.  [ ] 安全组
+    11. [ ] API token/password token, github api token like.
 2. 注册
    1. 邮箱注册
    2. 手机注册
