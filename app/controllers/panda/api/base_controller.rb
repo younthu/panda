@@ -1,4 +1,4 @@
-class Panda::Api::BaseController < ::ApplicationController
+class Panda::Api::BaseController < Panda::ApplicationController
   layout 'panda/layouts/application'
   skip_before_action :verify_authenticity_token
 

@@ -8,6 +8,7 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
     1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
 2. `bundle install`
 3. `rails g panda:install && rails g panda:initializer`
+   1. `rauks g panda:install` will call 'rails panda:install:migrations'
 4. `rails db:create && rails db:migrate`
 5. start server: `rails s`
 6. start sidekiq(optional): `sidekiq`

@@ -33,6 +33,7 @@ Panda::Engine.routes.draw do
         post :bind_ios_device_token
         post :sms_login
         post :sms
+        delete :delete_account
       end
 
       resources :orders do

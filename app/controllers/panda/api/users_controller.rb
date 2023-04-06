@@ -37,11 +37,19 @@ module Panda
     end
 
     def create
-      user = Panda.User.create! params.permit(:name, :nickname, :email, :mobile, :password)
+      user = Panda.User.create! params.permit(:name, :nickname, :email, :mobile, :password, :login, :firstname, :lastname, email_address: :address, email_address_attributes: :address)
 
       render json: user, methods: :auth_token
     end
 
+    # DELETE, 删除当前账号. 因为删除的时候会抛很多关联关系删除不了的问题，所以做假删除，把用户的手机号码改掉，token改掉。
+    def delete_account
+      user = current_user
+      user.update! mobile: "#{user.mobile}_deleted", secure_token: "#{ SecureRandom.base58(32) }",
+                   password: SecureRandom.base58(22), email: "#{user.email}.deleted"
+
+      head status: 204
+    end
     # TODO: Fixme
     def upload_avatar
       current_user.update({avatar: params[:avatar]})

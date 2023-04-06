@@ -5,6 +5,8 @@ WORKDIR /app
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+ENV TZ="Asia/Shanghai"
+
 RUN apt-get install libmagickwand-dev
 
 COPY Gemfile Gemfile.lock ./

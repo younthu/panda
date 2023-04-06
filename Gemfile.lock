@@ -377,6 +377,8 @@ GEM
     rack (2.2.4)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
+    rack-mini-profiler (3.0.0)
+      rack (>= 1.2.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.4)
@@ -613,6 +615,7 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 5.3)
+  rack-mini-profiler
   rails (~> 7.0.4)
   rails_param
   rspec-rails
