@@ -113,22 +113,24 @@ The gem is available as open source under the terms of the [MIT License](https:/
     2. [x] Rest api for Avatar upload
     3. [x] Identity model
     4. [x] Profile model
-    5. [ ] 账户注销
-    6. [ ] 会员等级 
-    7. [ ] captcha
-    8. [x] 新用户邀请
-    9. [ ] 用户行为安全审计
-       1.  [ ] 登录信息记录
-       2.  [ ] 异地登录检测
-       3.  [ ] 实名验证
-       4.  [ ] 所有写操作记录。
-       1. [ ] 禁用账户
-    10. [ ] 组织结构
+    5. [x] 账户注销
+    6. [] 拉黑
+    7. [] 举报
+    8. [ ] 会员等级 
+    9. [ ] captcha
+    10. [x] 新用户邀请
+    11. [ ] 用户行为安全审计
+        1.  [ ] 登录信息记录
+        2.  [ ] 异地登录检测
+        3.  [ ] 实名验证
+        4.  [ ] 所有写操作记录。
+        1. [ ] 禁用账户
+    12. [ ] 组织结构
         1.  [ ] 小组/团队
         2.  [ ] 家庭
         3.  [ ] 公司
         4.  [ ] 安全组
-    11. [ ] API token/password token, github api token like.
+    13. [ ] API token/password token, github api token like.
 2. 注册
    1. 邮箱注册
    2. 手机注册
@@ -137,7 +139,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 5. 保密协议生成
 6. [ ] Login with devise
     1. [x] 手机登录
-    2. [ ] 手机自动登录
+    2. [x] 手机自动登录
     3. [x] 微信登录
     4. [ ] 通过关注微信公众号来绑定账号
     5. [x] 邮箱登录

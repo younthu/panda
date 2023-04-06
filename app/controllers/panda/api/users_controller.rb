@@ -50,6 +50,52 @@ module Panda
 
         head status: 204
       end
+
+      # POST block_user?blocked_user_id=111
+      # 拉黑某人
+      def block_user
+        param! :blocked_user_id, String, required: true
+        u = current_user
+        blocked_user = User.find params[:blocked_user_id]
+
+        res = Blacklist.find_or_create_by(user: u, blocked_user: blocked_user)
+
+        render json: res
+      end
+
+      # POST unblock_user?blocked_user_id=111
+      # 把某人从黑名单里拉出来
+      def unblock_user
+        param! :blocked_user_id, String, required: true
+
+        u = current_user
+        blocked_user = User.find params[:blocked_user_id]
+
+        Blacklist.where(user: u, blocked_user: blocked_user).destroy_all
+
+        render json: {msg: :done}
+      end
+
+      # 黑名单
+      def blacklist
+        u = current_user
+        @result = Blacklist.where(user:u)
+
+        render json: @result
+      end
+
+      # post target_user_id, content, images
+      # 举报用户
+      def report_abuse
+        param! :target_user_id, String, required: true
+        user = current_user
+        target_user = User.find params[:target_user_id]
+
+        res = ReportAbuse.create! user: user, target_user: target_user, content: params[:content]
+
+        render json: res
+      end
+
       # TODO: Fixme
       def upload_avatar
         current_user.update({avatar: params[:avatar]})

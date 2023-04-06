@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: panda_report_abuses
+#
+#  id             :integer          not null, primary key
+#  content        :string
+#  images         :string
+#  status         :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  target_user_id :integer          not null
+#  user_id        :integer          not null
+#
+# Indexes
+#
+#  index_panda_report_abuses_on_target_user_id  (target_user_id)
+#  index_panda_report_abuses_on_user_id         (user_id)
+#
+# Foreign Keys
+#
+#  target_user_id  (target_user_id => target_users.id)
+#  user_id         (user_id => users.id)
+#
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  target_user: one
+  content: MyString
+  images: MyString
+  status: MyString
+
+two:
+  user: two
+  target_user: two
+  content: MyString
+  images: MyString
+  status: MyString

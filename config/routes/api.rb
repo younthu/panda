@@ -34,6 +34,10 @@ Panda::Engine.routes.draw do
         post :sms_login
         post :sms
         delete :delete_account
+        post :block_user
+        post :unblock_user
+        get :blacklist
+        post :report_abuse
       end
 
       resources :orders do
