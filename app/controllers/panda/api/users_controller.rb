@@ -81,7 +81,7 @@ module Panda
         u = current_user
         @result = Blacklist.where(user:u)
 
-        render json: @result
+        render json: @result, include: [user: {only: [:id, :name, :nickname, :gender, :avatar] }]
       end
 
       # post target_user_id, content, images
