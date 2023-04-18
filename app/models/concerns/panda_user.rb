@@ -19,6 +19,15 @@ module PandaUser
     mount_uploaders :photos, Panda::PhotoUploader # 用户头像顶部照片
     serialize :photos, JSON # If you use SQLite, add this line. if using psql, alter photos to type of json rails g migration add_avatars_to_users photos:json
 
+    before_validation do
+      self.email = "#{mobile}@panda.com" if email.blank?
+      self.password = Utils::Random.digital_code(12) if password.blank?
+      self.uid = mobile if uid.blank?
+      # self.invite_code = Utils::Random.digital_code(8) if invite_code.blank?
+      self.provider = 'mobile'
+      # self.nickname = mobile if nickname.blank?
+    end
+
     def age
       return unless self.birthday
       Date.today.year - self.birthday.year
