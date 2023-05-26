@@ -147,32 +147,35 @@ The gem is available as open source under the terms of the [MIT License](https:/
     7. [ ] 扫码登陆
     8. [ ] 苹果登录
 7. [ ] Feature Toggle
-8. [x] 聊天
-9. [ ] 站内信
-10. [x] 基于Secure_token的token管理和身份认证.
+8. [ ] 致敬redmine
+    1. [ ] dynamic fields
+    2. [ ] Workflow of ticket status.
+10. [x] 聊天
+11. [ ] 站内信
+12. [x] 基于Secure_token的token管理和身份认证.
    1. 目前`secure_token`和`devise`不能同时在`controller`里面用，因为有命名冲突,`current_user`和`authenticate_user!`都冲突了。目前的解决办法是通过`Panda.token_method == :secure_token`来决定是用secure_token还是`devise`
    2. 目前登录时两种token都会返回. `devise token`在`auth_token`下面, `secure_token`在`secure_token`字段
    3. 切换token认证方式需要去panda.rb里面设置token_method, 用postman测试过myinfo api, secure_token是工作的.
    1.
-11. [x] Login with wechat
-12. [x] User
-13. [x] 后台用户权限管理
+13. [x] Login with wechat
+14. [x] User
+15. [x] 后台用户权限管理
     1. [x] Roles
     2. [x] Permissions
     3. [ ] 角色配置页面, 分管理员和用户
     4. [ ] 权限配置页面, 分管理员和用
-14. [x] wx_pay, WechatMiniService from Tekapic.
-15. [x] config gem with settings files.
-16. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
-17. [ ] swagger
-18. [ ] Kaminari pagination
-19. [x] Localization
-20. [ ] ElasticSearch
-21. [x] Redis
-22. [ ] ELK Log
-23. [ ] Sidekiq
-24. [ ] Puma auto restart. 解决ruby内存泄漏到问题
-25. [x] CORS
+16. [x] wx_pay, WechatMiniService from Tekapic.
+17. [x] config gem with settings files.
+18. [ ] 常用可通用的功能写到subfolder里面以gem的形式加载.
+19. [ ] swagger
+20. [ ] Kaminari pagination
+21. [x] Localization
+22. [ ] ElasticSearch
+23. [x] Redis
+24. [ ] ELK Log
+25. [ ] Sidekiq
+26. [ ] Puma auto restart. 解决ruby内存泄漏到问题
+27. [x] CORS
      1. 默认关闭CORS
         [//]: # (   2. `rails g panda:install` 会生成`config/cors/initilaizer.rb`)
 26. [ ] OAuth
