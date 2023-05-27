@@ -54,6 +54,10 @@ class Panda::Api::LoginByCodesController < ::ApplicationController
     @user = login_user
     update_user_info
 
+    if @result.disabled?
+      raise CustomMessageError.new(422, "账号已被禁用到#{@result.disabled_to > 100.days.after ? "永久" : @result.disabled_to }。禁用原因: #{@result.disabled_for}")
+    end
+
     sign_in login_user
 
     user_encoder = Warden::JWTAuth::UserEncoder.new

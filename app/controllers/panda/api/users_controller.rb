@@ -11,6 +11,10 @@ module Panda
         SecurityCodeService.new(params[:mobile]).verify(params[:code])
         @result = Panda.User.find_or_create_by(mobile: params[:mobile])
 
+        if @result.disabled?
+          raise CustomMessageError.new(422, "账号已被禁用到#{@result.disabled_to > 100.days.after ? "永久" : @result.disabled_to }。禁用原因: #{@result.disabled_for}")
+        end
+
         if params[:invite_code].present? # 新用户邀请
           raise CustomMessageError.new(422, '不能填写本人邀请码') if @result.invite_code == params[:invite_code]
 

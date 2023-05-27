@@ -24,6 +24,11 @@ module Panda
           # user = User.find_by mobile: mobile
           user = User.where(mobile: mobile).last # 修复bug: 一个手机号被注册多个用户的情况下，以最新的账号为准。
           if user and user.valid_password?(password)
+
+            if @result.disabled?
+              raise CustomMessageError.new(422, "账号已被禁用到#{@result.disabled_to > 100.days.after ? "永久" : @result.disabled_to }。禁用原因: #{@result.disabled_for}")
+            end
+            
             sign_in :user, user
             # set_user_by_token
 
