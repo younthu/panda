@@ -18,8 +18,8 @@
 #
 # Foreign Keys
 #
-#  target_user_id  (target_user_id => target_users.id)
-#  user_id         (user_id => users.id)
+#  target_user_id  (target_user_id => panda_users.id)
+#  user_id         (user_id => panda_users.id)
 #
 module Panda
   class ReportAbuse < ApplicationRecord

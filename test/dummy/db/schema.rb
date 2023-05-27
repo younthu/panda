@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_06_081507) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -109,6 +109,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
     t.string "owner_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "panda_blacklists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "blocked_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blocked_user_id"], name: "index_panda_blacklists_on_blocked_user_id"
+    t.index ["user_id"], name: "index_panda_blacklists_on_user_id"
   end
 
   create_table "panda_devices", force: :cascade do |t|
@@ -233,6 +242,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
     t.index ["user_id"], name: "index_panda_profiles_on_user_id"
   end
 
+  create_table "panda_report_abuses", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "target_user_id", null: false
+    t.string "content"
+    t.string "images"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["target_user_id"], name: "index_panda_report_abuses_on_target_user_id"
+    t.index ["user_id"], name: "index_panda_report_abuses_on_user_id"
+  end
+
   create_table "panda_users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -256,6 +277,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
     t.text "tokens"
     t.string "secure_token"
     t.datetime "deleted_at", precision: nil
+    t.datetime "disabled_at", precision: nil
+    t.datetime "disabled_to", precision: nil
+    t.datetime "disabled_for", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_panda_users_on_confirmation_token", unique: true
@@ -340,9 +364,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_072935) do
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_roles", column: "admin_role_id"
   add_foreign_key "panda_admin_users_panda_admin_roles", "panda_admin_users", column: "admin_user_id"
   add_foreign_key "panda_app_versions", "panda_apps", column: "app_id"
+  add_foreign_key "panda_blacklists", "panda_users", column: "blocked_user_id"
+  add_foreign_key "panda_blacklists", "panda_users", column: "user_id"
   add_foreign_key "panda_devices", "panda_users", column: "user_id"
   add_foreign_key "panda_identities", "panda_users", column: "user_id"
   add_foreign_key "panda_notifications", "panda_users", column: "receiver_id"
   add_foreign_key "panda_order_items", "panda_orders", column: "order_id"
   add_foreign_key "panda_profiles", "panda_users", column: "user_id"
+  add_foreign_key "panda_report_abuses", "panda_users", column: "target_user_id"
+  add_foreign_key "panda_report_abuses", "panda_users", column: "user_id"
 end

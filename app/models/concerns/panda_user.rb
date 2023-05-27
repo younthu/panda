@@ -33,6 +33,18 @@ module PandaUser
       Date.today.year - self.birthday.year
     end
 
+    # 该账号是否被禁用了。如果要查被禁用的理由，可以查disabled_for.
+    def disabled?
+      disabled_at && DateTime.now < disabled_to
+    end
+
+    # 禁用账号,
+    # disable_for, 禁用账号的理由
+    # disable_to, 禁用到什么时候, 默认到1000年以后
+    def disable(disable_for="disabled by system", disable_to= 1000.years.after)
+      update! disabled_for: disable_for, disabled_to: disable_to
+    end
+
     def as_json(options = {})
       super(options).merge({
                              age: age

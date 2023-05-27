@@ -48,6 +48,11 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
       # paranoid
       t.datetime :deleted_at, comment: '软删除'
 
+      # disabled, 禁用账号
+      t.datetime :disabled_at, comment: '什么时候被禁用的'
+      t.datetime :disabled_to, comment: '到什么时候解禁'
+      t.datetime :disabled_for, comment: '为什么被禁用账号'
+
       t.timestamps
     end
 
