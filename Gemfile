@@ -6,7 +6,6 @@ ruby '3.1.1'
 gemspec
 
 gem 'rails', "~> 7.0.4"
-gem 'rswag'
 gem 'jbuilder'
 group :development do
   gem 'sqlite3'
