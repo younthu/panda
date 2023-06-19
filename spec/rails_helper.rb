@@ -25,10 +25,22 @@ Dir[Pathname(File.dirname(__FILE__)).join('spec', 'support', '**', '*.rb')].sort
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
-ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __dir__)
+
+# Resolving pending migrations issue in rspec. https://github.com/rspec/rspec-rails/issues/1330,
+# another point, https://stackoverflow.com/questions/14465754/how-to-manage-migrations-for-a-rails-engine-dummy-app
+# So, keep as it.
+# The previous duplicated migrations issue caused by duplicated migrations_path appending in different file.
+# Resolved by removing duplicated migration files appending. please check current commit for the whole change.
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)] # 欺骗一下rspec, 跑rspec之前先跑bin/rails db:drop db:create db:migrate  RAILS_ENV=test
+# ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __dir__)
 begin
-  ActiveRecord::Migration.maintain_test_schema!
+
+  puts ">>>==========================================="
+  puts "begin check test schema..."
+  puts "ActiveRecord::Migrator.migrations_paths:"
+  puts ActiveRecord::Migrator.migrations_paths
+  puts "<<<==========================================="
+  ActiveRecord::Migration.maintain_test_schema! # ~/.rvm/gems/ruby-3.1.1/gems/activerecord-7.0.4/lib/active_record/migration.rb:627
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
