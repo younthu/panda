@@ -135,11 +135,11 @@ describe '用户消息 API', type: :request, swagger_doc: 'v1/panda_swagger.json
       response '200', '请求成功' do
         let(:request_params) {
           {
-            sender_type: 'sender_type',
+            sender_type: panda_message.sender.class,
             sender_id: panda_message.sender_id,
-            receiver_type: 'receiver_type',
+            receiver_type: panda_message.receiver.class,
             receiver_id: panda_message.receiver_id,
-            payload_type: 'payload_type',
+            payload_type: panda_message.payload.class,
             payload_id: panda_message.payload_id,
             body: 'body',
             read: false,
@@ -153,7 +153,7 @@ describe '用户消息 API', type: :request, swagger_doc: 'v1/panda_swagger.json
         end
 
         run_test! do
-          expect_json('data', sender_type: 'sender_type')
+          expect_json('data', sender_type: 'User')
         end
       end
     end
