@@ -27,7 +27,7 @@
 module Panda
   class Notification < ApplicationRecord
     belongs_to :sender, polymorphic: true, optional: true
-    belongs_to :receiver
-    belongs_to :payload, polymorphic: true
+    belongs_to :receiver, class_name: Panda.userClassName
+    belongs_to :payload, polymorphic: true, optional: true
   end
 end

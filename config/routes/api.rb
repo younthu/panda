@@ -58,6 +58,7 @@ def draw_apis
         end
 
         resources :messages
+        resources :notifications
       end
 
 
