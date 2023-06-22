@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.1'
+ruby '3.2.2'
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
@@ -36,6 +36,12 @@ gem 'rails_param'
 
 gem 'rswag'
 
+
+  gem "bundler-audit", require: false # vulnerability scan
+  gem 'brakeman',      require: false # Brakeman performs static analysis of your Rails application's codebase and inspects various aspects, such as controllers, models, views, routes, and configuration files. It scans for potential security issues
+  gem 'robocop',       require: false #  static code analyzer and formatter for Ruby code. It aims to enforce a consistent coding style and identify potential issues in Ruby codebases.
+
+
 group :development, :test do
   gem 'bullet'
   gem 'byebug'
@@ -51,10 +57,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'nokogiri'
-
-  gem "bundler-audit" # vulnerability scan
-  gem 'brakeman'      # Brakeman performs static analysis of your Rails application's codebase and inspects various aspects, such as controllers, models, views, routes, and configuration files. It scans for potential security issues
-  gem 'robocop'       #  static code analyzer and formatter for Ruby code. It aims to enforce a consistent coding style and identify potential issues in Ruby codebases.
 
   gem 'rack-mini-profiler'
   # gem 'meta_request'
