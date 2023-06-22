@@ -142,6 +142,7 @@ GEM
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.2)
     bcrypt (3.1.18)
+    brakeman (6.0.0)
     builder (3.2.4)
     bullet (7.0.3)
       activesupport (>= 3.0.0)
@@ -457,6 +458,8 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
+    robocop (0.1.1)
+      rack
     rolify (6.0.0)
     rpush (7.0.1)
       activesupport (>= 5.2)
@@ -611,6 +614,7 @@ DEPENDENCIES
   airborne
   aliyun-cloud_sms
   annotate
+  brakeman
   bullet
   bundler-audit
   byebug
@@ -628,6 +632,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 7.0.4)
   rails_param
+  robocop
   rspec-rails
   rswag
   rubocop-rails
