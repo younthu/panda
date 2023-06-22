@@ -21,6 +21,7 @@ end
 
 # ruby 3以后必须指定web server
 gem "puma", "~> 5.3"
+gem 'pg'
 
 gem 'sass-rails'
 
