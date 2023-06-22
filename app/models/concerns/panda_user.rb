@@ -25,7 +25,7 @@ module PandaUser
       self.uid = mobile if uid.blank?
       # self.invite_code = Utils::Random.digital_code(8) if invite_code.blank?
       self.provider = 'mobile'
-      # self.nickname = mobile if nickname.blank?
+      # self.nick_name = mobile if nick_name.blank?
     end
 
     def age

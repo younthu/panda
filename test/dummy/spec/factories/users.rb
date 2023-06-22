@@ -57,7 +57,7 @@ FactoryBot.define do
   factory :user, class: 'User' do
     email { Faker::Internet.email }
     password { '123456' }
-    nickname { Faker::Name.unique.name }
+    nick_name { Faker::Name.unique.name }
     mobile { Faker::PhoneNumber.cell_phone }
 
     factory :child, class: 'Panda::User' do

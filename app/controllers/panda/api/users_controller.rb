@@ -40,8 +40,12 @@ module Panda
         head :created
       end
 
+      # 通过邮箱创建用户
       def create
-        user = Panda.User.create! params.permit(:name, :nickname, :email, :mobile, :password, :login, :firstname, :lastname, email_address: :address, email_address_attributes: :address)
+        # TODO: 这个方法应该被devise里面的方法替换，因为邮箱注册可能牵涉到验证问题.
+        uid = params[:email]
+        user = Panda.User.create! params.permit(:name, :nick_name, :email, :mobile, :password, :login, :firstname,
+                                                :lastname, email_address: :address, email_address_attributes: :address).merge(uid:)
 
         render json: user, methods: :auth_token
       end

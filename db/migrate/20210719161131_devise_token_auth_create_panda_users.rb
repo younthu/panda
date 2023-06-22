@@ -32,7 +32,7 @@ class DeviseTokenAuthCreatePandaUsers < ActiveRecord::Migration[6.1]
 
       ## User Info
       t.string  :name,       comment: '用户名'
-      t.string  :nickname,   comment: '昵称'
+      t.string  :nick_name,   comment: '昵称'
       t.string  :avatar,     comment: '头像'
       t.string  :photos,     comment: '个人顶部相册'
       t.date    :birthday,   comment: '个人生日'

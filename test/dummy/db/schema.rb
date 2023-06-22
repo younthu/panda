@@ -268,7 +268,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_081507) do
     t.string "unconfirmed_email"
     t.string "email"
     t.string "name"
-    t.string "nickname"
+    t.string "nick_name"
     t.string "avatar"
     t.string "photos"
     t.date "birthday"
