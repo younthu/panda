@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'nokogiri'
+  gem "bundler-audit"
 
   gem 'rack-mini-profiler'
   # gem 'meta_request'
