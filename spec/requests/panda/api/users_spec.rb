@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe '用户相关的API', type: :request, swagger_doc: 'v1/panda_swagger.json' do
+RSpec.describe '用户相关的API', type: :request, swagger_doc: 'v1/panda_swagger.yaml' do
 
   path '/api/v1/users/create' do
 

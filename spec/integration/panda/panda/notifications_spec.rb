@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-describe '通知消息 API', type: :request, swagger_doc: 'v1/panda_swagger.json' do
+describe '通知消息 API', type: :request, swagger_doc: 'v1/panda_swagger.yaml' do
   let(:user) { create(:user) }
   let(:receiver) {create(:user)}
   let(:Authorization) { user.secure_token }

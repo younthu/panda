@@ -1,0 +1,513 @@
+---
+openapi: 3.0.1
+info:
+  title: Panda API V1
+  version: v1
+paths:
+  "/api/v1/messages":
+    get:
+      summary: 用户消息 列表
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+              - id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_type: User
+                receiver_id: 1
+                payload_type:
+                payload_id:
+                body:
+                read: true
+                session_id:
+                msg_type: message
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+              meta:
+                current_page: 1
+                total_pages: 1
+                total_count: 1
+                next_page: 0
+                per: 10
+    post:
+      summary: 创建 用户消息
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 2
+                sender_type: User
+                sender_id: 1
+                receiver_type: User
+                receiver_id: 1
+                payload_type: payload_type
+                payload_id:
+                body: body
+                read: false
+                session_id:
+                msg_type: msg_type
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender_type:
+                  type: string
+                  description: sender_type
+                sender_id:
+                  type: integer
+                  description: sender_id
+                receiver_type:
+                  type: string
+                  description: receiver_type
+                receiver_id:
+                  type: integer
+                  description: receiver_id
+                payload_type:
+                  type: string
+                  description: payload_type
+                payload_id:
+                  type: integer
+                  description: payload_id
+                body:
+                  type: string
+                  description: body
+                read:
+                  type: boolean
+                  description: read
+                session_id:
+                  type: string
+                  description: session_id
+                msg_type:
+                  type: string
+                  description: msg_type
+  "/api/v1/messages/{id}":
+    get:
+      summary: 用户消息 详情
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_type: User
+                receiver_id: 1
+                payload_type:
+                payload_id:
+                body:
+                read: true
+                session_id:
+                msg_type: message
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+    delete:
+      summary: 删除 用户消息
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: 请求成功
+    put:
+      summary: 更新 用户消息
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_type: User
+                receiver_id: 1
+                payload_type: NilClass
+                payload_id:
+                body: body
+                read: false
+                session_id:
+                msg_type: msg_type
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender_type:
+                  type: string
+                  description: sender_type
+                sender_id:
+                  type: integer
+                  description: sender_id
+                receiver_type:
+                  type: string
+                  description: receiver_type
+                receiver_id:
+                  type: integer
+                  description: receiver_id
+                payload_type:
+                  type: string
+                  description: payload_type
+                payload_id:
+                  type: integer
+                  description: payload_id
+                body:
+                  type: string
+                  description: body
+                read:
+                  type: boolean
+                  description: read
+                session_id:
+                  type: string
+                  description: session_id
+                msg_type:
+                  type: string
+                  description: msg_type
+  "/api/v1/notifications":
+    get:
+      summary: 通知消息 列表
+      tags:
+      - 通知消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+              - id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_id: 2
+                payload_type:
+                payload_id:
+                body:
+                read: true
+                noti_type: notification
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+              meta:
+                current_page: 1
+                total_pages: 1
+                total_count: 1
+                next_page: 0
+                per: 10
+    post:
+      summary: 创建 通知消息
+      tags:
+      - 通知消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 2
+                sender_type: sender_type
+                sender_id: 1
+                receiver_id: 2
+                payload_type: payload_type
+                payload_id:
+                body: body
+                read: false
+                noti_type: notification
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender_type:
+                  type: string
+                  description: sender_type
+                sender_id:
+                  type: integer
+                  description: sender_id
+                receiver_id:
+                  type: integer
+                  description: receiver_id
+                payload_type:
+                  type: string
+                  description: payload_type
+                payload_id:
+                  type: integer
+                  description: payload_id
+                body:
+                  type: string
+                  description: body
+                read:
+                  type: boolean
+                  description: read
+                type:
+                  type: string
+                  description: type
+  "/api/v1/notifications/{id}":
+    get:
+      summary: 通知消息 详情
+      tags:
+      - 通知消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_id: 2
+                payload_type:
+                payload_id:
+                body:
+                read: true
+                noti_type: notification
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+    delete:
+      summary: 删除 通知消息
+      tags:
+      - 通知消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: 请求成功
+    put:
+      summary: 更新 通知消息
+      tags:
+      - 通知消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+                id: 1
+                sender_type: sender_type
+                sender_id: 1
+                receiver_id: 2
+                payload_type: payload_type
+                payload_id:
+                body: body
+                read: false
+                noti_type: notification
+                created_at: '2023-07-13 08:15:10'
+                updated_at: '2023-07-13 08:15:10'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sender_type:
+                  type: string
+                  description: sender_type
+                sender_id:
+                  type: integer
+                  description: sender_id
+                receiver_id:
+                  type: integer
+                  description: receiver_id
+                payload_type:
+                  type: string
+                  description: payload_type
+                payload_id:
+                  type: integer
+                  description: payload_id
+                body:
+                  type: string
+                  description: body
+                read:
+                  type: boolean
+                  description: read
+                type:
+                  type: string
+                  description: type
+  "/api/v1/users/create":
+    post:
+      summary: Register User
+      tags:
+      - User
+      - registration
+      parameters:
+      - name: name
+        in: path
+        description: name
+        required: true
+        schema:
+          type: string
+      - name: nick_name
+        in: query
+        required: false
+        description: nick name
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: mobile
+        in: query
+        required: false
+        description: mobile
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: password
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: email用户创建成功
+          examples:
+            application/json:
+              id: 1
+              provider: mobile
+              uid: test@test.com
+              allow_password_change: false
+              email: test@test.com
+              name:
+              nick_name:
+              avatar:
+                url:
+              photos: []
+              birthday:
+              gender:
+              mobile:
+              secure_token: cgDMywN9PkYsi1QaJVRnoHPuhg8nc5vY
+              deleted_at:
+              disabled_at:
+              disabled_to:
+              disabled_for:
+              created_at: '2023-07-13T08:15:11.321+08:00'
+              updated_at: '2023-07-13T08:15:11.321+08:00'
+              auth_token:
+                access-token: tdjzUJ7U5GGO396g--qiwg
+                token-type: Bearer
+                client: Du5Xwx0SmuJBfDHObv5GPQ
+                expiry: '1720656911'
+                uid: test@test.com
+                Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJ0ZGp6VUo3VTVHR08zOTZnLS1xaXdnIiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IkR1NVh3eDBTbXVKQmZESE9idjVHUFEiLCJleHBpcnkiOiIxNzIwNjU2OTExIiwidWlkIjoidGVzdEB0ZXN0LmNvbSJ9
+              age:
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

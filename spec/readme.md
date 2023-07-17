@@ -1,0 +1,1 @@
+1. rails generate rspec:swagger Panda::Api::UsersController, it generates an empty spec.
