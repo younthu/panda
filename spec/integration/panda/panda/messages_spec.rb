@@ -2,19 +2,20 @@
 
 require 'swagger_helper'
 
-describe '用户消息 API', type: :request, swagger_doc: 'v1/panda_swagger.yaml' do
+describe '用户消息的API', type: :request, swagger_doc: 'v1/panda_swagger.yaml' do
   let(:user) { create(:user) }
   let(:Authorization) { user.secure_token }
-  let(:panda_message) { create(:panda_message, receiver: user, sender: user) }
+  let(:panda_message) { create(:panda_message, receiver: user, sender: user, read: false) }
   let(:id) { panda_message.id }
 
   path "/api/v1/messages" do
-    get '用户消息 列表' do
+    get '用户消息 列表' do # TODO: 加有session_id参数的case
       tags '用户消息'
       produces 'application/json'
       consumes 'application/json'
 
       parameter name: :Authorization, in: :header, type: :string, description: '用户认证'
+      parameter name: :session_id, in: :query, required: false, type: :string, description: 'session_id, 如果有这个参数，则只返回该session相关的历史记录.'
 
       response 200, '请求成功' do
         before do
@@ -156,6 +157,36 @@ describe '用户消息 API', type: :request, swagger_doc: 'v1/panda_swagger.yaml
           expect_json('data', sender_type: 'User')
         end
       end
+    end
+  end
+
+  path "/api/v1/messages/unread" do
+    get "获取未读消息" do
+      tags '用户消息'
+      produces 'application/json'
+      consumes 'application/json'
+
+      parameter name: :Authorization, in: :header, type: :string, description: '用户认证'
+      parameter name: :session_id, in: :query, required: false, type: :string, description: 'session_id, 如果有这个参数，则只返回该session相关的历史记录.'
+
+      response 200, '请求成功' do # TODO: 加有session_id参数的case
+        before do
+          panda_message
+        end
+
+        after do |example|
+          generate_example(example)
+        end
+
+        run_test! do |response|
+          expect(response).to have_http_status(200)
+          # expect(response).to have_content_type(:json)
+          expect(response.body).to include('data')
+          json = JSON.parse(response.body)
+          expect_json_sizes(data: 1 ) # expect_json_sizes会自动parse response.body, 然后获取data的长度.
+        end
+      end
+
     end
   end
 end

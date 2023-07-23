@@ -57,7 +57,11 @@ def draw_apis
           end
         end
 
-        resources :messages
+        resources :messages do
+          collection do
+            get :unread
+          end
+        end
         resources :notifications
       end
 

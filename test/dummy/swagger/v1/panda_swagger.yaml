@@ -15,6 +15,12 @@ paths:
         description: 用户认证
         schema:
           type: string
+      - name: session_id
+        in: query
+        required: false
+        description: session_id, 如果有这个参数，则只返回该session相关的历史记录.
+        schema:
+          type: string
       responses:
         '200':
           description: 请求成功
@@ -29,11 +35,11 @@ paths:
                 payload_type:
                 payload_id:
                 body:
-                read: true
+                read: false
                 session_id:
                 msg_type: message
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
               meta:
                 current_page: 1
                 total_pages: 1
@@ -67,8 +73,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: msg_type
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
       requestBody:
         content:
           application/json:
@@ -136,11 +142,11 @@ paths:
                 payload_type:
                 payload_id:
                 body:
-                read: true
+                read: false
                 session_id:
                 msg_type: message
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
     delete:
       summary: 删除 用户消息
       tags:
@@ -193,8 +199,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: msg_type
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
       requestBody:
         content:
           application/json:
@@ -231,6 +237,48 @@ paths:
                 msg_type:
                   type: string
                   description: msg_type
+  "/api/v1/messages/unread":
+    get:
+      summary: 获取未读消息
+      tags:
+      - 用户消息
+      parameters:
+      - name: Authorization
+        in: header
+        description: 用户认证
+        schema:
+          type: string
+      - name: session_id
+        in: query
+        required: false
+        description: session_id, 如果有这个参数，则只返回该session相关的历史记录.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 请求成功
+          examples:
+            application/json:
+              data:
+              - id: 1
+                sender_type: User
+                sender_id: 1
+                receiver_type: User
+                receiver_id: 1
+                payload_type:
+                payload_id:
+                body:
+                read: false
+                session_id:
+                msg_type: message
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
+              meta:
+                current_page: 1
+                total_pages: 1
+                total_count: 1
+                next_page: 0
+                per: 10
   "/api/v1/notifications":
     get:
       summary: 通知消息 列表
@@ -257,8 +305,8 @@ paths:
                 body:
                 read: true
                 noti_type: notification
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
               meta:
                 current_page: 1
                 total_pages: 1
@@ -290,8 +338,8 @@ paths:
                 body: body
                 read: false
                 noti_type: notification
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
       requestBody:
         content:
           application/json:
@@ -354,8 +402,8 @@ paths:
                 body:
                 read: true
                 noti_type: notification
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
     delete:
       summary: 删除 通知消息
       tags:
@@ -406,8 +454,8 @@ paths:
                 body: body
                 read: false
                 noti_type: notification
-                created_at: '2023-07-13 08:15:10'
-                updated_at: '2023-07-13 08:15:10'
+                created_at: '2023-07-24 00:30:53'
+                updated_at: '2023-07-24 00:30:53'
       requestBody:
         content:
           application/json:
@@ -491,20 +539,20 @@ paths:
               birthday:
               gender:
               mobile:
-              secure_token: cgDMywN9PkYsi1QaJVRnoHPuhg8nc5vY
+              secure_token: zzMSAB9jTDsFFHLC2ZBP5oVvuuqcekEr
               deleted_at:
               disabled_at:
               disabled_to:
               disabled_for:
-              created_at: '2023-07-13T08:15:11.321+08:00'
-              updated_at: '2023-07-13T08:15:11.321+08:00'
+              created_at: '2023-07-24T00:30:53.890+08:00'
+              updated_at: '2023-07-24T00:30:53.890+08:00'
               auth_token:
-                access-token: tdjzUJ7U5GGO396g--qiwg
+                access-token: J-S0K3X5rNG_EwjDNKNV_Q
                 token-type: Bearer
-                client: Du5Xwx0SmuJBfDHObv5GPQ
-                expiry: '1720656911'
+                client: bOjKlb7psA4J4yvKlSUDRw
+                expiry: '1721579453'
                 uid: test@test.com
-                Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJ0ZGp6VUo3VTVHR08zOTZnLS1xaXdnIiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IkR1NVh3eDBTbXVKQmZESE9idjVHUFEiLCJleHBpcnkiOiIxNzIwNjU2OTExIiwidWlkIjoidGVzdEB0ZXN0LmNvbSJ9
+                Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJKLVMwSzNYNXJOR19Fd2pETktOVl9RIiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6ImJPaktsYjdwc0E0SjR5dktsU1VEUnciLCJleHBpcnkiOiIxNzIxNTc5NDUzIiwidWlkIjoidGVzdEB0ZXN0LmNvbSJ9
               age:
 servers:
 - url: https://{defaultHost}

@@ -30,5 +30,6 @@ module Panda
 
     scope :messages_for, ->(user){ where(sender: user).or(Message.where(receiver: user))}
     scope :in_session, ->(session_id){where session_id: session_id }
+    scope :unread, ->{where read: false}
   end
 end
