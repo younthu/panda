@@ -10,6 +10,10 @@ Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合
 3. [Things board for IoT](https://github.com/thingsboard/thingsboard)
 4. [Odoo for erp](https://github.com/odoo/odoo)
 5. [Wordpress for CRM](https://github.com/WordPress/WordPress)
+6. Messaging/Chatting
+   1. [XMPP](https://xmpp.org/)
+   2. [Rocket Chat](https://github.com/RocketChat/Rocket.Chat)	
+8. 
 
 
 # Quick start
