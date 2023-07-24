@@ -23,8 +23,11 @@
       render :intelligence
     end
 
-    # 未读消息, 只返回未读消息。返回的时候会把所有消息标记为已读。如果带session_id, 则只显示这个session的未读消息, 也只把这个session的未读消息返回给客户端。
+    # 未读消息, 只返回未读消息。如果带参数mark_as_read则返回的时候会把所有消息标记为已读。如果带session_id, 则只显示这个session的未读消息, 也只把这个session的未读消息返回给客户端。
     def unread
+      param! :session_id, Integer, required: false
+      param! :mark_as_read, :boolean, required: false
+
       if(params[:session_id])
         @result = Panda::Message.messages_for(current_user).unread.in_session(params[:session_id]).recent.page(page).per(per)
       else
@@ -32,6 +35,8 @@
       end
 
       paginate @result
+
+      @result.update_all(read: true) if(params[:mark_as_read])
 
       render :intelligence
 

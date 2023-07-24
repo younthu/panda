@@ -1,9 +1,11 @@
 1. rails generate rspec:swagger Panda::Api::UsersController, it generates an empty spec.
-2. `rails generate rspec:model user`, more generators, please check https://github.com/rspec/rspec-rails/blob/main/features/Generators.md 
+2. `rails generate rspec:model user`, 
+   1. more generators, please check https://github.com/rspec/rspec-rails/blob/main/features/Generators.md 
 3. `rspec --format Rswag::Specs::SwaggerFormatter --order defined`, 生成swagger.
-4. 文档分类，在post里面加`tags '用户消息'`
-5. 指定swagger doc文件名: `describe '用户消息的API', type: :request, swagger_doc: 'v1/panda_swagger.yaml'`
-6. spec 参数
+4. https://github.com/brooklynDev/airborne,  expect_json的用法.
+5. 文档分类，在post里面加`tags '用户消息'`
+6. 指定swagger doc文件名: `describe '用户消息的API', type: :request, swagger_doc: 'v1/panda_swagger.yaml'`
+7. spec 参数
   ~~~ruby
     post '创建 用户消息' do
       tags '用户消息'

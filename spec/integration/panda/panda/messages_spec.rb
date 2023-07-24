@@ -168,8 +168,11 @@ describe '用户消息的API', type: :request, swagger_doc: 'v1/panda_swagger.ya
 
       parameter name: :Authorization, in: :header, type: :string, description: '用户认证'
       parameter name: :session_id, in: :query, required: false, type: :string, description: 'session_id, 如果有这个参数，则只返回该session相关的历史记录.'
+      parameter name: :mark_as_read, in: :query, required: false, type: :boolean, description: 'mark_as_read, 如果有这个参数，则只返回前把所有的消息标记为read: true'
 
-      response 200, '请求成功' do # TODO: 加有session_id参数的case
+      response 200, '请求成功' do 
+        # TODO: 加有session_id参数的case
+        # TODO: 加有mark_as_read参数的case.
         before do
           panda_message
         end
@@ -184,6 +187,11 @@ describe '用户消息的API', type: :request, swagger_doc: 'v1/panda_swagger.ya
           expect(response.body).to include('data')
           json = JSON.parse(response.body)
           expect_json_sizes(data: 1 ) # expect_json_sizes会自动parse response.body, 然后获取data的长度.
+          expect_json_types(data: :array_of_objects) # https://github.com/brooklynDev/airborne
+          expect_json('data.0', sender_type: 'User')
+          expect_json('data.0', receiver_type: 'User')
+          expect_json('data.0', read: false)
+          
         end
       end
 

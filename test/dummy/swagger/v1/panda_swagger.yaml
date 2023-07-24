@@ -38,8 +38,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: message
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
               meta:
                 current_page: 1
                 total_pages: 1
@@ -73,8 +73,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: msg_type
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
       requestBody:
         content:
           application/json:
@@ -145,8 +145,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: message
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
     delete:
       summary: 删除 用户消息
       tags:
@@ -199,8 +199,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: msg_type
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
       requestBody:
         content:
           application/json:
@@ -254,6 +254,12 @@ paths:
         description: session_id, 如果有这个参数，则只返回该session相关的历史记录.
         schema:
           type: string
+      - name: mark_as_read
+        in: query
+        required: false
+        description: 'mark_as_read, 如果有这个参数，则只返回前把所有的消息标记为read: true'
+        schema:
+          type: boolean
       responses:
         '200':
           description: 请求成功
@@ -271,8 +277,8 @@ paths:
                 read: false
                 session_id:
                 msg_type: message
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
               meta:
                 current_page: 1
                 total_pages: 1
@@ -305,8 +311,8 @@ paths:
                 body:
                 read: true
                 noti_type: notification
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
               meta:
                 current_page: 1
                 total_pages: 1
@@ -338,8 +344,8 @@ paths:
                 body: body
                 read: false
                 noti_type: notification
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
       requestBody:
         content:
           application/json:
@@ -402,8 +408,8 @@ paths:
                 body:
                 read: true
                 noti_type: notification
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
     delete:
       summary: 删除 通知消息
       tags:
@@ -454,8 +460,8 @@ paths:
                 body: body
                 read: false
                 noti_type: notification
-                created_at: '2023-07-24 00:30:53'
-                updated_at: '2023-07-24 00:30:53'
+                created_at: '2023-07-25 00:53:31'
+                updated_at: '2023-07-25 00:53:31'
       requestBody:
         content:
           application/json:
@@ -539,20 +545,20 @@ paths:
               birthday:
               gender:
               mobile:
-              secure_token: zzMSAB9jTDsFFHLC2ZBP5oVvuuqcekEr
+              secure_token: bmchjXvZeDwHSK3tK22XncUb2CUyC5X2
               deleted_at:
               disabled_at:
               disabled_to:
               disabled_for:
-              created_at: '2023-07-24T00:30:53.890+08:00'
-              updated_at: '2023-07-24T00:30:53.890+08:00'
+              created_at: '2023-07-25T00:53:31.544+08:00'
+              updated_at: '2023-07-25T00:53:31.544+08:00'
               auth_token:
-                access-token: J-S0K3X5rNG_EwjDNKNV_Q
+                access-token: CulfdCeXo-6hUobCKmgo0w
                 token-type: Bearer
-                client: bOjKlb7psA4J4yvKlSUDRw
-                expiry: '1721579453'
+                client: 0kvqypBjpRJJlBNQcfjpVw
+                expiry: '1721667211'
                 uid: test@test.com
-                Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJKLVMwSzNYNXJOR19Fd2pETktOVl9RIiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6ImJPaktsYjdwc0E0SjR5dktsU1VEUnciLCJleHBpcnkiOiIxNzIxNTc5NDUzIiwidWlkIjoidGVzdEB0ZXN0LmNvbSJ9
+                Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJDdWxmZENlWG8tNmhVb2JDS21nbzB3IiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IjBrdnF5cEJqcFJKSmxCTlFjZmpwVnciLCJleHBpcnkiOiIxNzIxNjY3MjExIiwidWlkIjoidGVzdEB0ZXN0LmNvbSJ9
               age:
 servers:
 - url: https://{defaultHost}
