@@ -5,6 +5,10 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 
 Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合在一起，组成更加完整的解决方案。
 
+1. [Redmine for task management](https://github.com/redmine/redmine)
+2. [Spree for b2c online shop](https://github.com/spree/spree)
+3. [Things board for IoT](https://github.com/thingsboard/thingsboard)
+
 
 # Quick start
 
