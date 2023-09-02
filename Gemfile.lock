@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    panda (0.1.0)
+    panda (0.2.0)
       aasm
       activeadmin
       activeadmin_addons
@@ -353,6 +353,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
+      racc (~> 1.4)
     ohai (18.1.3)
       chef-config (>= 14.12, < 19)
       chef-utils (>= 16.0, < 19)
@@ -568,6 +570,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.4-x86_64-darwin)
+    sqlite3 (1.6.4-x86_64-linux)
     ssrf_filter (1.1.2)
     standard (1.31.0)
       language_server-protocol (~> 3.17.0.2)
@@ -628,6 +631,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   activeadmin (~> 2.9)
