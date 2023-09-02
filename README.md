@@ -6,18 +6,18 @@ Panda是一个业务代码聚合引擎，Rails Engine. 所有功能开箱即用�
 Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合在一起，组成更加完整的解决方案。
 
 1. Project/Task management
-   2. [Redmine for task management](https://github.com/redmine/redmine)
-   3. [Open project](https://github.com/opf/openproject)
-3. [Spree for b2c online shop](https://github.com/spree/spree)
-4. [Things board for IoT](https://github.com/thingsboard/thingsboard)
-5. ERP
-   5. [Odoo for erp](https://github.com/odoo/odoo)
-   6. [https://ofbiz.apache.org/](https://ofbiz.apache.org/)
-6. [Wordpress for CRM](https://github.com/WordPress/WordPress)
-7. Messaging/Chatting
+   1. [Redmine for task management](https://github.com/redmine/redmine)
+   2. [Open project](https://github.com/opf/openproject)
+2. [Spree for b2c online shop](https://github.com/spree/spree)
+3. [Things board for IoT](https://github.com/thingsboard/thingsboard)
+4. ERP
+   1. [Odoo for erp](https://github.com/odoo/odoo)
+   2. [https://ofbiz.apache.org/](https://ofbiz.apache.org/)
+5. [Wordpress for CRM](https://github.com/WordPress/WordPress)
+6. Messaging/Chatting
    1. [XMPP](https://xmpp.org/)
    2. [Rocket Chat](https://github.com/RocketChat/Rocket.Chat)	
-8. 
+7. 
 
 
 # Quick start
@@ -25,23 +25,22 @@ Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合
 1. Add gems
     1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
 2. `bundle install`
-3. `rails g panda:install && rails g panda:initializer`, `rails g panda:install` will call [./lib/generators/panda/install/install_generator.rb](./lib/generators/panda/install/install_generator.rb)
-   4. It will install gems.
-   5. install config
-      6. settings files
-      6. zh-CN.yml
-   7. mout panda to routes
-   8. install migration files
-   9. install user model
-   10. install deply scripts
-   11. install docker files
-   12. config activeadmin addons
-   13. initialize gems(rspec, rswag).
-5. `rails db:create && rails db:migrate`
-6. start server: `rails s`
-7. start sidekiq(optional): `sidekiq`
-8. start rpush(optional): `rpush start`
-9. check app info: `rails app:about`
+3. `rails g panda:install && rails g panda:initializer`, `rails g panda:install` will call [./lib/generators/panda/install/install_generator.rb](./lib/generators/panda/install/install_generator.rb)。It will install gems below:
+   1. install config
+      1. settings files
+      2. zh-CN.yml
+   2. mout panda to routes
+   3. install migration files
+   4. install user model
+   5.  install deply scripts
+   6.  install docker files
+   7.  config activeadmin addons
+   8.  initialize gems(rspec, rswag).
+4. `rails db:create && rails db:migrate`
+5. start server: `rails s`
+6. start sidekiq(optional): `sidekiq`
+7. start rpush(optional): `rpush start`
+8. check app info: `rails app:about`
 
 
 # Setup
