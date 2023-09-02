@@ -29,7 +29,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
   end
 
   def install_config
-    if yes?("生成settings.yml文件?[Yn]", default: "Yes")
+    if not no?("生成settings.yml文件?[Yn]")
       generate "config:install"
       copy_file "settings.yml.sample", "settings.local.yml"
     end
