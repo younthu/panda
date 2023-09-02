@@ -25,6 +25,9 @@ class Panda::InstallGenerator < Rails::Generators::Base
       gem 'factory_bot_rails'
       gem 'faker'
       gem 'nokogiri'
+      gem 'bundler-audit', required: false, comment: "vulnerability scan"
+      gem 'brakeman', required: false, comment: "Brakeman performs static analysis of your Rails application's codebase and inspects various aspects, such as controllers, models, views, routes, and configuration files. It scans for potential security issues"
+      gem 'robocop', required: false, comment: 'static code analyzer and formatter for Ruby code. It aims to enforce a consistent coding style and identify potential issues in Ruby codebases.'
     end
   end
 
