@@ -25,7 +25,7 @@ Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合
 1. Add gems
     1. Add `gem 'panda', git: 'https://github.com/younthu/panda.git'` to Gemfile
 2. `bundle install`
-3. `rails g panda:install && rails g panda:initializer`, `rails g panda:install` will call [./lib/generators/panda/install/install_generator.rb](./lib/generators/panda/install/install_generator.rb)。It will install gems below:
+3. `rails g panda:install`, 拷贝各种代码和配置文件.it will call [./lib/generators/panda/install/install_generator.rb](./lib/generators/panda/install/install_generator.rb) and install gems below:
    1. install config
       1. settings files
       2. zh-CN.yml
@@ -36,6 +36,7 @@ Panda的终极目标是做成一个方案粘合剂，把各种开源方向黏合
    6.  install docker files
    7.  config activeadmin addons
    8.  initialize gems(rspec, rswag).
+9.  `rails g panda:initializer`
 4. `rails db:create && rails db:migrate`
 5. start server: `rails s`
 6. start sidekiq(optional): `sidekiq`
