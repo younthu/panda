@@ -133,7 +133,7 @@ Comment
     
     Welcome to Panda!
     
-    1. please install migration files via `rails g panda:install:migrations`
+    1. 接下来请运行`rails g panda:install && rails g panda:initializer`
     2. 如果使用mqtt, 请启动mqtt进程.
     3. 更多流程，请看doc/setup.md.
     4. 如果想快速
