@@ -65,6 +65,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
       app_name = folder_name if app_name.blank?
       template "ssh_deploy.sh", "ssh_deploy.sh", {app_name: app_name}
       template "restart.sh", "restart.sh", {app_name: app_name}
+      template "deploy.md", "deploy.md", {app_name: app_name}
     end
   end
 
