@@ -37,7 +37,7 @@ Comment
   # spec.add_dependency "devise-jwt"
   # spec.add_dependency "warden-jwt_auth"
 
-
+ spec.add_dependency "pg"
   # devise 用户管理, gem 'devise'
   spec.add_dependency 'devise'
 
