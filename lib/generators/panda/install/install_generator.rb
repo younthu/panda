@@ -21,7 +21,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
       gem 'rubocop-rspec'
       gem 'standard'
       gem 'rspec-rails'
-      gem 'airborne'
+      gem 'airborne', comment: "RSpec driven API testing framework. methods for expect_json or expect_json_types."
       gem 'factory_bot_rails'
       gem 'faker'
       gem 'nokogiri'
@@ -29,7 +29,7 @@ class Panda::InstallGenerator < Rails::Generators::Base
   end
 
   def install_config
-    if yes?("生成settings.yml文件?[Yn]")
+    if yes?("生成settings.yml文件?[Yn]", default: "Yes")
       generate "config:install"
       copy_file "settings.yml.sample", "settings.local.yml"
     end
