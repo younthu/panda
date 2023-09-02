@@ -5,7 +5,7 @@ ruby '3.2.2'
 # Specify your gem's dependencies in panda.gemspec.
 gemspec
 
-gem 'rails', "~> 7.0.4"
+gem 'rails', "~> 7.0.6"
 gem 'jbuilder'
 group :development do
   gem 'sqlite3'
