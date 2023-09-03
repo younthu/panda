@@ -60,6 +60,14 @@ class Panda::InstallGenerator < Rails::Generators::Base
     end
   end
 
+  # 安装users controller
+  def install_users_controller
+    if not no?("生成api/users_controller.rb?[Yn]")
+      copy_file "users_controller.rb.tpl", "app/controllers/api/users_controller.rb"
+      puts "api/users_controller.rb已经生成，可以在这个controller里面添加api了。"
+    end
+  end
+
   def install_deploy_scripts
     if not no?("生成install scripts?[Yn]")
       puts "生成ssh_deploy.sh"
