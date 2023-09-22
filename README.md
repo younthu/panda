@@ -162,6 +162,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 2. 注册
    1. 邮箱注册
    2. 手机注册
+3. 集成[ipapi数据库](https://ipapi.is/geolocation.html)
+4. 集成[ipinfo数据库](https://ipinfo.io/developers/ip-to-country-asn-database)
 3. 图形验证码.
 4. 隐私协议生成
 5. 保密协议生成
